@@ -19,7 +19,6 @@ import { AboutPage } from './pages/AboutPage';
 import { BusinessInfoPage } from './pages/BusinessInfoPage';
 import { ContactPage } from './pages/ContactPage';
 import { RequestServicePage } from './pages/RequestServicePage';
-import { MyLeadsPage } from './pages/MyLeadsPage';
 import { ListYourBusinessPage } from './pages/ListYourBusinessPage';
 
 // Scroll to top helper
@@ -116,7 +115,6 @@ export const AppContent: React.FC = () => {
           <Route path="/business-information" element={<BusinessInfoPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/request-service" element={<RequestServicePage />} />
-          <Route path="/my-leads" element={<MyLeadsPage />} />
           <Route path="/list-your-business" element={<ListYourBusinessPage />} />
         </Routes>
       </main>

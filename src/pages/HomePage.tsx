@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
-  Search, MapPin, Phone, MessageCircle, ShieldCheck, Zap, 
+  MapPin, Phone, MessageCircle, ShieldCheck, Zap, 
   IndianRupee, ThumbsUp, Heart, ArrowRight, CheckCircle2, 
   Wrench, Wind, Car, Navigation, Building, HardHat, Home, 
   Camera, Monitor, GraduationCap, AlertTriangle, Briefcase, ChevronRight
@@ -34,15 +34,6 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
 };
 
 export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, onOpenLead }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const navigate = useNavigate();
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchTerm.trim()) {
-      navigate(`/services?q=${encodeURIComponent(searchTerm.trim())}`);
-    }
-  };
 
   return (
     <div className="space-y-12 pb-12">
@@ -68,33 +59,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
             </p>
           </div>
 
-          {/* Prominent Search Bar */}
-          <form onSubmit={handleSearchSubmit} className="max-w-2xl mx-auto bg-white rounded-2xl p-2 sm:p-2.5 shadow-2xl flex flex-col sm:flex-row items-center gap-2 border border-slate-100">
-            <div className="flex items-center gap-2.5 flex-1 px-3 py-1.5 w-full">
-              <Search className="w-5 h-5 text-slate-400 flex-shrink-0" />
-              <input
-                type="text"
-                placeholder="Search for a service... (e.g. Electrician, Taxi, AC Repair)"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-transparent text-slate-800 placeholder-slate-400 text-sm sm:text-base outline-none font-medium"
-              />
-            </div>
 
-            <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-2 border-t sm:border-t-0 border-slate-100 pt-2 sm:pt-0">
-              <div className="flex items-center gap-1 text-xs font-bold text-slate-700 px-3 py-2 bg-slate-100 rounded-xl flex-shrink-0">
-                <MapPin className="w-3.5 h-3.5 text-nearfix-orange" />
-                <span>Araku Valley</span>
-              </div>
-
-              <button
-                type="submit"
-                className="py-3 px-6 bg-nearfix-blue hover:bg-nearfix-navy text-white font-bold text-sm rounded-xl transition-all shadow-md flex-shrink-0"
-              >
-                Search
-              </button>
-            </div>
-          </form>
 
           {/* CTA Buttons Row */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">

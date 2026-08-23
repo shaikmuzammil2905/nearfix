@@ -34,7 +34,6 @@ export const Footer: React.FC = () => {
               <li><Link to="/about" className="hover:text-nearfix-orange transition-colors">About NEARFIX</Link></li>
               <li><Link to="/business-information" className="hover:text-nearfix-orange transition-colors">Business Information</Link></li>
               <li><Link to="/contact" className="hover:text-nearfix-orange transition-colors">Contact Us</Link></li>
-              <li><Link to="/my-leads" className="hover:text-nearfix-orange transition-colors">Track My Leads</Link></li>
               <li><Link to="/list-your-business" className="hover:text-nearfix-orange transition-colors">List Your Business</Link></li>
             </ul>
           </div>

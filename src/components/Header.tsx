@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Phone, MessageCircle, MapPin, Search, Wrench, ListPlus } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle, MapPin, Search } from 'lucide-react';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 
 interface HeaderProps {
@@ -163,14 +163,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
 
           <div className="flex items-center gap-3">
             <Link
-              to="/my-leads"
-              className="text-xs font-bold text-slate-600 hover:text-nearfix-blue flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
-            >
-              <ListPlus className="w-3.5 h-3.5 text-nearfix-orange" />
-              My Leads
-            </Link>
-
-            <Link
               to="/list-your-business"
               className="text-xs font-bold text-nearfix-blue hover:text-white hover:bg-nearfix-blue px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-lg transition-colors"
             >
@@ -212,25 +204,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
                     </Link>
                   );
                 })}
-              </div>
-
-              {/* Additional Options */}
-              <div className="space-y-2 border-t border-slate-100 pt-4">
-                <Link
-                  to="/my-leads"
-                  className="flex items-center justify-between px-4 py-3 rounded-xl bg-slate-100 text-slate-800 font-semibold text-sm"
-                >
-                  <span>My Leads / Tracking</span>
-                  <ListPlus className="w-4 h-4 text-nearfix-orange" />
-                </Link>
-
-                <Link
-                  to="/list-your-business"
-                  className="flex items-center justify-between px-4 py-3 rounded-xl bg-blue-50 text-nearfix-blue font-semibold text-sm border border-blue-100"
-                >
-                  <span>List Your Business</span>
-                  <Wrench className="w-4 h-4 text-nearfix-blue" />
-                </Link>
               </div>
             </div>
 

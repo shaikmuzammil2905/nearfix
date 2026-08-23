@@ -9,14 +9,14 @@ interface FloatingActionsProps {
 
 export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenCall, onOpenWhatsApp }) => {
   return (
-    <div className="fixed bottom-20 lg:bottom-8 right-4 lg:right-8 z-30 flex flex-col gap-3 pointer-events-auto">
+    <div className="fixed bottom-20 lg:bottom-8 right-3 sm:right-6 z-40 flex flex-col gap-3 items-end pointer-events-none">
       {/* Floating WhatsApp Button */}
       <button
         onClick={onOpenWhatsApp}
-        className="group relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-nearfix-whatsapp text-white shadow-xl shadow-emerald-600/30 hover:bg-emerald-600 hover:scale-110 active:scale-95 transition-all duration-300"
+        className="pointer-events-auto group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-nearfix-whatsapp text-white shadow-lg shadow-emerald-600/30 hover:bg-emerald-600 hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-400"
         aria-label="Chat on WhatsApp"
       >
-        <MessageCircle className="w-7 h-7 fill-current" />
+        <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 fill-current" />
         <span className="absolute right-16 hidden lg:group-hover:flex items-center px-3 py-1.5 bg-slate-900 text-white text-xs font-bold rounded-lg shadow-lg whitespace-nowrap animate-fadeIn">
           WhatsApp Us ({NEARFIX_CONTACT.whatsappDisplay})
         </span>
@@ -25,10 +25,10 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenCall, on
       {/* Floating Call Button */}
       <button
         onClick={onOpenCall}
-        className="group relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-nearfix-green text-white shadow-xl shadow-emerald-700/30 hover:bg-emerald-700 hover:scale-110 active:scale-95 transition-all duration-300"
+        className="pointer-events-auto group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-nearfix-green text-white shadow-lg shadow-emerald-700/30 hover:bg-emerald-700 hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-400"
         aria-label="Call NEARFIX"
       >
-        <Phone className="w-6 h-6 fill-current animate-pulse" />
+        <Phone className="w-5 h-5 sm:w-6 sm:h-6 fill-current animate-pulse" />
         <span className="absolute right-16 hidden lg:group-hover:flex items-center px-3 py-1.5 bg-slate-900 text-white text-xs font-bold rounded-lg shadow-lg whitespace-nowrap animate-fadeIn">
           Call Now ({NEARFIX_CONTACT.phoneDisplay})
         </span>

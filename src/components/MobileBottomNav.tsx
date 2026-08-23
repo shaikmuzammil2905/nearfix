@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Grid, ClipboardList, Info, PhoneCall } from 'lucide-react';
+import { Home, Grid, Wrench, Info, PhoneCall } from 'lucide-react';
 
 export const MobileBottomNav: React.FC = () => {
   const location = useLocation();
@@ -8,7 +8,7 @@ export const MobileBottomNav: React.FC = () => {
   const navItems = [
     { label: 'Home', path: '/', icon: Home },
     { label: 'Categories', path: '/categories', icon: Grid },
-    { label: 'My Leads', path: '/my-leads', icon: ClipboardList },
+    { label: 'Services', path: '/services', icon: Wrench },
     { label: 'About Us', path: '/about', icon: Info },
     { label: 'Contact', path: '/contact', icon: PhoneCall },
   ];
