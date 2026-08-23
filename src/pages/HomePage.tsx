@@ -59,11 +59,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
               <ShieldCheck className="w-4 h-4 text-nearfix-orange" /> Araku Valley's #1 Service Platform
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-              Find Trusted Local Services <span className="text-nearfix-orange">Near You</span>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)]">
+              Find Trusted Local Services <span className="text-nearfix-orange drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)]">Near You</span>
             </h1>
 
-            <p className="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white font-medium text-base sm:text-lg max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Connect with verified service providers instantly via Call or WhatsApp.
             </p>
           </div>
