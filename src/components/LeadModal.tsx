@@ -167,10 +167,13 @@ export const LeadModal: React.FC<LeadModalProps> = ({
                     onChange={(e) => setLocation(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-nearfix-blue focus:ring-2 focus:ring-nearfix-blue/20 outline-none text-slate-800 text-sm transition-all bg-white"
                   >
+                    <optgroup label="Alluri Seetha Ramaraju District">
+                      <option value="Araku Valley">Araku Valley</option>
+                      <option value="Paderu">Paderu</option>
+                      <option value="Chinthapalli">Chinthapalli</option>
+                    </optgroup>
                     <option value="Visakhapatnam District">Visakhapatnam District</option>
                     <option value="Anakapalli District">Anakapalli District</option>
-                    <option value="Alluri Seetha Ramaraju District">Alluri Seetha Ramaraju District</option>
-                    <option value="Araku Valley">Araku Valley</option>
                   </select>
                 </div>
               </div>

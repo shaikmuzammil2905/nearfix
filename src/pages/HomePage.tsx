@@ -76,13 +76,41 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
             </p>
           </div>
 
-          {/* Quick Locations Pill Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-1 max-w-3xl mx-auto">
-            {['Visakhapatnam District', 'Anakapalli District', 'Alluri Seetha Ramaraju District', 'Araku Valley'].map((loc) => (
-              <span key={loc} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-extrabold text-white shadow-xs">
-                <MapPin className="w-3 h-3 text-nearfix-orange" /> {loc}
-              </span>
-            ))}
+          {/* Line-wise District & Location Hierarchy */}
+          <div className="bg-slate-950/75 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 max-w-3xl mx-auto space-y-3 text-left sm:text-center text-white shadow-2xl">
+            <div className="text-xs font-extrabold uppercase tracking-wider text-nearfix-orange flex items-center justify-center gap-1.5">
+              <MapPin className="w-4 h-4 text-nearfix-orange" /> Verified Local Service Coverage Areas
+            </div>
+
+            <div className="space-y-2 text-xs sm:text-sm">
+              {/* Line 1: Alluri Seetha Ramaraju District with sub-places */}
+              <div className="bg-white/10 p-3 rounded-xl border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                <span className="font-extrabold text-amber-300 flex items-center gap-1.5">
+                  <MapPin className="w-4 h-4 text-nearfix-orange flex-shrink-0" /> Alluri Seetha Ramaraju District
+                </span>
+                <div className="flex flex-wrap items-center gap-1.5 font-bold text-white">
+                  <span className="bg-nearfix-orange px-2.5 py-1 rounded-lg text-xs shadow-xs">Araku Valley</span>
+                  <span className="bg-nearfix-orange px-2.5 py-1 rounded-lg text-xs shadow-xs">Paderu</span>
+                  <span className="bg-nearfix-orange px-2.5 py-1 rounded-lg text-xs shadow-xs">Chinthapalli</span>
+                </div>
+              </div>
+
+              {/* Line 2: Visakhapatnam District */}
+              <div className="bg-white/10 p-3 rounded-xl border border-white/10 flex items-center justify-between">
+                <span className="font-extrabold text-emerald-400 flex items-center gap-1.5">
+                  <MapPin className="w-4 h-4 text-emerald-400 flex-shrink-0" /> Visakhapatnam District
+                </span>
+                <span className="text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-1 rounded-lg">Active Coverage</span>
+              </div>
+
+              {/* Line 3: Anakapalli District */}
+              <div className="bg-white/10 p-3 rounded-xl border border-white/10 flex items-center justify-between">
+                <span className="font-extrabold text-sky-300 flex items-center gap-1.5">
+                  <MapPin className="w-4 h-4 text-sky-400 flex-shrink-0" /> Anakapalli District
+                </span>
+                <span className="text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30 px-2.5 py-1 rounded-lg">Active Coverage</span>
+              </div>
+            </div>
           </div>
 
 

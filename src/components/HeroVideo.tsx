@@ -4,26 +4,29 @@ export const HeroVideo: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Ensure video plays programmatically on all browsers & mobile devices
+    // Ensure video plays programmatically on all mobile browsers & desktop
     if (videoRef.current) {
       videoRef.current.muted = true;
       videoRef.current.play().catch(() => {
-        // Autoplay policy fallback handling
+        // Autoplay fallback
       });
     }
   }, []);
 
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 bg-slate-900">
-      {/* 100% Clear Video Background - No Poster Image & Zero Overlay Shadows */}
+      {/* 100% High Clarity Video Background - No Shadow Overlay, Crisp View on Mobile & Desktop */}
       <video
         ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover object-center transform scale-100 transition-opacity duration-500"
+        webkit-playsinline="true"
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover object-center transform scale-100 opacity-90 transition-opacity duration-300"
       >
+        <source src="/main_concept_is_near_fix_worke.mp4" type="video/mp4" />
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
     </div>

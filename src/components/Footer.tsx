@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, MessageCircle, Mail, MapPin, ShieldCheck, Heart } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, ShieldCheck, Heart, Facebook, Instagram, Youtube, Twitter } from 'lucide-react';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-nearfix-blue text-white pt-12 pb-24 lg:pb-12 border-t border-slate-800 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           
           {/* Col 1: Brand */}
           <div className="space-y-4">
@@ -89,8 +89,72 @@ export const Footer: React.FC = () => {
 
         </div>
 
+        {/* Social Media Links Bar */}
+        <div className="border-t border-slate-800/80 pt-6 pb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+            <span>Follow Us On Social Media:</span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
+              aria-label="Facebook"
+              title="Facebook"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-red-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
+              aria-label="YouTube"
+              title="YouTube"
+            >
+              <Youtube className="w-5 h-5" />
+            </a>
+
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-sky-500 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
+              aria-label="Twitter / X"
+              title="Twitter / X"
+            >
+              <Twitter className="w-5 h-5" />
+            </a>
+
+            <a
+              href="https://threads.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110 font-bold text-xs"
+              aria-label="Threads"
+              title="Threads"
+            >
+              <span className="font-extrabold text-base text-center leading-none">@</span>
+            </a>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div className="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>© {new Date().getFullYear()} NEARFIX. All rights reserved.</p>
           <div className="flex items-center gap-1 text-slate-400">
             Serving local communities in <span className="text-white font-semibold">Visakhapatnam, Anakapalli, Alluri Seetha Ramaraju & Araku Valley</span> <Heart className="w-3.5 h-3.5 text-red-500 fill-current inline ml-1" />

@@ -12,10 +12,9 @@ export const NEARFIX_CONTACT = {
   location: "Araku Valley",
   district: "Alluri Seetha Ramaraju District",
   districtsServed: [
+    "Alluri Seetha Ramaraju District (Araku Valley, Paderu, Chinthapalli)",
     "Visakhapatnam District",
-    "Anakapalli District",
-    "Alluri Seetha Ramaraju District",
-    "Araku Valley"
+    "Anakapalli District"
   ],
   state: "Andhra Pradesh",
   pincode: "531151",

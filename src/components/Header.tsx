@@ -96,10 +96,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
                   className="bg-transparent outline-none text-xs font-bold text-slate-700 cursor-pointer pr-1"
                 >
                   <option value="All Districts">All Districts</option>
-                  <option value="Visakhapatnam District">Visakhapatnam</option>
-                  <option value="Anakapalli District">Anakapalli</option>
-                  <option value="Alluri Seetha Ramaraju District">Alluri Seetha Ramaraju</option>
-                  <option value="Araku Valley">Araku Valley</option>
+                  <optgroup label="Alluri Seetha Ramaraju District">
+                    <option value="Araku Valley">Araku Valley</option>
+                    <option value="Paderu">Paderu</option>
+                    <option value="Chinthapalli">Chinthapalli</option>
+                  </optgroup>
+                  <option value="Visakhapatnam District">Visakhapatnam District</option>
+                  <option value="Anakapalli District">Anakapalli District</option>
                 </select>
               </div>
             </form>
@@ -226,10 +229,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
                     className="bg-transparent outline-none text-xs font-bold text-slate-700 w-full cursor-pointer"
                   >
                     <option value="All Districts">All Districts</option>
+                    <optgroup label="Alluri Seetha Ramaraju District">
+                      <option value="Araku Valley">Araku Valley</option>
+                      <option value="Paderu">Paderu</option>
+                      <option value="Chinthapalli">Chinthapalli</option>
+                    </optgroup>
                     <option value="Visakhapatnam District">Visakhapatnam District</option>
                     <option value="Anakapalli District">Anakapalli District</option>
-                    <option value="Alluri Seetha Ramaraju District">Alluri Seetha Ramaraju District</option>
-                    <option value="Araku Valley">Araku Valley</option>
                   </select>
                 </div>
               </form>
