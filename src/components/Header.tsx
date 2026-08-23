@@ -187,56 +187,101 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
 
       {/* Mobile Drawer Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-[60px] z-30 bg-slate-950/50 backdrop-blur-xs lg:hidden animate-fadeIn">
-          <div className="bg-white w-4/5 max-w-sm h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
+        <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm lg:hidden animate-fadeIn flex">
+          <div className="bg-white w-5/6 max-w-xs h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between relative z-10">
             <div className="space-y-6">
-              {/* Search inside Mobile Drawer */}
-              <form onSubmit={handleSearchSubmit} className="relative">
-                <input
-                  type="text"
-                  placeholder="Search for a service..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 bg-slate-100 rounded-xl text-sm outline-none border border-slate-200"
-                />
-                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              
+              {/* Header inside Drawer with Close button & Logo */}
+              <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+                <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                  <img src="/logo.png" alt="NEARFIX Logo" className="h-9 w-auto object-contain" />
+                </Link>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors"
+                  aria-label="Close navigation menu"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Mobile Search & Location Select */}
+              <form onSubmit={(e) => { handleSearchSubmit(e); setIsMobileMenuOpen(false); }} className="space-y-3">
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search for any service..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-9 pr-4 py-2.5 bg-slate-100 focus:bg-white rounded-xl text-xs font-medium outline-none border border-slate-200 focus:border-nearfix-blue"
+                  />
+                  <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                </div>
+
+                <div className="flex items-center gap-2 bg-slate-100 border border-slate-200 px-3 py-2 rounded-xl text-xs font-bold text-slate-700">
+                  <MapPin className="w-4 h-4 text-nearfix-orange flex-shrink-0" />
+                  <select
+                    value={selectedLocation}
+                    onChange={(e) => setSelectedLocation(e.target.value)}
+                    className="bg-transparent outline-none text-xs font-bold text-slate-700 w-full cursor-pointer"
+                  >
+                    <option value="All Districts">All Districts</option>
+                    <option value="Visakhapatnam District">Visakhapatnam District</option>
+                    <option value="Anakapalli District">Anakapalli District</option>
+                    <option value="Alluri Seetha Ramaraju District">Alluri Seetha Ramaraju District</option>
+                    <option value="Araku Valley">Araku Valley</option>
+                  </select>
+                </div>
               </form>
 
               {/* Navigation Items */}
               <div className="space-y-1">
-                <div className="text-xs font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Navigation</div>
+                <div className="text-[11px] font-extrabold text-slate-400 uppercase tracking-wider px-3 mb-2">Navigation</div>
                 {navLinks.map((link) => {
                   const isActive = location.pathname === link.path;
                   return (
                     <Link
                       key={link.path}
                       to={link.path}
-                      className={`flex items-center justify-between px-4 py-3 rounded-xl font-semibold text-sm transition-colors ${isActive ? 'bg-orange-50 text-nearfix-orange font-bold' : 'text-slate-700 hover:bg-slate-50'}`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`flex items-center justify-between px-4 py-3 rounded-xl font-bold text-sm transition-all ${isActive ? 'bg-orange-50 text-nearfix-orange border border-orange-200/60' : 'text-slate-700 hover:bg-slate-50'}`}
                     >
                       <span>{link.name}</span>
                     </Link>
                   );
                 })}
+
+                <Link
+                  to="/list-your-business"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-between px-4 py-3 rounded-xl font-bold text-sm bg-blue-50 text-nearfix-blue border border-blue-200/80 mt-3"
+                >
+                  <span>List Your Business</span>
+                </Link>
               </div>
+
             </div>
 
-            {/* Mobile Drawer Bottom Contact Card */}
-            <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200 mt-6 space-y-3">
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Quick Direct Action</div>
+            {/* Quick Contact Action Card at Bottom */}
+            <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200 mt-6 space-y-2.5">
+              <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Quick Direct Help</div>
               <button
                 onClick={() => { setIsMobileMenuOpen(false); onOpenCall(); }}
-                className="w-full py-2.5 px-4 bg-nearfix-green text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 bg-nearfix-green text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-xs"
               >
                 <Phone className="w-4 h-4 fill-current" /> Call {NEARFIX_CONTACT.phoneDisplay}
               </button>
               <button
                 onClick={() => { setIsMobileMenuOpen(false); onOpenWhatsApp(); }}
-                className="w-full py-2.5 px-4 bg-nearfix-whatsapp text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 bg-nearfix-whatsapp text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-xs"
               >
                 <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp {NEARFIX_CONTACT.whatsappDisplay}
               </button>
             </div>
           </div>
+
+          {/* Backdrop Click */}
+          <div className="flex-1" onClick={() => setIsMobileMenuOpen(false)} />
         </div>
       )}
     </header>
