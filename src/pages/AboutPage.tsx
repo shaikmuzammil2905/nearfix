@@ -1,12 +1,19 @@
 import React from 'react';
-import { ShieldCheck, Target, Eye, Heart, Zap, MapPin, Award, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Target, Eye, ArrowRight } from 'lucide-react';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 import { Link } from 'react-router-dom';
+import { BackButton } from '../components/BackButton';
 
 export const AboutPage: React.FC = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       
+      {/* Top Bar with Back Button */}
+      <div className="flex items-center justify-between">
+        <BackButton label="Back to Home" fallbackPath="/" />
+        <span className="text-xs font-semibold text-slate-500">About NEARFIX</span>
+      </div>
+
       {/* Banner */}
       <div className="bg-gradient-to-r from-nearfix-blue via-slate-900 to-nearfix-navy text-white rounded-3xl p-8 sm:p-12 shadow-xl text-center space-y-4">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-xs font-bold text-nearfix-orange uppercase tracking-wider">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Wrench, Send, CheckCircle, ShieldCheck, Info } from 'lucide-react';
+import { Wrench, Send, CheckCircle, Info } from 'lucide-react';
 import { CATEGORIES } from '../data/categories';
+import { BackButton } from '../components/BackButton';
 
 export const ListYourBusinessPage: React.FC = () => {
   const [businessName, setBusinessName] = useState('');
@@ -21,8 +22,14 @@ export const ListYourBusinessPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       
+      {/* Top Bar with Back Button */}
+      <div className="flex items-center justify-between">
+        <BackButton label="Back to Home" fallbackPath="/" />
+        <span className="text-xs font-semibold text-slate-500">Business Registration</span>
+      </div>
+
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-nearfix-blue to-nearfix-navy text-white rounded-3xl p-8 sm:p-12 shadow-xl space-y-4">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-bold text-nearfix-orange uppercase tracking-wider">
@@ -39,7 +46,7 @@ export const ListYourBusinessPage: React.FC = () => {
       {/* Form Container */}
       <div className="max-w-3xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-card">
         
-        {/* Verification Disclosure Rule 48 */}
+        {/* Verification Disclosure */}
         <div className="bg-blue-50 border border-blue-200/80 rounded-2xl p-4 mb-6 flex items-start gap-3">
           <Info className="w-5 h-5 text-nearfix-blue flex-shrink-0 mt-0.5" />
           <p className="text-xs text-slate-700 leading-relaxed font-medium">
@@ -158,7 +165,6 @@ export const ListYourBusinessPage: React.FC = () => {
             </button>
           </form>
         ) : (
-          /* Success state */
           <div className="text-center py-12 space-y-4">
             <div className="w-16 h-16 mx-auto bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
               <CheckCircle className="w-8 h-8" />

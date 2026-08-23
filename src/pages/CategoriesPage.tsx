@@ -5,20 +5,10 @@ import {
   Building, HardHat, Home, Camera, Monitor, GraduationCap, AlertTriangle, Briefcase 
 } from 'lucide-react';
 import { CATEGORIES } from '../data/categories';
+import { BackButton } from '../components/BackButton';
 
 const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
-  Wrench,
-  Wind,
-  Car,
-  Navigation,
-  Building,
-  HardHat,
-  Home,
-  Camera,
-  Monitor,
-  GraduationCap,
-  AlertTriangle,
-  Briefcase
+  Wrench, Wind, Car, Navigation, Building, HardHat, Home, Camera, Monitor, GraduationCap, AlertTriangle, Briefcase
 };
 
 export const CategoriesPage: React.FC = () => {
@@ -31,8 +21,14 @@ export const CategoriesPage: React.FC = () => {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       
+      {/* Top Action Bar with Back Button (Mobile & Desktop) */}
+      <div className="flex items-center justify-between">
+        <BackButton label="Back to Home" fallbackPath="/" />
+        <span className="text-xs font-semibold text-slate-500">12 Categories Available</span>
+      </div>
+
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-nearfix-blue to-nearfix-navy text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
         <div className="max-w-2xl space-y-4 relative z-10">

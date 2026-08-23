@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ShieldCheck, Send, CheckCircle, Phone, MessageCircle } from 'lucide-react';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 import { SubmittedLead } from '../components/LeadModal';
+import { BackButton } from '../components/BackButton';
 
 export const RequestServicePage: React.FC = () => {
   const [name, setName] = useState('');
@@ -39,8 +40,14 @@ export const RequestServicePage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       
+      {/* Top Bar with Back Button */}
+      <div className="flex items-center justify-between">
+        <BackButton label="Back to Home" fallbackPath="/" />
+        <span className="text-xs font-semibold text-slate-500">Request Form</span>
+      </div>
+
       {/* Banner */}
       <div className="bg-gradient-to-r from-nearfix-blue to-nearfix-navy text-white rounded-3xl p-8 sm:p-12 shadow-xl space-y-4">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-bold text-nearfix-orange uppercase tracking-wider">

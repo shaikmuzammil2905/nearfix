@@ -1,12 +1,13 @@
 import React from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { 
-  ArrowLeft, Phone, MessageCircle, ArrowRight, ShieldCheck, 
+  Phone, MessageCircle, ArrowRight, ShieldCheck, 
   Wrench, Wind, Car, Navigation, Building, HardHat, Home, 
   Camera, Monitor, GraduationCap, AlertTriangle, Briefcase, ChevronRight, Zap
 } from 'lucide-react';
 import { getCategoryBySlug } from '../data/categories';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
+import { BackButton } from '../components/BackButton';
 
 interface CategoryDetailPageProps {
   onOpenCall: (serviceName?: string) => void;
@@ -24,8 +25,6 @@ export const CategoryDetailPage: React.FC<CategoryDetailPageProps> = ({
   onOpenLead
 }) => {
   const { categorySlug } = useParams<{ categorySlug: string }>();
-  const navigate = useNavigate();
-
   const category = getCategoryBySlug(categorySlug || '');
 
   if (!category) {
@@ -33,26 +32,26 @@ export const CategoryDetailPage: React.FC<CategoryDetailPageProps> = ({
       <div className="max-w-4xl mx-auto px-4 py-16 text-center space-y-4">
         <h2 className="text-2xl font-bold text-slate-800">Category Not Found</h2>
         <p className="text-slate-500 text-sm">The category you requested does not exist or has been updated.</p>
-        <Link to="/categories" className="inline-flex items-center gap-2 py-2.5 px-6 bg-nearfix-blue text-white font-bold rounded-xl text-sm">
-          <ArrowLeft className="w-4 h-4" /> Back to Categories
-        </Link>
+        <BackButton label="Back to Categories" fallbackPath="/categories" />
       </div>
     );
   }
 
-  const CategoryIcon = iconMap[category.iconName] || Wrench;
-
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       
-      {/* Breadcrumb Navigation */}
-      <nav className="flex items-center gap-2 text-xs text-slate-500 font-semibold">
-        <Link to="/" className="hover:text-nearfix-blue">Home</Link>
-        <ChevronRight className="w-3.5 h-3.5" />
-        <Link to="/categories" className="hover:text-nearfix-blue">Categories</Link>
-        <ChevronRight className="w-3.5 h-3.5" />
-        <span className="text-slate-900 font-bold">{category.name}</span>
-      </nav>
+      {/* Top Action Bar with Universal Back Button */}
+      <div className="flex items-center justify-between">
+        <BackButton label="Back to Categories" fallbackPath="/categories" />
+        
+        <nav className="hidden sm:flex items-center gap-2 text-xs text-slate-500 font-semibold">
+          <Link to="/" className="hover:text-nearfix-blue">Home</Link>
+          <ChevronRight className="w-3.5 h-3.5" />
+          <Link to="/categories" className="hover:text-nearfix-blue">Categories</Link>
+          <ChevronRight className="w-3.5 h-3.5" />
+          <span className="text-slate-900 font-bold">{category.name}</span>
+        </nav>
+      </div>
 
       {/* Category Header Banner */}
       <div className={`rounded-3xl p-8 sm:p-12 shadow-xl border ${category.isEmergency ? 'bg-gradient-to-r from-red-900 via-rose-900 to-red-950 text-white border-red-800' : 'bg-gradient-to-r from-nearfix-blue to-nearfix-navy text-white border-slate-800'} relative overflow-hidden`}>

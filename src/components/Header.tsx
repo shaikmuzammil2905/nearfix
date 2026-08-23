@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Phone, MessageCircle, MapPin, Search, ChevronDown, Wrench, Info, PhoneCall, Grid, ListPlus } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle, MapPin, Search, Wrench, ListPlus } from 'lucide-react';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 
 interface HeaderProps {
@@ -68,12 +68,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
               <img
                 src="/logo.png"
                 alt="NEARFIX Logo"
-                className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-8 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </Link>
           </div>
 
-          {/* Center: Search & Location (Desktop) */}
+          {/* Center: Search & Location (DESKTOP ONLY - hidden on mobile to prevent scroll overlap) */}
           <div className="hidden lg:flex items-center gap-3 flex-1 max-w-md mx-4">
             <form onSubmit={handleSearchSubmit} className="relative w-full">
               <input
@@ -94,7 +94,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
 
           {/* Right: Contact Actions (Desktop) */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* Call Action */}
             <button
               onClick={onOpenCall}
               className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-50 hover:bg-emerald-100 text-nearfix-green border border-emerald-200/80 font-bold text-xs transition-all hover:scale-[1.02]"
@@ -108,7 +107,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
               </div>
             </button>
 
-            {/* WhatsApp Action */}
             <button
               onClick={onOpenWhatsApp}
               className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-50 hover:bg-emerald-100 text-nearfix-whatsapp border border-emerald-200/80 font-bold text-xs transition-all hover:scale-[1.02]"
@@ -123,18 +121,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
             </button>
           </div>
 
-          {/* Mobile Right Contact Buttons */}
+          {/* Mobile Right Quick Action Icons (Clean & Compact) */}
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onOpenCall}
-              className="p-2 rounded-full bg-emerald-100 text-nearfix-green hover:bg-emerald-200 transition-colors"
+              className="p-2.5 rounded-full bg-emerald-100 text-nearfix-green hover:bg-emerald-200 transition-colors shadow-xs"
               aria-label="Call NEARFIX"
             >
               <Phone className="w-5 h-5 fill-current" />
             </button>
             <button
               onClick={onOpenWhatsApp}
-              className="p-2 rounded-full bg-emerald-100 text-nearfix-whatsapp hover:bg-emerald-200 transition-colors"
+              className="p-2.5 rounded-full bg-emerald-100 text-nearfix-whatsapp hover:bg-emerald-200 transition-colors shadow-xs"
               aria-label="WhatsApp NEARFIX"
             >
               <MessageCircle className="w-5 h-5 fill-current" />
@@ -187,7 +185,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
         <div className="fixed inset-0 top-[60px] z-30 bg-slate-950/50 backdrop-blur-xs lg:hidden animate-fadeIn">
           <div className="bg-white w-4/5 max-w-sm h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
             <div className="space-y-6">
-              {/* Search in Drawer */}
+              {/* Search inside Mobile Drawer */}
               <form onSubmit={handleSearchSubmit} className="relative">
                 <input
                   type="text"

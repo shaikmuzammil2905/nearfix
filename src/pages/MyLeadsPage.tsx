@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ClipboardList, Phone, MessageCircle, Clock, ShieldCheck, ArrowRight, Trash2 } from 'lucide-react';
+import { ClipboardList, Clock, ShieldCheck, ArrowRight, Trash2 } from 'lucide-react';
 import { SubmittedLead } from '../components/LeadModal';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
+import { BackButton } from '../components/BackButton';
 
 export const MyLeadsPage: React.FC = () => {
   const [leads, setLeads] = useState<SubmittedLead[]>([]);
@@ -24,8 +25,14 @@ export const MyLeadsPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       
+      {/* Top Bar with Back Button */}
+      <div className="flex items-center justify-between">
+        <BackButton label="Back to Home" fallbackPath="/" />
+        <span className="text-xs font-semibold text-slate-500">Service Requests</span>
+      </div>
+
       {/* Banner */}
       <div className="bg-gradient-to-r from-nearfix-blue to-nearfix-navy text-white rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div className="space-y-2 max-w-xl">
@@ -113,7 +120,6 @@ export const MyLeadsPage: React.FC = () => {
           </div>
         </div>
       ) : (
-        /* Empty State */
         <div className="bg-white rounded-3xl p-12 text-center border border-slate-100 shadow-sm max-w-lg mx-auto space-y-4">
           <div className="w-16 h-16 mx-auto bg-blue-50 text-nearfix-blue rounded-full flex items-center justify-center">
             <ClipboardList className="w-8 h-8 text-nearfix-orange" />

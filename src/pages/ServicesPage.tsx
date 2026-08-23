@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Search, Phone, MessageCircle, ArrowRight, ShieldCheck, Filter, AlertCircle, ChevronRight } from 'lucide-react';
-import { getAllServices, CATEGORIES, ServiceItem } from '../data/categories';
-import { NEARFIX_CONTACT } from '../data/contactInfo';
+import { Search, Phone, MessageCircle, ShieldCheck, AlertCircle, ChevronRight } from 'lucide-react';
+import { getAllServices, CATEGORIES } from '../data/categories';
+import { BackButton } from '../components/BackButton';
 
 interface ServicesPageProps {
   onOpenCall: (serviceName?: string) => void;
@@ -46,8 +46,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenCall, onOpenWh
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       
+      {/* Top Bar with Back Button */}
+      <div className="flex items-center justify-between">
+        <BackButton label="Back to Home" fallbackPath="/" />
+        <span className="text-xs font-semibold text-slate-500">Service Directory</span>
+      </div>
+
       {/* Page Title & Search Bar */}
       <div className="bg-gradient-to-r from-nearfix-blue to-nearfix-navy text-white rounded-3xl p-8 sm:p-12 shadow-xl space-y-6">
         <div className="max-w-2xl space-y-2">
@@ -154,7 +160,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenCall, onOpenWh
             ))}
           </div>
         ) : (
-          /* Empty State Requirement Section 38 */
           <div className="bg-white rounded-3xl p-12 text-center border border-slate-100 shadow-sm space-y-4 max-w-lg mx-auto my-8">
             <div className="w-16 h-16 mx-auto bg-orange-50 text-nearfix-orange rounded-full flex items-center justify-center">
               <AlertCircle className="w-8 h-8" />

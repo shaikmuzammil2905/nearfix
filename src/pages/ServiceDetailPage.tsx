@@ -1,11 +1,12 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
-  ArrowLeft, Phone, MessageCircle, Send, CheckCircle2, ShieldCheck, 
-  MapPin, Clock, Info, ChevronRight, Zap, HelpCircle
+  Phone, MessageCircle, Send, CheckCircle2, 
+  MapPin, Clock, Info, ChevronRight, Zap, ShieldCheck
 } from 'lucide-react';
 import { getServiceBySlug, getAllServices } from '../data/categories';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
+import { BackButton } from '../components/BackButton';
 
 interface ServiceDetailPageProps {
   onOpenCall: (serviceName?: string) => void;
@@ -19,7 +20,6 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
   onOpenLead
 }) => {
   const { serviceSlug } = useParams<{ serviceSlug: string }>();
-
   const service = getServiceBySlug(serviceSlug || '');
 
   if (!service) {
@@ -27,32 +27,33 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
       <div className="max-w-4xl mx-auto px-4 py-16 text-center space-y-4">
         <h2 className="text-2xl font-bold text-slate-800">Service Not Found</h2>
         <p className="text-slate-500 text-sm">The requested service could not be located in our directory.</p>
-        <Link to="/services" className="inline-flex items-center gap-2 py-2.5 px-6 bg-nearfix-blue text-white font-bold rounded-xl text-sm">
-          <ArrowLeft className="w-4 h-4" /> Browse All Services
-        </Link>
+        <BackButton label="Back to Services" fallbackPath="/services" />
       </div>
     );
   }
 
-  // Related services in same category
   const all = getAllServices();
   const relatedServices = all
     .filter(s => s.categorySlug === service.categorySlug && s.id !== service.id)
     .slice(0, 3);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       
-      {/* Breadcrumbs */}
-      <nav className="flex items-center gap-2 text-xs text-slate-500 font-semibold overflow-x-auto">
-        <Link to="/" className="hover:text-nearfix-blue">Home</Link>
-        <ChevronRight className="w-3.5 h-3.5" />
-        <Link to="/categories" className="hover:text-nearfix-blue">Categories</Link>
-        <ChevronRight className="w-3.5 h-3.5" />
-        <Link to={`/categories/${service.categorySlug}`} className="hover:text-nearfix-blue">{service.categoryName}</Link>
-        <ChevronRight className="w-3.5 h-3.5" />
-        <span className="text-slate-900 font-bold">{service.name}</span>
-      </nav>
+      {/* Top Bar with Universal Back Button & Breadcrumbs */}
+      <div className="flex items-center justify-between">
+        <BackButton label="Back" fallbackPath={`/categories/${service.categorySlug}`} />
+
+        <nav className="hidden sm:flex items-center gap-2 text-xs text-slate-500 font-semibold overflow-x-auto">
+          <Link to="/" className="hover:text-nearfix-blue">Home</Link>
+          <ChevronRight className="w-3.5 h-3.5" />
+          <Link to="/categories" className="hover:text-nearfix-blue">Categories</Link>
+          <ChevronRight className="w-3.5 h-3.5" />
+          <Link to={`/categories/${service.categorySlug}`} className="hover:text-nearfix-blue">{service.categoryName}</Link>
+          <ChevronRight className="w-3.5 h-3.5" />
+          <span className="text-slate-900 font-bold">{service.name}</span>
+        </nav>
+      </div>
 
       {/* Main Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -80,7 +81,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               {service.description}
             </p>
 
-            {/* Provider Disclosure (Section 26 Rule: No fake provider data) */}
+            {/* Provider Disclosure */}
             <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 flex items-center gap-3">
               <Info className="w-5 h-5 text-nearfix-blue flex-shrink-0" />
               <p className="text-sm font-semibold text-slate-700">
