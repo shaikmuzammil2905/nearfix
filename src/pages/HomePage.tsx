@@ -55,7 +55,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
           
           {/* Main Heading */}
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold text-emerald-300 uppercase tracking-wider animate-fadeIn">
+            <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-extrabold text-white uppercase tracking-wider animate-fadeIn drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
               <ShieldCheck className="w-4 h-4 text-nearfix-orange" /> Araku Valley's #1 Service Platform
             </div>
 
