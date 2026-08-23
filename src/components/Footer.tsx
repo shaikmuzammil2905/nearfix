@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, MessageCircle, Mail, MapPin, ShieldCheck, Heart, Facebook, Instagram, Youtube, Twitter } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, ShieldCheck, Heart, Facebook, Instagram, Youtube, Twitter, Linkedin } from 'lucide-react';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 
 export const Footer: React.FC = () => {
@@ -89,13 +89,13 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Social Media Links Bar */}
-        <div className="border-t border-slate-800/80 pt-6 pb-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-            <span>Follow Us On Social Media:</span>
+        {/* Social Media Links Bar - Placed Below the Label */}
+        <div className="border-t border-slate-800/80 pt-6 pb-6 flex flex-col items-start gap-3">
+          <div className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+            Follow Us On Social Media:
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center flex-wrap gap-3">
             <a
               href="https://facebook.com"
               target="_blank"
@@ -149,6 +149,17 @@ export const Footer: React.FC = () => {
               title="Threads"
             >
               <span className="font-extrabold text-base text-center leading-none">@</span>
+            </a>
+
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-blue-700 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
             </a>
           </div>
         </div>

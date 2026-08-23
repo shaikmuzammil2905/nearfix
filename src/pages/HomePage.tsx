@@ -63,8 +63,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
           
           {/* Main Heading */}
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/60 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider animate-fadeIn shadow-lg">
-              <ShieldCheck className="w-4 h-4 text-nearfix-orange flex-shrink-0" /> #1 Service Platform in Visakhapatnam, Anakapalli, Alluri Seetha Ramaraju & Araku Valley
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider animate-fadeIn shadow-md">
+              <ShieldCheck className="w-4 h-4 text-nearfix-orange flex-shrink-0" /> #1 Service Platform in Alluri Seetha Ramaraju, Visakhapatnam & Anakapalli Districts
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)]">
@@ -72,48 +72,46 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
             </h1>
 
             <p className="text-white font-medium text-base sm:text-lg max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              Actively serving <span className="font-bold text-amber-300">Visakhapatnam District</span>, <span className="font-bold text-amber-300">Anakapalli District</span>, <span className="font-bold text-amber-300">Alluri Seetha Ramaraju District</span> & <span className="font-bold text-amber-300">Araku Valley</span>. Connect with verified local professionals instantly via Call or WhatsApp.
+              Actively serving <span className="font-bold text-amber-300">Alluri Seetha Ramaraju District (Araku Valley, Paderu, Chinthapalli)</span>, <span className="font-bold text-amber-300">Visakhapatnam District</span> & <span className="font-bold text-amber-300">Anakapalli District</span>. Connect with verified local professionals instantly via Call or WhatsApp.
             </p>
           </div>
 
-          {/* Line-wise District & Location Hierarchy */}
-          <div className="bg-slate-950/75 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 max-w-3xl mx-auto space-y-3 text-left sm:text-center text-white shadow-2xl">
-            <div className="text-xs font-extrabold uppercase tracking-wider text-nearfix-orange flex items-center justify-center gap-1.5">
+          {/* Line-wise District & Location Hierarchy - Clear View, No Heavy Shadow Box */}
+          <div className="max-w-3xl mx-auto space-y-2.5 text-left sm:text-center text-white">
+            <div className="text-xs font-extrabold uppercase tracking-wider text-amber-300 drop-shadow flex items-center justify-center gap-1.5">
               <MapPin className="w-4 h-4 text-nearfix-orange" /> Verified Local Service Coverage Areas
             </div>
 
             <div className="space-y-2 text-xs sm:text-sm">
               {/* Line 1: Alluri Seetha Ramaraju District with sub-places */}
-              <div className="bg-white/10 p-3 rounded-xl border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                <span className="font-extrabold text-amber-300 flex items-center gap-1.5">
+              <div className="bg-black/35 backdrop-blur-sm p-3 rounded-2xl border border-white/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 shadow-md">
+                <span className="font-extrabold text-amber-300 drop-shadow flex items-center gap-1.5">
                   <MapPin className="w-4 h-4 text-nearfix-orange flex-shrink-0" /> Alluri Seetha Ramaraju District
                 </span>
                 <div className="flex flex-wrap items-center gap-1.5 font-bold text-white">
-                  <span className="bg-nearfix-orange px-2.5 py-1 rounded-lg text-xs shadow-xs">Araku Valley</span>
-                  <span className="bg-nearfix-orange px-2.5 py-1 rounded-lg text-xs shadow-xs">Paderu</span>
-                  <span className="bg-nearfix-orange px-2.5 py-1 rounded-lg text-xs shadow-xs">Chinthapalli</span>
+                  <span className="bg-nearfix-orange px-2.5 py-1 rounded-lg text-xs shadow-md">Araku Valley</span>
+                  <span className="bg-nearfix-orange px-2.5 py-1 rounded-lg text-xs shadow-md">Paderu</span>
+                  <span className="bg-nearfix-orange px-2.5 py-1 rounded-lg text-xs shadow-md">Chinthapalli</span>
                 </div>
               </div>
 
               {/* Line 2: Visakhapatnam District */}
-              <div className="bg-white/10 p-3 rounded-xl border border-white/10 flex items-center justify-between">
-                <span className="font-extrabold text-emerald-400 flex items-center gap-1.5">
+              <div className="bg-black/35 backdrop-blur-sm p-3 rounded-2xl border border-white/20 flex items-center justify-between shadow-md">
+                <span className="font-extrabold text-emerald-300 drop-shadow flex items-center gap-1.5">
                   <MapPin className="w-4 h-4 text-emerald-400 flex-shrink-0" /> Visakhapatnam District
                 </span>
-                <span className="text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-1 rounded-lg">Active Coverage</span>
+                <span className="text-xs font-bold bg-emerald-600/90 text-white px-2.5 py-1 rounded-lg shadow-xs">Active Coverage</span>
               </div>
 
               {/* Line 3: Anakapalli District */}
-              <div className="bg-white/10 p-3 rounded-xl border border-white/10 flex items-center justify-between">
-                <span className="font-extrabold text-sky-300 flex items-center gap-1.5">
+              <div className="bg-black/35 backdrop-blur-sm p-3 rounded-2xl border border-white/20 flex items-center justify-between shadow-md">
+                <span className="font-extrabold text-sky-300 drop-shadow flex items-center gap-1.5">
                   <MapPin className="w-4 h-4 text-sky-400 flex-shrink-0" /> Anakapalli District
                 </span>
-                <span className="text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30 px-2.5 py-1 rounded-lg">Active Coverage</span>
+                <span className="text-xs font-bold bg-sky-600/90 text-white px-2.5 py-1 rounded-lg shadow-xs">Active Coverage</span>
               </div>
             </div>
           </div>
-
-
 
           {/* CTA Buttons Row */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
@@ -122,7 +120,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
               className="flex items-center justify-center gap-2.5 w-full sm:w-auto py-3.5 px-8 bg-nearfix-green hover:bg-emerald-700 text-white font-extrabold text-base rounded-2xl shadow-xl shadow-emerald-600/30 transition-all hover:scale-105 active:scale-95"
             >
               <Phone className="w-5 h-5 fill-current" />
-              Call Now ({NEARFIX_CONTACT.phoneDisplay})
+              Call Now
             </button>
 
             <button
