@@ -23,7 +23,7 @@ export const AboutPage: React.FC = () => {
           Connecting You with Local Experts
         </h1>
         <p className="text-slate-300 text-base max-w-2xl mx-auto leading-relaxed">
-          NEARFIX is Araku Valley's leading local service discovery and lead generation platform designed to make finding reliable help effortless and transparent.
+          NEARFIX is the leading local service discovery and lead generation platform active across Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley — designed to make finding reliable help effortless and transparent.
         </p>
       </div>
 

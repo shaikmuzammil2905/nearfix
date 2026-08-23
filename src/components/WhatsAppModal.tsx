@@ -12,8 +12,8 @@ export const WhatsAppModal: React.FC<WhatsAppModalProps> = ({ isOpen, onClose, s
   if (!isOpen) return null;
 
   const customText = serviceName 
-    ? `Hello NEARFIX, I need help with ${serviceName} in Araku Valley.`
-    : `Hello NEARFIX, I need help finding a local service in Araku Valley.`;
+    ? `Hello NEARFIX, I need help with ${serviceName}.`
+    : `Hello NEARFIX, I need help finding a local service in Visakhapatnam / Anakapalli / Alluri Seetha Ramaraju / Araku Valley.`;
     
   const customWhatsappUrl = `https://wa.me/919493192020?text=${encodeURIComponent(customText)}`;
 

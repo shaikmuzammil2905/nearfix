@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-slate-300 text-sm leading-relaxed">
-              NEARFIX is Araku Valley's trusted local service discovery and lead platform. Connecting customers with verified local professionals quickly and transparently via Call & WhatsApp.
+              NEARFIX is the trusted local service discovery and lead platform for Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley. Connecting customers with verified local professionals quickly and transparently via Call & WhatsApp.
             </p>
 
             <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-3 py-2 rounded-xl w-fit">
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>© {new Date().getFullYear()} NEARFIX. All rights reserved.</p>
           <div className="flex items-center gap-1 text-slate-400">
-            Designed for local communities in <span className="text-white font-semibold">Araku Valley & AP</span> <Heart className="w-3.5 h-3.5 text-red-500 fill-current inline ml-1" />
+            Serving local communities in <span className="text-white font-semibold">Visakhapatnam, Anakapalli, Alluri Seetha Ramaraju & Araku Valley</span> <Heart className="w-3.5 h-3.5 text-red-500 fill-current inline ml-1" />
           </div>
         </div>
       </div>

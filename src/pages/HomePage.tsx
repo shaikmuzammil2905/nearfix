@@ -63,17 +63,26 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
           
           {/* Main Heading */}
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-extrabold text-white uppercase tracking-wider animate-fadeIn drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-              <ShieldCheck className="w-4 h-4 text-nearfix-orange" /> Araku Valley's #1 Service Platform
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/60 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider animate-fadeIn shadow-lg">
+              <ShieldCheck className="w-4 h-4 text-nearfix-orange flex-shrink-0" /> #1 Service Platform in Visakhapatnam, Anakapalli, Alluri Seetha Ramaraju & Araku Valley
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)]">
               Find Trusted Local Services <span className="text-nearfix-orange drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)]">Near You</span>
             </h1>
 
-            <p className="text-white font-medium text-base sm:text-lg max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              Connect with verified service providers instantly via Call or WhatsApp.
+            <p className="text-white font-medium text-base sm:text-lg max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              Actively serving <span className="font-bold text-amber-300">Visakhapatnam District</span>, <span className="font-bold text-amber-300">Anakapalli District</span>, <span className="font-bold text-amber-300">Alluri Seetha Ramaraju District</span> & <span className="font-bold text-amber-300">Araku Valley</span>. Connect with verified local professionals instantly via Call or WhatsApp.
             </p>
+          </div>
+
+          {/* Quick Locations Pill Bar */}
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1 max-w-3xl mx-auto">
+            {['Visakhapatnam District', 'Anakapalli District', 'Alluri Seetha Ramaraju District', 'Araku Valley'].map((loc) => (
+              <span key={loc} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-extrabold text-white shadow-xs">
+                <MapPin className="w-3 h-3 text-nearfix-orange" /> {loc}
+              </span>
+            ))}
           </div>
 
 

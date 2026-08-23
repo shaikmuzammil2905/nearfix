@@ -46,7 +46,7 @@ export const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose, serviceNa
             <div className="text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-1">Direct Helpline Number</div>
             <div className="text-3xl font-extrabold text-slate-900 tracking-tight">{NEARFIX_CONTACT.phoneDisplay}</div>
             <div className="flex items-center justify-center gap-1.5 text-xs text-emerald-800 font-medium mt-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" /> Verified Local Service Desk — Araku Valley
+              <ShieldCheck className="w-4 h-4 text-emerald-600" /> Verified Local Service Desk — Visakhapatnam, Anakapalli, Alluri Seetha Ramaraju & Araku Valley
             </div>
           </div>
 
