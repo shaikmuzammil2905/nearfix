@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Search, ArrowRight, ShieldCheck, Wrench, Wind, Car, Navigation, 
-  Building, HardHat, Home, Camera, Monitor, GraduationCap, AlertTriangle, Briefcase 
+  Building, HardHat, Home, Camera, Monitor, GraduationCap, AlertTriangle, Briefcase,
+  FileText, Receipt, Truck, Users, Drill, Scissors, ShoppingBag, Landmark, Scale, DollarSign, Package, Tractor, Droplet, Sparkles, Calculator, Zap
 } from 'lucide-react';
 import { CATEGORIES } from '../data/categories';
 import { BackButton } from '../components/BackButton';
 
 const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
-  Wrench, Wind, Car, Navigation, Building, HardHat, Home, Camera, Monitor, GraduationCap, AlertTriangle, Briefcase
+  Wrench, Wind, Car, Navigation, Building, HardHat, Home, Camera, Monitor, GraduationCap, AlertTriangle, Briefcase,
+  FileText, Receipt, Truck, Users, Drill, Scissors, ShoppingBag, Landmark, Scale, DollarSign, Package, Tractor, Droplet, Sparkles, Calculator, Zap
 };
 
 export const CategoriesPage: React.FC = () => {
@@ -26,20 +28,20 @@ export const CategoriesPage: React.FC = () => {
       {/* Top Action Bar with Back Button (Mobile & Desktop) */}
       <div className="flex items-center justify-between">
         <BackButton label="Back to Home" fallbackPath="/" />
-        <span className="text-xs font-semibold text-slate-500">12 Categories Available</span>
+        <span className="text-xs font-semibold text-slate-500">{CATEGORIES.length} Categories Available</span>
       </div>
 
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-nearfix-blue to-nearfix-navy text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
         <div className="max-w-2xl space-y-4 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-bold text-nearfix-orange uppercase tracking-wider">
-            <ShieldCheck className="w-4 h-4" /> All 12 Service Categories
+            <ShieldCheck className="w-4 h-4" /> All {CATEGORIES.length} Service Categories
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
             Popular Categories
           </h1>
           <p className="text-slate-300 text-base leading-relaxed">
-            Explore trusted local services across Araku Valley. Select a category to find specialized professionals ready to help.
+            Explore trusted local services across Visakhapatnam, Anakapalli & Alluri Seetha Ramaraju Districts. Select a category to find specialized professionals ready to help.
           </p>
 
           {/* Search Filter */}

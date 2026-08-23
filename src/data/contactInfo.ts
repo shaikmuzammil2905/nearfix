@@ -11,6 +11,12 @@ export const NEARFIX_CONTACT = {
   email: "nearfixin@gmail.com",
   location: "Araku Valley",
   district: "Alluri Seetha Ramaraju District",
+  districtsServed: [
+    "Visakhapatnam District",
+    "Anakapalli District",
+    "Alluri Seetha Ramaraju District",
+    "Araku Valley"
+  ],
   state: "Andhra Pradesh",
   pincode: "531151",
   country: "India",

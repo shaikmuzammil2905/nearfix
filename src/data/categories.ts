@@ -1693,6 +1693,647 @@ export const CATEGORIES: CategoryItem[] = [
         commonRequirements: ["24/7 Hotel security guard", "Night watchman for construction site", "Event bouncers for concert", "Commercial complex guard"]
       }
     ]
+  },
+  {
+    id: "cat-13",
+    slug: "rta-services",
+    name: "RTA Services",
+    description: "Road Transport Authority assistance for Driving License, Vehicle RC, Fitness Certificate & Permits.",
+    iconName: "FileText",
+    color: "text-amber-600",
+    bgColor: "bg-amber-50 border-amber-100",
+    services: [
+      {
+        id: "driving-license-assistance",
+        slug: "driving-license-assistance",
+        name: "Driving License Assistance",
+        categorySlug: "rta-services",
+        categoryName: "RTA Services",
+        description: "Assistance for Learner's License (LLR), Permanent Driving License slot booking, renewal, and DL address updates.",
+        shortDesc: "LLR, Permanent DL slot booking & renewal",
+        iconName: "FileText",
+        benefits: ["Hassle-free document verification", "Fast online slot booking", "Guidance for driving test", "On-time DL delivery"],
+        commonRequirements: ["Aadhaar card copy", "Age proof / Birth certificate", "Blood group certificate", "Passport size photos"]
+      },
+      {
+        id: "vehicle-rc-transfer",
+        slug: "vehicle-rc-transfer",
+        name: "Vehicle RC & Ownership Transfer",
+        categorySlug: "rta-services",
+        categoryName: "RTA Services",
+        description: "Vehicle registration certificate transfer, buyer-seller ownership change, and duplicate RC processing.",
+        shortDesc: "Vehicle ownership transfer & duplicate RC",
+        iconName: "Car",
+        benefits: ["Legal ownership transfer", "Form 29/30 documentation", "Clearance certificate assistance", "Doorstep document pickup"],
+        commonRequirements: ["Original RC book", "Insurance copy", "Valid PUC certificate", "Buyer & Seller Aadhaar"]
+      },
+      {
+        id: "vehicle-fitness-certificate",
+        slug: "vehicle-fitness-certificate",
+        name: "Vehicle Fitness Certificate (FC)",
+        categorySlug: "rta-services",
+        categoryName: "RTA Services",
+        description: "Fitness renewal for commercial auto-rickshaws, taxis, lorries, and private heavy vehicles.",
+        shortDesc: "Commercial & heavy vehicle FC renewal",
+        iconName: "ShieldCheck",
+        benefits: ["Speedy inspection slotting", "Pre-inspection check guidance", "RTA agent assistance", "Full compliance check"],
+        commonRequirements: ["Vehicle RC copy", "Road tax payment receipt", "Valid insurance policy", "Speed governor / reflective tape check"]
+      },
+      {
+        id: "commercial-vehicle-permits",
+        slug: "commercial-vehicle-permits",
+        name: "Commercial Vehicle Permits",
+        categorySlug: "rta-services",
+        categoryName: "RTA Services",
+        description: "State and National permits for goods carriers, passenger buses, taxis, and tourist cabs.",
+        shortDesc: "State & National permit applications & renewals",
+        iconName: "Navigation",
+        benefits: ["All India Permit setup", "Tax payment assistance", "Inter-state border clearance info", "Permit renewal reminders"],
+        commonRequirements: ["Valid RC & FC", "Commercial insurance", "Tax receipt", "Driver license copy"]
+      }
+    ]
+  },
+  {
+    id: "cat-14",
+    slug: "gst-income-tax",
+    name: "GST & Income Tax",
+    description: "Professional GST registration, monthly return filing, Income Tax Return (ITR), and tax advisory.",
+    iconName: "Receipt",
+    color: "text-emerald-700",
+    bgColor: "bg-emerald-50 border-emerald-100",
+    services: [
+      {
+        id: "gst-registration-filing",
+        slug: "gst-registration-filing",
+        name: "GST Registration & Return Filing",
+        categorySlug: "gst-income-tax",
+        categoryName: "GST & Income Tax",
+        description: "New GST number registration for shopkeepers, contractors & businesses, GSTR-1 & GSTR-3B monthly filing.",
+        shortDesc: "GST registration, GSTR-1 & GSTR-3B filing",
+        iconName: "Receipt",
+        benefits: ["Zero penalty timely filing", "Input tax credit (ITC) reconciliation", "CA certified filing", "Notice response guidance"],
+        commonRequirements: ["PAN & Aadhaar of owner", "Rental agreement or electricity bill", "Bank passbook/cancelled cheque", "Business logo & details"]
+      },
+      {
+        id: "income-tax-return-itr",
+        slug: "income-tax-return-itr",
+        name: "Income Tax Return (ITR) Filing",
+        categorySlug: "gst-income-tax",
+        categoryName: "GST & Income Tax",
+        description: "ITR filing for salaried individuals, traders, contractors, farmers, and self-employed professionals.",
+        shortDesc: "ITR-1 to ITR-4 filing for individuals & business",
+        iconName: "Calculator",
+        benefits: ["Maximum tax saving calculation", "Form 16 & Form 26AS matching", "Fast refund processing", "Qualified tax experts"],
+        commonRequirements: ["PAN & Aadhaar", "Form 16 or salary slips", "Bank statements", "Investment proofs (80C, 80D)"]
+      },
+      {
+        id: "business-tax-advisory",
+        slug: "business-tax-advisory",
+        name: "Business Tax Advisory & Audit",
+        categorySlug: "gst-income-tax",
+        categoryName: "GST & Income Tax",
+        description: "Tax planning, balance sheet auditing, company incorporation, and municipal trade license assistance.",
+        shortDesc: "Balance sheet audit, trade license & tax planning",
+        iconName: "Briefcase",
+        benefits: ["Expert Chartered Accountant advice", "Accurate balance sheet prep", "Compliance check", "Long-term tax optimization"],
+        commonRequirements: ["Sales & purchase registers", "Bank account statements", "Previous year ITR", "Expense receipts"]
+      }
+    ]
+  },
+  {
+    id: "cat-15",
+    slug: "packers-movers",
+    name: "Packers & Movers",
+    description: "Reliable home shifting, office relocation, safe packing, loading, unloading, and intercity transport.",
+    iconName: "Truck",
+    color: "text-blue-700",
+    bgColor: "bg-blue-50 border-blue-100",
+    services: [
+      {
+        id: "home-shifting",
+        slug: "home-shifting",
+        name: "House Shifting & Relocation",
+        categorySlug: "packers-movers",
+        categoryName: "Packers & Movers",
+        description: "Complete house packing, bubble wrap protection, heavy furniture dismantling, loading, transport, and setup.",
+        shortDesc: "Complete home packing, transport & unloading",
+        iconName: "Home",
+        benefits: ["Zero damage guarantee", "Multi-layer bubble wrapping", "Trained loading labor", "Covered container trucks"],
+        commonRequirements: ["2BHK / 3BHK household goods", "Electronics & fridge packaging", "Furniture disassembly", "Local or long distance destination"]
+      },
+      {
+        id: "office-relocation",
+        slug: "office-relocation",
+        name: "Office & Shop Relocation",
+        categorySlug: "packers-movers",
+        categoryName: "Packers & Movers",
+        description: "Commercial office furniture moving, computer network server packing, and safe store shifting.",
+        shortDesc: "Office furniture, computers & store shifting",
+        iconName: "Building",
+        benefits: ["Minimal business downtime", "Weekend shifting availability", "IT equipment care", "Labeled box tracking"],
+        commonRequirements: ["Office desks & chairs", "Computers & monitors", "Document file cabinets", "Signage & billing counters"]
+      },
+      {
+        id: "intercity-goods-transport",
+        slug: "intercity-goods-transport",
+        name: "Intercity Goods Transport",
+        categorySlug: "packers-movers",
+        categoryName: "Packers & Movers",
+        description: "Interdistrict and intercity transport for household luggage, commercial goods, and heavy boxes.",
+        shortDesc: "Intercity truck logistics & luggage transport",
+        iconName: "Truck",
+        benefits: ["GPS tracked vehicles", "Direct door-to-door delivery", "Shared or dedicated truck choice", "Transit insurance option"],
+        commonRequirements: ["Pickup location & pincode", "Drop destination", "Approximate weight/volume", "Preferred date"]
+      }
+    ]
+  },
+  {
+    id: "cat-16",
+    slug: "local-employment",
+    name: "Local Employment",
+    description: "Connecting local job seekers with employers, skilled workers, daily wagers, and staff recruitment.",
+    iconName: "Users",
+    color: "text-indigo-600",
+    bgColor: "bg-indigo-50 border-indigo-100",
+    services: [
+      {
+        id: "local-job-listings",
+        slug: "local-job-listings",
+        name: "Local Job Placement & Openings",
+        categorySlug: "local-employment",
+        categoryName: "Local Employment",
+        description: "Find jobs or hire staff in shops, hotels, resorts, offices, schools, and local businesses.",
+        shortDesc: "Shops, hotel, office & resort job placement",
+        iconName: "Briefcase",
+        benefits: ["Verified local employers", "Direct phone connection", "Zero placement fees for candidates", "Immediate joining options"],
+        commonRequirements: ["Updated resume / bio-data", "Qualification certificates", "Aadhaar card copy", "Work experience summary"]
+      },
+      {
+        id: "skilled-labor-hiring",
+        slug: "skilled-labor-hiring",
+        name: "Skilled Labor Hiring",
+        categorySlug: "local-employment",
+        categoryName: "Local Employment",
+        description: "Hire skilled masons, carpenters, welders, painters, electricians, and mechanics for project work.",
+        shortDesc: "Contract masons, welders, painters & technicians",
+        iconName: "HardHat",
+        benefits: ["Experienced trade workers", "Daily or contract basis", "Reliable workforce", "Fast turnaround"],
+        commonRequirements: ["Work location", "Project scope & duration", "Number of workers required", "Daily wage rate agreement"]
+      },
+      {
+        id: "daily-wager-staffing",
+        slug: "daily-wager-staffing",
+        name: "Daily Wager & Construction Worker Hiring",
+        categorySlug: "local-employment",
+        categoryName: "Local Employment",
+        description: "Supplying daily wage labor for earth moving, loading/unloading, farm work, and construction assistance.",
+        shortDesc: "Daily wage labor for construction & agriculture",
+        iconName: "Users",
+        benefits: ["Bulk worker availability", "On-time arrival", "Hardworking local teams", "Transparent daily wages"],
+        commonRequirements: ["Number of laborers", "Reporting time & site location", "Nature of manual work"]
+      }
+    ]
+  },
+  {
+    id: "cat-17",
+    slug: "borewells",
+    name: "Borewells",
+    description: "Professional borewell drilling, submersible pump installation, flushing, and deep cleaning.",
+    iconName: "Drill",
+    color: "text-cyan-700",
+    bgColor: "bg-cyan-50 border-cyan-100",
+    services: [
+      {
+        id: "borewell-drilling",
+        slug: "borewell-drilling",
+        name: "New Borewell Drilling",
+        categorySlug: "borewells",
+        categoryName: "Borewells",
+        description: "Advanced hydraulic rig borewell drilling for agricultural fields, commercial resorts, and residential houses.",
+        shortDesc: "Hydraulic rig borewell drilling up to 1000 ft",
+        iconName: "Drill",
+        benefits: ["High-power sensor geological survey", "Heavy casing pipe installation", "Fast drilling completion", "Competitive per-foot pricing"],
+        commonRequirements: ["Site point identification", "Rig vehicle access road", "Water connection for drilling", "Depth requirement"]
+      },
+      {
+        id: "submersible-pump-repair",
+        slug: "submersible-pump-repair",
+        name: "Submersible Pump Repair & Install",
+        categorySlug: "borewells",
+        categoryName: "Borewells",
+        description: "Submersible pump lowering, motor rewinding, panel box troubleshooting, and cable replacement.",
+        shortDesc: "Submersible pump motor rewinding & installation",
+        iconName: "Wrench",
+        benefits: ["Quick pump retrieval", "Quality copper rewinding", "Starter box repair", "Water flow testing"],
+        commonRequirements: ["Borewell depth & HP details", "Current motor issue description", "Three-phase / single-phase power supply"]
+      },
+      {
+        id: "borewell-flushing-cleaning",
+        slug: "borewell-flushing-cleaning",
+        name: "Borewell Flushing & Deep Cleaning",
+        categorySlug: "borewells",
+        categoryName: "Borewells",
+        description: "High-pressure air compressor flushing to remove mud, silt, stones, and restore water yield.",
+        shortDesc: "High pressure air compressor mud flushing",
+        iconName: "Wind",
+        benefits: ["Restores muddy water to clean flow", "Increases water yield", "Removes accumulated silt", "Prevents pump damage"],
+        commonRequirements: ["Existing borewell depth", "Years since last cleaning", "Water mud level"]
+      }
+    ]
+  },
+  {
+    id: "cat-18",
+    slug: "construction-vehicle-rentals",
+    name: "Construction Vehicle Rentals",
+    description: "Heavy machinery and construction vehicle rentals including JCB, Tractor, Tipper, Crane, Roller & Water Tanker.",
+    iconName: "HardHat",
+    color: "text-amber-700",
+    bgColor: "bg-amber-50 border-amber-100",
+    badge: "HEAVY EQUIPMENT",
+    services: [
+      {
+        id: "jcb",
+        slug: "jcb",
+        name: "JCB Rental",
+        categorySlug: "construction-vehicle-rentals",
+        categoryName: "Construction Vehicle Rentals",
+        description: "JCB 3DX backhoe loader on hourly/daily rent for earth digging, land leveling, trenching, and foundation excavation.",
+        shortDesc: "JCB 3DX Earth digger, land leveling & trenching",
+        iconName: "HardHat",
+        benefits: ["Experienced operator included", "Well-maintained diesel machines", "Hourly or project basis", "Prompt site arrival"],
+        commonRequirements: ["Work site location", "Digging depth / leveling area", "Estimated operating hours"]
+      },
+      {
+        id: "earth-work-machine",
+        slug: "earth-work-machine",
+        name: "Earth Work Machine & Excavator",
+        categorySlug: "construction-vehicle-rentals",
+        categoryName: "Construction Vehicle Rentals",
+        description: "Heavy excavators (Hitachi / Poclain) for rock breaking, large hill cutting, pond digging, and site clearing.",
+        shortDesc: "Heavy excavator & breaker for rock cutting",
+        iconName: "HardHat",
+        benefits: ["Heavy rock breaker attachment", "High bucket capacity", "Large excavation capability", "Dedicated site supervisor"],
+        commonRequirements: ["Site terrain description", "Breaker requirement", "Work duration in days"]
+      },
+      {
+        id: "tractor",
+        slug: "tractor",
+        name: "Tractor Rental",
+        categorySlug: "construction-vehicle-rentals",
+        categoryName: "Construction Vehicle Rentals",
+        description: "Tractor with trailer for farm plowing, sand/mud transport, water tanker towing, and site clearance.",
+        shortDesc: "Tractor with trailer for farm plowing & transport",
+        iconName: "Tractor",
+        benefits: ["Multiple attachments (rotavator, trailer)", "Rugged terrain capability", "Local experienced driver", "Affordable rates"],
+        commonRequirements: ["Purpose (plowing, hauling sand, mud)", "Site location", "Number of trips / hours"]
+      },
+      {
+        id: "tipper",
+        slug: "tipper",
+        name: "Tipper Truck Rental",
+        categorySlug: "construction-vehicle-rentals",
+        categoryName: "Construction Vehicle Rentals",
+        description: "Heavy 6-wheel and 10-wheel tipper trucks for sand, gravel, stone metal, soil, and construction debris transport.",
+        shortDesc: "Heavy tipper truck for sand, stone & soil transport",
+        iconName: "Truck",
+        benefits: ["Hydraulic quick dumping", "Large load capacity", "Fast trip turnarounds", "Reliable drivers"],
+        commonRequirements: ["Material type (sand, metal, soil)", "Loading & dumping points", "Trip count requirement"]
+      },
+      {
+        id: "vibrator",
+        slug: "vibrator",
+        name: "Vibrator Machine Rental",
+        categorySlug: "construction-vehicle-rentals",
+        categoryName: "Construction Vehicle Rentals",
+        description: "Needle concrete vibrators and earth plate compactors for roof slab casting, pillar pouring, and floor compaction.",
+        shortDesc: "Concrete needle vibrator & plate compactor",
+        iconName: "Wrench",
+        benefits: ["Petrol & electric vibrators", "Eliminates concrete air bubbles", "Smooth slab finish", "Daily rental"],
+        commonRequirements: ["Needle size required", "Electric / Petrol engine preference", "Slab casting date"]
+      },
+      {
+        id: "roller",
+        slug: "roller",
+        name: "Road Roller Rental",
+        categorySlug: "construction-vehicle-rentals",
+        categoryName: "Construction Vehicle Rentals",
+        description: "Vibratory road roller and soil compactor for road work, building foundation rolling, and site leveling.",
+        shortDesc: "8 to 12 Ton road roller & soil compactor",
+        iconName: "HardHat",
+        benefits: ["High compaction force", "Ideal for gravel & asphalt", "Experienced roller operator", "Daily / Weekly rent"],
+        commonRequirements: ["Road length / site area", "Soil or gravel compaction", "Rental duration"]
+      },
+      {
+        id: "crane",
+        slug: "crane",
+        name: "Crane Rental",
+        categorySlug: "construction-vehicle-rentals",
+        categoryName: "Construction Vehicle Rentals",
+        description: "Hydraulic mobile crane and hydra crane for heavy iron beam lifting, machine unloading, and pillar erection.",
+        shortDesc: "12 to 50 Ton Hydra & Mobile Crane lifting",
+        iconName: "HardHat",
+        benefits: ["Certified crane operators", "Heavy tonnage lifting", "Safety rigging equipment", "Precise placement"],
+        commonRequirements: ["Weight of item to lift", "Height / boom reach needed", "Lifting site access"]
+      },
+      {
+        id: "water-tanker",
+        slug: "water-tanker",
+        name: "Water Tanker Supply",
+        categorySlug: "construction-vehicle-rentals",
+        categoryName: "Construction Vehicle Rentals",
+        description: "5000L to 12000L water tanker supply for construction curing, road work, borewell drilling, and commercial use.",
+        shortDesc: "5,000L - 12,000L construction & bulk water supply",
+        iconName: "Droplet",
+        benefits: ["Prompt emergency delivery", "Clean water quality", "High pressure hose pipe", "Multiple tanker fleet"],
+        commonRequirements: ["Delivery location", "Capacity required (5000L/10000L)", "Purpose (slab curing, event, commercial)"]
+      }
+    ]
+  },
+  {
+    id: "cat-19",
+    slug: "saloon-spa",
+    name: "Saloon & Spa",
+    description: "Professional gents hair styling, ladies beauty parlour, bridal makeup, skin care, and spa treatments.",
+    iconName: "Scissors",
+    color: "text-rose-600",
+    bgColor: "bg-rose-50 border-rose-100",
+    services: [
+      {
+        id: "gents-hair-salon",
+        slug: "gents-hair-salon",
+        name: "Gents Salon & Haircut",
+        categorySlug: "saloon-spa",
+        categoryName: "Saloon & Spa",
+        description: "Trendy men's haircuts, beard shaping, head massage, hair coloring, and skin cleansing facial.",
+        shortDesc: "Haircut, beard styling, head massage & facial",
+        iconName: "Scissors",
+        benefits: ["Hygienic sanitized tools", "Experienced stylists", "Modern haircut trends", "Doorstep or parlour visit"],
+        commonRequirements: ["Service desired (cut, beard, facial)", "Preferred timing", "Location preference"]
+      },
+      {
+        id: "ladies-beauty-parlour",
+        slug: "ladies-beauty-parlour",
+        name: "Ladies Beauty Parlour & Facial",
+        categorySlug: "saloon-spa",
+        categoryName: "Saloon & Spa",
+        description: "Threaded eyebrows, waxing, gold/diamond facial, pedicure, manicure, and hair straightening.",
+        shortDesc: "Facials, waxing, threading, hair spa & manicure",
+        iconName: "Sparkles",
+        benefits: ["Branded beauty products", "Private & comfortable environment", "Certified beauticians", "Doorstep home service available"],
+        commonRequirements: ["Facial type preference", "Home visit or parlour booking", "Event date if any"]
+      },
+      {
+        id: "bridal-makeup-artist",
+        slug: "bridal-makeup-artist",
+        name: "Bridal & Event Makeup Artist",
+        categorySlug: "saloon-spa",
+        categoryName: "Saloon & Spa",
+        description: "HD & Airbrush bridal makeup, saree draping, hair styling, mehendi design, and party makeup.",
+        shortDesc: "HD Bridal makeup, saree draping & mehendi",
+        iconName: "Sparkles",
+        benefits: ["Trial session available", "Waterproof long-lasting HD makeup", "Premium cosmetic brands", "On-location wedding venue service"],
+        commonRequirements: ["Wedding / Function date", "Venue location", "Number of family members needing makeup"]
+      },
+      {
+        id: "spa-body-massage",
+        slug: "spa-body-massage",
+        name: "Spa & Full Body Massage",
+        categorySlug: "saloon-spa",
+        categoryName: "Saloon & Spa",
+        description: "Relaxing full body oil massage, Ayurvedic pain-relief massage, steam bath, and stress relief spa.",
+        shortDesc: "Aromatherapy, Ayurvedic body massage & spa",
+        iconName: "Heart",
+        benefits: ["Certified massage therapists", "Authentic herbal oils", "Pain & fatigue relief", "Peaceful ambience"],
+        commonRequirements: ["Therapy duration (60/90 mins)", "Special focus area (back/feet pain)", "Slot booking"]
+      }
+    ]
+  },
+  {
+    id: "cat-20",
+    slug: "food-grocery-delivery",
+    name: "Food, Grocery & Parcel Delivery",
+    description: "Fast doorstep delivery of daily groceries, restaurant food parcels, emergency medicine, and courier packages.",
+    iconName: "ShoppingBag",
+    color: "text-orange-600",
+    bgColor: "bg-orange-50 border-orange-100",
+    services: [
+      {
+        id: "local-grocery-delivery",
+        slug: "local-grocery-delivery",
+        name: "Home Grocery Delivery",
+        categorySlug: "food-grocery-delivery",
+        categoryName: "Food, Grocery & Parcel Delivery",
+        description: "Order rice, pulses, spices, packaged snacks, milk, and home essentials delivered straight to your door.",
+        shortDesc: "Daily provisions, packaged food & dairy delivery",
+        iconName: "ShoppingBag",
+        benefits: ["Fresh stock from trusted local stores", "Fast same-day delivery", "Bill receipt provided", "No minimum order requirement"],
+        commonRequirements: ["Item list via WhatsApp text or photo", "Delivery address", "Preferred delivery time"]
+      },
+      {
+        id: "restaurant-food-parcel",
+        slug: "restaurant-food-parcel",
+        name: "Restaurant Food Parcel Delivery",
+        categorySlug: "food-grocery-delivery",
+        categoryName: "Food, Grocery & Parcel Delivery",
+        description: "Hot food delivery from your favorite local restaurants, biryani points, tiffin centers, and bakeries.",
+        shortDesc: "Hot biryani, tiffins & restaurant meals delivery",
+        iconName: "ShoppingBag",
+        benefits: ["Insulated thermal bag transport", "Hygienic packing", "Fast delivery", "All top local eateries supported"],
+        commonRequirements: ["Restaurant name & dishes", "Quantity", "Exact delivery address & landmark"]
+      },
+      {
+        id: "parcel-courier-pickup",
+        slug: "parcel-courier-pickup",
+        name: "Express Local Parcel Pickup & Drop",
+        categorySlug: "food-grocery-delivery",
+        categoryName: "Food, Grocery & Parcel Delivery",
+        description: "Pick up and drop off documents, keys, forgotten items, or small packages anywhere across town.",
+        shortDesc: "Pickup & drop documents, keys & packages",
+        iconName: "Package",
+        benefits: ["Instant rider dispatch", "Live status updates", "Safe handling of items", "Low distance-based fare"],
+        commonRequirements: ["Pickup point & contact person", "Drop location & receiver phone", "Package description"]
+      }
+    ]
+  },
+  {
+    id: "cat-21",
+    slug: "loans-financial-services",
+    name: "Loans & Financial Services",
+    description: "Quick loan assistance for Personal, Home, Vehicle, Business, Agriculture, Gold, Education & Loan Against Property.",
+    iconName: "Landmark",
+    color: "text-emerald-800",
+    bgColor: "bg-emerald-50 border-emerald-100",
+    badge: "INSTANT APPROVAL",
+    services: [
+      {
+        id: "personal-loan",
+        slug: "personal-loan",
+        name: "Personal Loan Assistance",
+        categorySlug: "loans-financial-services",
+        categoryName: "Loans & Financial Services",
+        description: "Instant collateral-free personal loans for salaried employees and self-employed professionals with minimal documentation.",
+        shortDesc: "Collateral-free instant personal loans",
+        iconName: "DollarSign",
+        benefits: ["Fast loan processing", "Lowest interest rate options", "Flexible repayment tenure (1 to 5 yrs)", "No hidden charges"],
+        commonRequirements: ["Aadhaar & PAN card", "Last 6 months bank statement", "Salary slip / ITR copy", "Proof of address"]
+      },
+      {
+        id: "home-loan",
+        slug: "home-loan",
+        name: "Home Loan & Housing Finance",
+        categorySlug: "loans-financial-services",
+        categoryName: "Loans & Financial Services",
+        description: "Low-interest housing loans for house construction, flat purchase, plot purchase, and home expansion.",
+        shortDesc: "House construction, flat & plot purchase loan",
+        iconName: "Home",
+        benefits: ["Up to 90% property funding", "PMAY subsidy assistance", "Long tenure up to 30 years", "Balance transfer facility"],
+        commonRequirements: ["Property link documents / sale deed", "Approved house plan", "Income proof / Bank statement", "KYC documents"]
+      },
+      {
+        id: "vehicle-auto-loan",
+        slug: "vehicle-auto-loan",
+        name: "Vehicle / Auto / Two-Wheeler Loan",
+        categorySlug: "loans-financial-services",
+        categoryName: "Loans & Financial Services",
+        description: "New and used bike, car, auto-rickshaw, tractor, and commercial vehicle finance at attractive EMIs.",
+        shortDesc: "Two-wheeler, car & tractor vehicle financing",
+        iconName: "Car",
+        benefits: ["On-road price funding", "Instant spot approval", "Low down payment", "Minimal paperwork"],
+        commonRequirements: ["Vehicle quotation / RC", "Income proof", "Identity & address proof", "Bank passbook"]
+      },
+      {
+        id: "business-msme-loan",
+        slug: "business-msme-loan",
+        name: "Business Loan & MSME Support",
+        categorySlug: "loans-financial-services",
+        categoryName: "Loans & Financial Services",
+        description: "Working capital loans, Mudra loans, machinery purchase loans, and MSME business growth finance.",
+        shortDesc: "Mudra loans, working capital & shop business loan",
+        iconName: "Briefcase",
+        benefits: ["Govt scheme Mudra loan guidance", "Without collateral options available", "High loan amount limit", "Flexible EMI"],
+        commonRequirements: ["Business trade license / GST", "Bank statement 1 year", "ITR / Turnover proof", "Owner KYC"]
+      },
+      {
+        id: "agriculture-farmer-loan",
+        slug: "agriculture-farmer-loan",
+        name: "Agriculture & Farmer Kisan Loan",
+        categorySlug: "loans-financial-services",
+        categoryName: "Loans & Financial Services",
+        description: "Kisan Credit Card (KCC) assistance, crop loans, borewell finance, and farm equipment loans for farmers.",
+        shortDesc: "Kisan Credit Card (KCC), crop & farm loans",
+        iconName: "Landmark",
+        benefits: ["Low interest rates for farmers", "Government subsidy benefits", "Crop harvest aligned repayment", "Simple land document processing"],
+        commonRequirements: ["Pattadar passbook / 1B document", "Aadhaar card", "VRO certification", "Bank account details"]
+      },
+      {
+        id: "gold-loan",
+        slug: "gold-loan",
+        name: "Instant Gold Loan Assistance",
+        categorySlug: "loans-financial-services",
+        categoryName: "Loans & Financial Services",
+        description: "Instant cash against gold ornaments with maximum per-gram valuation and low monthly interest rates.",
+        shortDesc: "Instant cash against gold ornaments at high value",
+        iconName: "DollarSign",
+        benefits: ["Same-day cash in bank", "Maximum per gram rate", "Safe bank vault storage", "Easy monthly interest repayment"],
+        commonRequirements: ["Gold ornaments / jewelry", "Aadhaar card", "PAN card", "Active bank account"]
+      },
+      {
+        id: "education-loan",
+        slug: "education-loan",
+        name: "Higher Education Student Loan",
+        categorySlug: "loans-financial-services",
+        categoryName: "Loans & Financial Services",
+        description: "Financial assistance for college degrees, engineering, medical studies, and overseas education.",
+        shortDesc: "College, B.Tech, Medical & overseas education loan",
+        iconName: "GraduationCap",
+        benefits: ["Covers college tuition fee & hostel", "Moratorium period (pay after job)", "Tax benefit under Sec 80E", "Co-applicant support"],
+        commonRequirements: ["Admission offer letter", "Fee structure breakdown", "10th, 12th, Degree marks sheets", "Parents income proof"]
+      },
+      {
+        id: "loan-against-property",
+        slug: "loan-against-property",
+        name: "Loan Against Property (LAP)",
+        categorySlug: "loans-financial-services",
+        categoryName: "Loans & Financial Services",
+        description: "High-value mortgage loan against residential house, commercial building, or open plot property.",
+        shortDesc: "Mortgage loan against house, building or land plot",
+        iconName: "Building",
+        benefits: ["High loan amounts", "Lower interest rate than personal loans", "Long repayment tenure up to 15 years", "Retain property ownership"],
+        commonRequirements: ["Original property title deeds", "EC (Encumbrance Certificate)", "Approved building plan", "Income proof"]
+      }
+    ]
+  },
+  {
+    id: "cat-22",
+    slug: "legal-advisor-services",
+    name: "Legal Advisor & Legal Services",
+    description: "Professional legal consultation, property deed registration, land title verification, and court case advocacy.",
+    iconName: "Scale",
+    color: "text-purple-700",
+    bgColor: "bg-purple-50 border-purple-100",
+    badge: "CERTIFIED ADVOCATES",
+    services: [
+      {
+        id: "legal-consultation",
+        slug: "legal-consultation",
+        name: "Legal Advisory & Advocate Consultation",
+        categorySlug: "legal-advisor-services",
+        categoryName: "Legal Advisor & Legal Services",
+        description: "Expert legal guidance from experienced advocates for civil disputes, criminal defense, property rights, and family law.",
+        shortDesc: "Expert advocate advice for civil, property & family disputes",
+        iconName: "Scale",
+        benefits: ["Confidential & professional advice", "Clear legal opinion", "Court procedural guidance", "Experienced senior advocates"],
+        commonRequirements: ["Case background summary", "Relevant documents/notices", "Appointment scheduling"]
+      },
+      {
+        id: "property-registration-deeds",
+        slug: "property-registration-deeds",
+        name: "Property Registration & Sale Deed Drafting",
+        categorySlug: "legal-advisor-services",
+        categoryName: "Legal Advisor & Legal Services",
+        description: "Drafting of Sale Deeds, Gift Deeds, Lease Agreements, Partition Deeds, and Sub-Registrar office representation.",
+        shortDesc: "Sale deed, gift deed & sub-registrar office registration",
+        iconName: "FileText",
+        benefits: ["Flawless legal drafting", "Stamp duty & registration fee calculation", "Sub-Registrar slot booking", "Zero land dispute drafting"],
+        commonRequirements: ["Parent property title deeds", "Buyer & Seller Aadhaar/PAN", "Market value assessment", "EC certificate"]
+      },
+      {
+        id: "land-title-verification",
+        slug: "land-title-verification",
+        name: "Land & House Property Title Verification",
+        categorySlug: "legal-advisor-services",
+        categoryName: "Legal Advisor & Legal Services",
+        description: "30-year Encumbrance (EC) checking, revenue record searching, link document scrutiny, and legal search opinion report.",
+        shortDesc: "30-Year property link document legal search report",
+        iconName: "ShieldCheck",
+        benefits: ["Prevents buying disputed land", "Thorough revenue office search", "Written advocate opinion certificate", "100% peace of mind"],
+        commonRequirements: ["Property survey number / door number", "Copy of main title deed", "30-year EC search copy"]
+      },
+      {
+        id: "court-litigation-support",
+        slug: "court-litigation-support",
+        name: "Court Case & Litigation Assistance",
+        categorySlug: "legal-advisor-services",
+        categoryName: "Legal Advisor & Legal Services",
+        description: "Representation in District Courts, High Court, Consumer Forum, and Revenue Divisional Officer (RDO) courts.",
+        shortDesc: "District Court, Consumer Forum & RDO court representation",
+        iconName: "Scale",
+        benefits: ["Dedicated courtroom representation", "Timely petition filing", "Strong evidence prep", "Injunction order support"],
+        commonRequirements: ["Court summons / notice copy", "Case history", "Vakalatnama signing"]
+      },
+      {
+        id: "agreement-affidavit-drafting",
+        slug: "agreement-affidavit-drafting",
+        name: "Agreement, Affidavit & Power of Attorney Drafting",
+        categorySlug: "legal-advisor-services",
+        categoryName: "Legal Advisor & Legal Services",
+        description: "Notary public attestation, General Power of Attorney (GPA), name change affidavits, rental agreements, and business MoUs.",
+        shortDesc: "Rent agreement, Notary affidavits, GPA & MoU drafting",
+        iconName: "FileText",
+        benefits: ["Stamp paper printing", "Notary seal attestation", "Legally binding clauses", "Same-day document delivery"],
+        commonRequirements: ["Party identity details", "Agreement terms & conditions", "Stamp paper value selection"]
+      }
+    ]
   }
 ];
 

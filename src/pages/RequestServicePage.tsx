@@ -36,6 +36,11 @@ export const RequestServicePage: React.FC = () => {
       console.error(err);
     }
 
+    // Direct WhatsApp Dispatch
+    const wpText = `Hello NEARFIX, I want to submit a service request:\n\n*Name:* ${name.trim()}\n*Phone:* ${phone.trim()}\n*Service Needed:* ${service.trim()}\n*Location/District:* ${location.trim() || 'Araku Valley'}\n*Preferred Contact:* ${contactMethod}${message.trim() ? `\n*Details:* ${message.trim()}` : ''}`;
+    const wpUrl = `https://wa.me/919493192020?text=${encodeURIComponent(wpText)}`;
+    window.open(wpUrl, '_blank');
+
     setIsSubmitted(true);
   };
 
@@ -106,13 +111,17 @@ export const RequestServicePage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Location</label>
-              <input
-                type="text"
+              <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Select Location / District *</label>
+              <select
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-nearfix-blue outline-none text-sm"
-              />
+                className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-nearfix-blue outline-none text-sm bg-white"
+              >
+                <option value="Visakhapatnam District">Visakhapatnam District</option>
+                <option value="Anakapalli District">Anakapalli District</option>
+                <option value="Alluri Seetha Ramaraju District">Alluri Seetha Ramaraju District</option>
+                <option value="Araku Valley">Araku Valley</option>
+              </select>
             </div>
 
             <div>

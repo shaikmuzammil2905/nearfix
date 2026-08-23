@@ -4,7 +4,8 @@ import {
   MapPin, Phone, MessageCircle, ShieldCheck, Zap, 
   IndianRupee, ThumbsUp, Heart, ArrowRight, CheckCircle2, 
   Wrench, Wind, Car, Navigation, Building, HardHat, Home, 
-  Camera, Monitor, GraduationCap, AlertTriangle, Briefcase, ChevronRight
+  Camera, Monitor, GraduationCap, AlertTriangle, Briefcase, ChevronRight,
+  FileText, Receipt, Truck, Users, Drill, Scissors, ShoppingBag, Landmark, Scale, DollarSign, Package, Tractor, Droplet, Sparkles, Calculator
 } from 'lucide-react';
 import { CATEGORIES, CategoryItem } from '../data/categories';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
@@ -30,7 +31,23 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
   Monitor,
   GraduationCap,
   AlertTriangle,
-  Briefcase
+  Briefcase,
+  FileText,
+  Receipt,
+  Truck,
+  Users,
+  Drill,
+  Scissors,
+  ShoppingBag,
+  Landmark,
+  Scale,
+  DollarSign,
+  Package,
+  Tractor,
+  Droplet,
+  Sparkles,
+  Calculator,
+  Zap
 };
 
 export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, onOpenLead }) => {
@@ -90,7 +107,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               Popular Categories
             </h2>
-            <p className="text-slate-500 text-sm mt-1">Browse all 12 service categories available in Araku Valley</p>
+            <p className="text-slate-500 text-sm mt-1">Browse all {CATEGORIES.length} service categories available across Visakhapatnam, Anakapalli & Alluri Seetha Ramaraju Districts</p>
           </div>
 
           <Link

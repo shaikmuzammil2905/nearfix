@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { 
   Phone, MessageCircle, ArrowRight, ShieldCheck, 
   Wrench, Wind, Car, Navigation, Building, HardHat, Home, 
-  Camera, Monitor, GraduationCap, AlertTriangle, Briefcase, ChevronRight, Zap
+  Camera, Monitor, GraduationCap, AlertTriangle, Briefcase, ChevronRight, Zap,
+  FileText, Receipt, Truck, Users, Drill, Scissors, ShoppingBag, Landmark, Scale, DollarSign, Package, Tractor, Droplet, Sparkles, Calculator
 } from 'lucide-react';
 import { getCategoryBySlug } from '../data/categories';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
@@ -16,7 +17,8 @@ interface CategoryDetailPageProps {
 }
 
 const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
-  Wrench, Wind, Car, Navigation, Building, HardHat, Home, Camera, Monitor, GraduationCap, AlertTriangle, Briefcase
+  Wrench, Wind, Car, Navigation, Building, HardHat, Home, Camera, Monitor, GraduationCap, AlertTriangle, Briefcase,
+  FileText, Receipt, Truck, Users, Drill, Scissors, ShoppingBag, Landmark, Scale, DollarSign, Package, Tractor, Droplet, Sparkles, Calculator, Zap
 };
 
 export const CategoryDetailPage: React.FC<CategoryDetailPageProps> = ({
@@ -111,7 +113,10 @@ export const CategoryDetailPage: React.FC<CategoryDetailPageProps> = ({
               <div>
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div className="w-12 h-12 rounded-2xl bg-blue-50 text-nearfix-blue flex items-center justify-center flex-shrink-0 font-bold">
-                    <Zap className="w-6 h-6 text-nearfix-orange" />
+                    {(() => {
+                      const ServiceIcon = iconMap[service.iconName] || Zap;
+                      return <ServiceIcon className="w-6 h-6 text-nearfix-orange" />;
+                    })()}
                   </div>
 
                   <Link

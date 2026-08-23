@@ -14,6 +14,9 @@ export const ContactPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (name.trim() && phone.trim()) {
+      const wpText = `Hello NEARFIX, I have a contact inquiry:\n\n*Name:* ${name.trim()}\n*Phone:* ${phone.trim()}${email ? `\n*Email:* ${email.trim()}` : ''}\n*Message:* ${message.trim()}`;
+      const wpUrl = `https://wa.me/919493192020?text=${encodeURIComponent(wpText)}`;
+      window.open(wpUrl, '_blank');
       setIsSent(true);
     }
   };
