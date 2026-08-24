@@ -1559,7 +1559,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Briefcase",
     color: "text-slate-700",
     bgColor: "bg-slate-100 border-slate-200",
-    image: "/categories/digital-tech.jpg",
+    image: "/categories/business-services.jpg",
     services: [
       {
         id: "office-cleaning",
@@ -1775,7 +1775,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Receipt",
     color: "text-emerald-700",
     bgColor: "bg-emerald-50 border-emerald-100",
-    image: "/categories/rta-services.jpg",
+    image: "/categories/gst-income-tax.jpg",
     services: [
       {
         id: "gst-registration-filing",
@@ -1823,7 +1823,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Truck",
     color: "text-blue-700",
     bgColor: "bg-blue-50 border-blue-100",
-    image: "/categories/vehicle-services.jpg",
+    image: "/categories/packers-movers.jpg",
     services: [
       {
         id: "home-shifting",
@@ -1871,7 +1871,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Users",
     color: "text-indigo-600",
     bgColor: "bg-indigo-50 border-indigo-100",
-    image: "/categories/education-training.jpg",
+    image: "/categories/local-employment.jpg",
     services: [
       {
         id: "local-job-listings",
@@ -1919,7 +1919,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Drill",
     color: "text-cyan-700",
     bgColor: "bg-cyan-50 border-cyan-100",
-    image: "/categories/construction.jpg",
+    image: "/categories/borewells.jpg",
     services: [
       {
         id: "borewell-drilling",
@@ -1967,7 +1967,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "HardHat",
     color: "text-amber-700",
     bgColor: "bg-amber-100 border-amber-200",
-    image: "/categories/construction.jpg",
+    image: "/categories/heavy-machinery.jpg",
     badge: "HEAVY EQUIPMENT",
     services: [
       {
@@ -2071,12 +2071,12 @@ export const CATEGORIES: CategoryItem[] = [
   {
     id: "cat-19",
     slug: "saloon-spa",
-    name: "Event Services",
-    description: "Marriage decors, DJ, photography & sound systems.",
-    iconName: "Sparkles",
+    name: "Saloon & Spa",
+    description: "Professional gents hair styling, ladies beauty parlour, bridal makeup, skin care, and spa treatments.",
+    iconName: "Scissors",
     color: "text-rose-600",
     bgColor: "bg-rose-50 border-rose-100",
-    image: "/categories/event-services.jpg",
+    image: "/categories/saloon-spa.jpg",
     services: [
       {
         id: "gents-hair-salon",
@@ -2184,7 +2184,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Landmark",
     color: "text-emerald-800",
     bgColor: "bg-emerald-50 border-emerald-100",
-    image: "/categories/real-estate.jpg",
+    image: "/categories/financial-loans.jpg",
     badge: "INSTANT APPROVAL",
     services: [
       {
@@ -2293,7 +2293,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Scale",
     color: "text-purple-700",
     bgColor: "bg-purple-50 border-purple-100",
-    image: "/categories/rta-services.jpg",
+    image: "/categories/legal-services.jpg",
     badge: "CERTIFIED ADVOCATES",
     services: [
       {

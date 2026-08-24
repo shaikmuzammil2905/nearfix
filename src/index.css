@@ -36,12 +36,19 @@
   z-index: 1;
 }
 
-/* Hero Pulse Animation */
-@keyframes pulse-subtle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.92; transform: scale(1.02); }
+/* Hero Ken Burns Background Animation */
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate(-1%, -1.5%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
 }
 
-.animate-pulse-subtle {
-  animation: pulse-subtle 4s ease-in-out infinite;
+.animate-kenburns {
+  animation: kenburns 22s ease-in-out infinite alternate;
 }
