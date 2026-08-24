@@ -8,6 +8,13 @@ export const NEARFIX_CONTACT = {
   whatsappDisplay: "9493192020",
   whatsappRaw: "9493192020",
   whatsappUrl: "https://wa.me/919493192020?text=Hello%20NEARFIX%2C%20I%20need%20assistance%20with%20a%20local%20service.",
+  social: {
+    linkedin: "https://www.linkedin.com/in/near-fix-4497a2430",
+    instagram: "https://www.instagram.com/nearfixin?utm_source=qr&igsi=MTd1bzM4NDNmN3prdQ==",
+    facebook: "https://www.facebook.com/share/1ckDPP1Bfg/",
+    threads: "https://www.threads.com/@nearfixin",
+    x: "https://x.com/NearFixin"
+  },
   email: "nearfixin@gmail.com",
   location: "Araku Valley",
   district: "Alluri Seetha Ramaraju District",

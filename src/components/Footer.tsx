@@ -97,67 +97,56 @@ export const Footer: React.FC = () => {
 
           <div className="flex items-center flex-wrap gap-3">
             <a
-              href="https://facebook.com"
+              href={NEARFIX_CONTACT.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
               aria-label="Facebook"
-              title="Facebook"
+              title="Facebook Profile"
             >
               <Facebook className="w-5 h-5" />
             </a>
 
             <a
-              href="https://instagram.com"
+              href={NEARFIX_CONTACT.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-slate-800 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
               aria-label="Instagram"
-              title="Instagram"
+              title="Instagram Profile"
             >
               <Instagram className="w-5 h-5" />
             </a>
 
             <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-red-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
-              aria-label="YouTube"
-              title="YouTube"
-            >
-              <Youtube className="w-5 h-5" />
-            </a>
-
-            <a
-              href="https://twitter.com"
+              href={NEARFIX_CONTACT.social.x}
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-slate-800 hover:bg-sky-500 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
-              aria-label="Twitter / X"
-              title="Twitter / X"
+              aria-label="X (Twitter)"
+              title="X Profile"
             >
               <Twitter className="w-5 h-5" />
             </a>
 
             <a
-              href="https://threads.net"
+              href={NEARFIX_CONTACT.social.threads}
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110 font-bold text-xs"
               aria-label="Threads"
-              title="Threads"
+              title="Threads Profile"
             >
               <span className="font-extrabold text-base text-center leading-none">@</span>
             </a>
 
             <a
-              href="https://linkedin.com"
+              href={NEARFIX_CONTACT.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-slate-800 hover:bg-blue-700 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
               aria-label="LinkedIn"
-              title="LinkedIn"
+              title="LinkedIn Profile"
             >
               <Linkedin className="w-5 h-5" />
             </a>

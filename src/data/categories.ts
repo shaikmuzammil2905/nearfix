@@ -20,6 +20,7 @@ export interface CategoryItem {
   iconName: string;
   color: string;
   bgColor: string;
+  image?: string;
   badge?: string;
   isEmergency?: boolean;
   services: ServiceItem[];
@@ -34,6 +35,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Wrench",
     color: "text-blue-600",
     bgColor: "bg-blue-50 border-blue-100",
+    image: "/categories/home-services.jpg",
     services: [
       {
         id: "electrician",
@@ -173,10 +175,11 @@ export const CATEGORIES: CategoryItem[] = [
     id: "cat-2",
     slug: "ac-appliance-services",
     name: "AC & Appliance Services",
-    description: "For installation, maintenance and repairs.",
+    description: "AC repair, gas filling, refrigerator & washing machine fixes.",
     iconName: "Wind",
-    color: "text-amber-600",
-    bgColor: "bg-amber-50 border-amber-100",
+    color: "text-sky-600",
+    bgColor: "bg-sky-50 border-sky-100",
+    image: "/categories/ac-appliance.jpg",
     services: [
       {
         id: "ac-repair",
@@ -308,6 +311,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Car",
     color: "text-emerald-600",
     bgColor: "bg-emerald-50 border-emerald-100",
+    image: "/categories/vehicle-services.jpg",
     services: [
       {
         id: "bike-repair",
@@ -436,10 +440,11 @@ export const CATEGORIES: CategoryItem[] = [
     id: "cat-4",
     slug: "taxi-travel",
     name: "Taxi & Travel",
-    description: "Especially useful for tourism and local transportation.",
+    description: "Local & outstation taxis, Araku Valley tours & rentals.",
     iconName: "Navigation",
-    color: "text-purple-600",
-    bgColor: "bg-purple-50 border-purple-100",
+    color: "text-emerald-600",
+    bgColor: "bg-emerald-50 border-emerald-100",
+    image: "/categories/taxi-travel.jpg",
     services: [
       {
         id: "local-taxi",
@@ -567,10 +572,11 @@ export const CATEGORIES: CategoryItem[] = [
     id: "cat-5",
     slug: "hotels-stays",
     name: "Hotels & Stays",
-    description: "Help customers find accommodation.",
+    description: "Resorts, hotels, homestays & lodges booking.",
     iconName: "Building",
-    color: "text-rose-600",
-    bgColor: "bg-rose-50 border-rose-100",
+    color: "text-purple-600",
+    bgColor: "bg-purple-50 border-purple-100",
+    image: "/categories/hotels-stays.jpg",
     services: [
       {
         id: "hotels",
@@ -690,6 +696,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "HardHat",
     color: "text-orange-600",
     bgColor: "bg-orange-50 border-orange-100",
+    image: "/categories/construction-home-improvement.jpg",
     services: [
       {
         id: "building-contractors",
@@ -857,6 +864,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Home",
     color: "text-teal-600",
     bgColor: "bg-teal-50 border-teal-100",
+    image: "/categories/real-estate.jpg",
     badge: "High Value Leads",
     services: [
       {
@@ -989,6 +997,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Camera",
     color: "text-pink-600",
     bgColor: "bg-pink-50 border-pink-100",
+    image: "/categories/events-wedding.jpg",
     services: [
       {
         id: "photography",
@@ -1144,6 +1153,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Monitor",
     color: "text-indigo-600",
     bgColor: "bg-indigo-50 border-indigo-100",
+    image: "/categories/business-digital-services.jpg",
     services: [
       {
         id: "website-development",
@@ -1299,6 +1309,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "GraduationCap",
     color: "text-cyan-600",
     bgColor: "bg-cyan-50 border-cyan-100",
+    image: "/categories/education-training.jpg",
     services: [
       {
         id: "home-tuition",
@@ -1430,6 +1441,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "AlertTriangle",
     color: "text-red-600",
     bgColor: "bg-red-50 border-red-200 ring-2 ring-red-400/30",
+    image: "/categories/emergency-services.jpg",
     isEmergency: true,
     badge: "Need Help Now?",
     services: [
@@ -1547,6 +1559,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Briefcase",
     color: "text-slate-700",
     bgColor: "bg-slate-100 border-slate-200",
+    image: "/categories/business-services.jpg",
     services: [
       {
         id: "office-cleaning",
@@ -1702,6 +1715,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "FileText",
     color: "text-amber-600",
     bgColor: "bg-amber-50 border-amber-100",
+    image: "/categories/rta-services.jpg",
     services: [
       {
         id: "driving-license-assistance",
@@ -1761,6 +1775,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Receipt",
     color: "text-emerald-700",
     bgColor: "bg-emerald-50 border-emerald-100",
+    image: "/categories/gst-income-tax.jpg",
     services: [
       {
         id: "gst-registration-filing",
@@ -1808,6 +1823,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Truck",
     color: "text-blue-700",
     bgColor: "bg-blue-50 border-blue-100",
+    image: "/categories/packers-movers.jpg",
     services: [
       {
         id: "home-shifting",
@@ -1855,6 +1871,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Users",
     color: "text-indigo-600",
     bgColor: "bg-indigo-50 border-indigo-100",
+    image: "/categories/local-employment.jpg",
     services: [
       {
         id: "local-job-listings",
@@ -1902,6 +1919,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Drill",
     color: "text-cyan-700",
     bgColor: "bg-cyan-50 border-cyan-100",
+    image: "/categories/borewells.jpg",
     services: [
       {
         id: "borewell-drilling",
@@ -1945,10 +1963,11 @@ export const CATEGORIES: CategoryItem[] = [
     id: "cat-18",
     slug: "construction-vehicle-rentals",
     name: "Construction Vehicle Rentals",
-    description: "Heavy machinery and construction vehicle rentals including JCB, Tractor, Tipper, Crane, Roller & Water Tanker.",
+    description: "Masons, painters, welders, house plan & building material.",
     iconName: "HardHat",
     color: "text-amber-700",
-    bgColor: "bg-amber-50 border-amber-100",
+    bgColor: "bg-amber-100 border-amber-200",
+    image: "/categories/construction.jpg",
     badge: "HEAVY EQUIPMENT",
     services: [
       {
@@ -2052,11 +2071,12 @@ export const CATEGORIES: CategoryItem[] = [
   {
     id: "cat-19",
     slug: "saloon-spa",
-    name: "Saloon & Spa",
-    description: "Professional gents hair styling, ladies beauty parlour, bridal makeup, skin care, and spa treatments.",
-    iconName: "Scissors",
+    name: "Event Services",
+    description: "Marriage decors, DJ, photography & sound systems.",
+    iconName: "Sparkles",
     color: "text-rose-600",
     bgColor: "bg-rose-50 border-rose-100",
+    image: "/categories/event-services.jpg",
     services: [
       {
         id: "gents-hair-salon",
@@ -2111,11 +2131,12 @@ export const CATEGORIES: CategoryItem[] = [
   {
     id: "cat-20",
     slug: "food-grocery-delivery",
-    name: "Food, Grocery & Parcel Delivery",
-    description: "Fast doorstep delivery of daily groceries, restaurant food parcels, emergency medicine, and courier packages.",
+    name: "Food & Catering",
+    description: "Event catering, Tiffin services & food orders.",
     iconName: "ShoppingBag",
     color: "text-orange-600",
     bgColor: "bg-orange-50 border-orange-100",
+    image: "/categories/food-catering.jpg",
     services: [
       {
         id: "local-grocery-delivery",

@@ -66,35 +66,46 @@ export const CategoriesPage: React.FC = () => {
             <Link
               key={cat.id}
               to={`/categories/${cat.slug}`}
-              className={`group relative p-5 sm:p-6 bg-white rounded-2xl sm:rounded-3xl border border-slate-100 shadow-card hover:shadow-cardHover transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between ${cat.isEmergency ? 'ring-2 ring-red-400/60 bg-red-50/20' : ''}`}
+              className={`group relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between ${cat.isEmergency ? 'ring-2 ring-red-500/80' : ''}`}
             >
-              {cat.badge && (
-                <span className={`absolute top-3 right-3 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full ${cat.isEmergency ? 'bg-red-600 text-white' : 'bg-nearfix-orange text-white'}`}>
-                  {cat.badge}
-                </span>
-              )}
+              {/* Category Photo Image Banner */}
+              <div className="relative h-28 sm:h-36 w-full overflow-hidden bg-slate-900">
+                <img
+                  src={cat.image || '/hero-bg-custom.png'}
+                  alt={cat.name}
+                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                
+                {cat.badge && (
+                  <span className={`absolute top-2.5 right-2.5 z-10 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-md ${cat.isEmergency ? 'bg-red-600 text-white' : 'bg-nearfix-orange text-white'}`}>
+                    {cat.badge}
+                  </span>
+                )}
 
-              <div>
-                <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-xs ${cat.bgColor}`}>
-                  <IconComponent className={`w-7 h-7 sm:w-8 sm:h-8 ${cat.color}`} />
-                </div>
-
-                <h3 className="text-base sm:text-lg font-extrabold text-slate-900 group-hover:text-nearfix-blue transition-colors">
-                  {cat.name}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">
-                  {cat.description}
-                </p>
-
-                <div className="text-xs font-semibold text-slate-400 mt-3">
-                  {cat.services.length} Specialized Services
+                {/* Icon Overlay Badge */}
+                <div className={`absolute bottom-2.5 left-3 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-lg border border-white/20 backdrop-blur-md ${cat.bgColor}`}>
+                  <IconComponent className={`w-5 h-5 sm:w-6 sm:h-6 ${cat.color}`} />
                 </div>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-nearfix-orange">
-                <span>View Services</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              {/* Card Body */}
+              <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-sm sm:text-base font-extrabold text-slate-900 group-hover:text-nearfix-orange transition-colors line-clamp-1">
+                    {cat.name}
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+                    {cat.description}
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-nearfix-orange">
+                  <span className="text-slate-500 font-semibold">{cat.services.length} Services</span>
+                  <span className="inline-flex items-center gap-1">
+                    Explore <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
               </div>
             </Link>
           );

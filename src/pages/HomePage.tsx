@@ -154,35 +154,53 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
         </div>
 
         {/* Categories Grid (2 Columns on mobile matching UI, 4 on desktop) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {CATEGORIES.map((cat) => {
             const IconComponent = iconMap[cat.iconName] || Wrench;
             return (
               <Link
                 key={cat.id}
                 to={`/categories/${cat.slug}`}
-                className={`group relative p-4 sm:p-6 bg-white rounded-2xl sm:rounded-3xl border border-slate-100 shadow-card hover:shadow-cardHover transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center ${cat.isEmergency ? 'ring-2 ring-red-400/50 bg-red-50/30' : ''}`}
+                className={`group relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col ${cat.isEmergency ? 'ring-2 ring-red-500/80' : ''}`}
               >
-                {cat.badge && (
-                  <span className={`absolute top-2 right-2 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full ${cat.isEmergency ? 'bg-red-600 text-white' : 'bg-nearfix-orange text-white'}`}>
-                    {cat.badge}
-                  </span>
-                )}
+                {/* Category Photo Image Banner */}
+                <div className="relative h-28 sm:h-36 w-full overflow-hidden bg-slate-900">
+                  <img
+                    src={cat.image || '/hero-bg-custom.png'}
+                    alt={cat.name}
+                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                  
+                  {cat.badge && (
+                    <span className={`absolute top-2.5 right-2.5 z-10 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-md ${cat.isEmergency ? 'bg-red-600 text-white' : 'bg-nearfix-orange text-white'}`}>
+                      {cat.badge}
+                    </span>
+                  )}
 
-                <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-3 sm:mb-4 transition-transform group-hover:scale-110 shadow-xs ${cat.bgColor}`}>
-                  <IconComponent className={`w-7 h-7 sm:w-8 sm:h-8 ${cat.color}`} />
+                  {/* Icon Overlay Badge */}
+                  <div className={`absolute bottom-2.5 left-3 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-lg border border-white/20 backdrop-blur-md ${cat.bgColor}`}>
+                    <IconComponent className={`w-5 h-5 sm:w-6 sm:h-6 ${cat.color}`} />
+                  </div>
                 </div>
 
-                <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-nearfix-blue transition-colors line-clamp-1">
-                  {cat.name}
-                </h3>
-                
-                <p className="text-xs text-slate-500 mt-1 line-clamp-2 hidden sm:block">
-                  {cat.description}
-                </p>
+                {/* Card Text Content */}
+                <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-sm sm:text-base font-extrabold text-slate-900 group-hover:text-nearfix-orange transition-colors line-clamp-1">
+                      {cat.name}
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+                      {cat.description}
+                    </p>
+                  </div>
 
-                <div className="mt-3 flex items-center gap-1 text-xs font-semibold text-nearfix-orange opacity-0 group-hover:opacity-100 transition-opacity">
-                  Explore Services <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="mt-3 flex items-center justify-between pt-2 border-t border-slate-100 text-xs font-bold text-slate-600">
+                    <span className="text-slate-500">{cat.services?.length || 0} Services</span>
+                    <span className="inline-flex items-center gap-0.5 text-nearfix-orange group-hover:translate-x-1 transition-transform">
+                      Explore <ChevronRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
                 </div>
               </Link>
             );

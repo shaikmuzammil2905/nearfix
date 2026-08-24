@@ -1,34 +1,19 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 
 export const HeroVideo: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    // Ensure video plays programmatically on all mobile browsers & desktop
-    if (videoRef.current) {
-      videoRef.current.muted = true;
-      videoRef.current.play().catch(() => {
-        // Autoplay fallback
-      });
-    }
-  }, []);
-
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 bg-slate-900">
-      {/* 100% High Clarity Video Background - Scaled to Crop Out Video Corner Watermark */}
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        webkit-playsinline="true"
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover object-top transform scale-[1.14] origin-top-left opacity-90 transition-opacity duration-300"
-      >
-        <source src="/main_concept_is_near_fix_worke.mp4" type="video/mp4" />
-        <source src="/hero-bg.mp4" type="video/mp4" />
-      </video>
+    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 bg-slate-950">
+      {/* User Custom Grand Architectural Illustration Background */}
+      <img
+        src="/hero-bg-custom.png"
+        alt="NEARFIX Services Background"
+        className="absolute inset-0 w-full h-full object-cover object-center transform scale-105 filter brightness-90 contrast-105 transition-transform duration-700"
+      />
+
+      {/* Layered Gradient Overlay for High Contrast & Text Legibility on Desktop & Mobile */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-900/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-slate-950/80" />
+      <div className="absolute inset-0 bg-radial-vignette opacity-70" />
     </div>
   );
 };
