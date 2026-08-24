@@ -164,23 +164,23 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
                 className={`group relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col ${cat.isEmergency ? 'ring-2 ring-red-500/80' : ''}`}
               >
                 {/* Category Photo Image Banner */}
-                <div className="relative h-28 sm:h-36 w-full overflow-hidden bg-slate-900">
+                <div className="relative h-32 sm:h-44 w-full overflow-hidden bg-slate-900">
                   <img
                     src={cat.image || '/hero-bg-custom.png'}
                     alt={cat.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                   
                   {cat.badge && (
-                    <span className={`absolute top-2.5 right-2.5 z-10 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-md ${cat.isEmergency ? 'bg-red-600 text-white' : 'bg-nearfix-orange text-white'}`}>
+                    <span className={`absolute top-2.5 right-2.5 z-10 text-[10px] sm:text-xs font-extrabold uppercase px-2.5 py-1 rounded-full shadow-md ${cat.isEmergency ? 'bg-red-600 text-white' : 'bg-nearfix-orange text-white'}`}>
                       {cat.badge}
                     </span>
                   )}
 
                   {/* Icon Overlay Badge */}
-                  <div className={`absolute bottom-2.5 left-3 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-lg border border-white/20 backdrop-blur-md ${cat.bgColor}`}>
-                    <IconComponent className={`w-5 h-5 sm:w-6 sm:h-6 ${cat.color}`} />
+                  <div className={`absolute bottom-2.5 left-3 w-9 h-9 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center shadow-lg border border-white/30 backdrop-blur-md ${cat.bgColor}`}>
+                    <IconComponent className={`w-4 h-4 sm:w-5 sm:h-5 ${cat.color}`} />
                   </div>
                 </div>
 

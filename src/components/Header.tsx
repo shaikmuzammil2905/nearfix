@@ -65,11 +65,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
 
-            <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
+            <Link to="/" className="flex items-center gap-2 group flex-shrink-0 py-1">
               <img
                 src="/logo.png"
                 alt="NEARFIX Logo"
-                className="h-8 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-10 sm:h-14 lg:h-16 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-sm"
               />
             </Link>
           </div>
