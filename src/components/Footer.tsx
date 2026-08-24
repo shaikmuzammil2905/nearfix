@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand */}
           <div className="space-y-4">
             <Link to="/" className="inline-block bg-white p-2.5 rounded-2xl shadow-md">
-              <img src="/logo.png" alt="NEARFIX" className="h-10 w-auto object-contain" />
+              <img src="/logo.png" alt="NEARFIX Logo" className="h-12 sm:h-14 w-auto object-contain" />
             </Link>
 
             <p className="text-slate-300 text-sm leading-relaxed">
@@ -89,66 +89,66 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Social Media Links Bar - Placed Below the Label */}
-        <div className="border-t border-slate-800/80 pt-6 pb-6 flex flex-col items-start gap-3">
-          <div className="text-xs font-bold text-slate-300 uppercase tracking-wider">
-            Follow Us On Social Media:
+        {/* Social Media Links Bar - Centered matching mobile reference design */}
+        <div className="border-t border-slate-800/80 pt-8 pb-8 flex flex-col items-center justify-center text-center gap-4">
+          <div className="text-xs sm:text-sm font-extrabold text-slate-300 uppercase tracking-widest text-center">
+            TAP ICONS BELOW TO CONNECT WITH US DIRECTLY
           </div>
 
-          <div className="flex items-center flex-wrap gap-3">
+          <div className="flex items-center justify-center flex-wrap gap-4 sm:gap-5">
             <a
               href={NEARFIX_CONTACT.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
+              className="w-12 h-12 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110 border border-slate-700/80"
               aria-label="Facebook"
-              title="Facebook Profile"
+              title="Connect on Facebook"
             >
-              <Facebook className="w-5 h-5" />
+              <Facebook className="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
 
             <a
               href={NEARFIX_CONTACT.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
+              className="w-12 h-12 rounded-full bg-slate-800 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110 border border-slate-700/80"
               aria-label="Instagram"
-              title="Instagram Profile"
+              title="Connect on Instagram"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
 
             <a
               href={NEARFIX_CONTACT.social.x}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-sky-500 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
+              className="w-12 h-12 rounded-full bg-slate-800 hover:bg-sky-500 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110 border border-slate-700/80"
               aria-label="X (Twitter)"
-              title="X Profile"
+              title="Connect on X"
             >
-              <Twitter className="w-5 h-5" />
+              <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
 
             <a
               href={NEARFIX_CONTACT.social.threads}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110 font-bold text-xs"
+              className="w-12 h-12 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110 font-bold text-xs border border-slate-700/80"
               aria-label="Threads"
-              title="Threads Profile"
+              title="Connect on Threads"
             >
-              <span className="font-extrabold text-base text-center leading-none">@</span>
+              <span className="font-extrabold text-lg text-center leading-none">@</span>
             </a>
 
             <a
               href={NEARFIX_CONTACT.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-blue-700 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-110"
+              className="w-12 h-12 rounded-full bg-slate-800 hover:bg-blue-700 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110 border border-slate-700/80"
               aria-label="LinkedIn"
-              title="LinkedIn Profile"
+              title="Connect on LinkedIn"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
           </div>
         </div>
