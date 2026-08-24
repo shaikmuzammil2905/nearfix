@@ -696,7 +696,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "HardHat",
     color: "text-orange-600",
     bgColor: "bg-orange-50 border-orange-100",
-    image: "/categories/construction-home-improvement.jpg",
+    image: "/categories/construction.jpg",
     services: [
       {
         id: "building-contractors",
@@ -997,7 +997,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Camera",
     color: "text-pink-600",
     bgColor: "bg-pink-50 border-pink-100",
-    image: "/categories/events-wedding.jpg",
+    image: "/categories/event-services.jpg",
     services: [
       {
         id: "photography",
@@ -1153,7 +1153,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Monitor",
     color: "text-indigo-600",
     bgColor: "bg-indigo-50 border-indigo-100",
-    image: "/categories/business-digital-services.jpg",
+    image: "/categories/digital-tech.jpg",
     services: [
       {
         id: "website-development",
@@ -1559,7 +1559,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Briefcase",
     color: "text-slate-700",
     bgColor: "bg-slate-100 border-slate-200",
-    image: "/categories/business-services.jpg",
+    image: "/categories/digital-tech.jpg",
     services: [
       {
         id: "office-cleaning",
@@ -1775,7 +1775,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Receipt",
     color: "text-emerald-700",
     bgColor: "bg-emerald-50 border-emerald-100",
-    image: "/categories/gst-income-tax.jpg",
+    image: "/categories/rta-services.jpg",
     services: [
       {
         id: "gst-registration-filing",
@@ -1823,7 +1823,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Truck",
     color: "text-blue-700",
     bgColor: "bg-blue-50 border-blue-100",
-    image: "/categories/packers-movers.jpg",
+    image: "/categories/vehicle-services.jpg",
     services: [
       {
         id: "home-shifting",
@@ -1871,7 +1871,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Users",
     color: "text-indigo-600",
     bgColor: "bg-indigo-50 border-indigo-100",
-    image: "/categories/local-employment.jpg",
+    image: "/categories/education-training.jpg",
     services: [
       {
         id: "local-job-listings",
@@ -1919,7 +1919,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Drill",
     color: "text-cyan-700",
     bgColor: "bg-cyan-50 border-cyan-100",
-    image: "/categories/borewells.jpg",
+    image: "/categories/construction.jpg",
     services: [
       {
         id: "borewell-drilling",
@@ -2184,6 +2184,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Landmark",
     color: "text-emerald-800",
     bgColor: "bg-emerald-50 border-emerald-100",
+    image: "/categories/real-estate.jpg",
     badge: "INSTANT APPROVAL",
     services: [
       {
@@ -2292,6 +2293,7 @@ export const CATEGORIES: CategoryItem[] = [
     iconName: "Scale",
     color: "text-purple-700",
     bgColor: "bg-purple-50 border-purple-100",
+    image: "/categories/rta-services.jpg",
     badge: "CERTIFIED ADVOCATES",
     services: [
       {
