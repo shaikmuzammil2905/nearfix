@@ -77,32 +77,32 @@ export const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose, serviceNa
             <Phone className="w-7 h-7 fill-current" />
           </div>
 
-          <h3 className="text-2xl font-extrabold tracking-tight">Visitor Service Call Request</h3>
+          <h3 className="text-2xl font-extrabold tracking-tight">Quick Service Enquiry Form</h3>
           <p className="text-emerald-100 text-xs sm:text-sm mt-1">
-            Fill in your details below to connect with NEARFIX Helpline ({NEARFIX_CONTACT.phoneDisplay})
+            Fill out your service details below for instant assistance & helpline call ({NEARFIX_CONTACT.phoneDisplay})
           </p>
         </div>
 
         {/* Content Body / Visitor Form */}
         <form onSubmit={handleSubmitAndCall} className="p-6 space-y-4">
-          <div className="bg-emerald-50/80 border border-emerald-100 p-3 rounded-2xl flex items-center gap-3">
+          <div className="bg-emerald-50/80 border border-emerald-100 p-3.5 rounded-2xl flex items-center gap-3">
             <ShieldCheck className="w-6 h-6 text-nearfix-green flex-shrink-0" />
-            <p className="text-xs text-emerald-900 font-medium">
-              Verified Local Helpline for <strong>Visakhapatnam, Anakapalli, Alluri Seetha Ramaraju & Araku Valley</strong>.
+            <p className="text-xs text-emerald-900 font-semibold">
+              Official Helpline for <strong>Visakhapatnam, Anakapalli, Alluri Seetha Ramaraju & Araku Valley</strong>.
             </p>
           </div>
 
           {/* Visitor Name */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name *</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Your Full Name *</label>
             <div className="relative">
               <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
               <input
                 type="text"
-                placeholder="e.g. Ramesh Kumar"
+                placeholder="Enter your full name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className={`w-full pl-10 pr-4 py-2.5 bg-slate-50 border ${errors.name ? 'border-red-500' : 'border-slate-200'} rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500`}
+                className={`w-full pl-10 pr-4 py-3 bg-slate-50 border ${errors.name ? 'border-red-500' : 'border-slate-200'} rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500`}
               />
             </div>
             {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
@@ -115,10 +115,10 @@ export const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose, serviceNa
               <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
               <input
                 type="tel"
-                placeholder="e.g. 9876543210"
+                placeholder="Enter 10-digit mobile number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className={`w-full pl-10 pr-4 py-2.5 bg-slate-50 border ${errors.phone ? 'border-red-500' : 'border-slate-200'} rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500`}
+                className={`w-full pl-10 pr-4 py-3 bg-slate-50 border ${errors.phone ? 'border-red-500' : 'border-slate-200'} rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500`}
               />
             </div>
             {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
@@ -132,7 +132,7 @@ export const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose, serviceNa
               <select
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
                 <option value="Araku Valley">Araku Valley</option>
                 <option value="Paderu">Paderu</option>
@@ -146,25 +146,25 @@ export const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose, serviceNa
 
           {/* Service Needed */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Service Needed (Optional)</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Service Needed (e.g. Electrician, AC, Taxi, Plumbing)</label>
             <input
               type="text"
               placeholder="e.g. Electrician, Plumbing leak, Taxi, AC Repair"
               value={service}
               onChange={(e) => setService(e.target.value)}
-              className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
           {/* Additional Notes */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Requirements / Note (Optional)</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Enquiry Details / Note (Optional)</label>
             <textarea
               rows={2}
-              placeholder="Brief details about your problem..."
+              placeholder="Describe your issue or service requirement..."
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
+              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
             />
           </div>
 
@@ -172,10 +172,10 @@ export const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose, serviceNa
           <div className="pt-2 space-y-2">
             <button
               type="submit"
-              className="flex items-center justify-center gap-2.5 w-full py-4 px-6 bg-nearfix-green hover:bg-emerald-700 text-white font-extrabold text-base rounded-2xl shadow-lg shadow-emerald-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="flex items-center justify-center gap-2.5 w-full py-4 px-6 bg-nearfix-green hover:bg-emerald-700 text-white font-extrabold text-base rounded-2xl shadow-xl shadow-emerald-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               <Phone className="w-5 h-5 fill-current" />
-              Submit & Call Now ({NEARFIX_CONTACT.phoneDisplay})
+              Submit Enquiry & Call Now ({NEARFIX_CONTACT.phoneDisplay})
             </button>
 
             <button
