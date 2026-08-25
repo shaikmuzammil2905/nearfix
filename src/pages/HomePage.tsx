@@ -196,18 +196,18 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
 
             </div>
 
-            {/* RIGHT COLUMN: Animated Technician & Phone App Graphic (image copy 32) */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0 flex items-center justify-center">
-              <div className="relative max-w-sm sm:max-w-md lg:max-w-lg w-full mx-auto group">
+            {/* RIGHT COLUMN: Animated Technician & Phone App Graphic (Mobile & Desktop Visible) */}
+            <div className="lg:col-span-5 relative mt-8 lg:mt-0 flex items-center justify-center w-full">
+              <div className="relative w-full max-w-xs sm:max-w-md lg:max-w-lg mx-auto group">
                 
-                {/* Soft ambient glowing background */}
-                <div className="absolute -inset-4 bg-gradient-to-tr from-orange-500/25 via-emerald-500/20 to-amber-400/25 rounded-3xl blur-3xl opacity-70 group-hover:opacity-100 transition duration-700 animate-pulse-glow" />
+                {/* Glowing radial backdrop */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-amber-400/20 via-orange-500/25 to-emerald-400/20 rounded-full blur-3xl opacity-75 group-hover:opacity-100 transition duration-700 animate-pulse-glow" />
 
-                {/* Main Floating Container */}
-                <div className="relative z-10 animate-float-slow">
+                {/* Floating Graphic Container */}
+                <div className="relative z-10 animate-float-slow flex flex-col items-center justify-center">
                   
                   {/* Floating Badge 1: Top Right 100+ Services */}
-                  <div className="absolute -top-2 -right-2 z-20 bg-gradient-to-r from-blue-700 to-nearfix-blue text-white px-3.5 py-2 rounded-2xl shadow-2xl border border-white/20 flex items-center gap-2 animate-float">
+                  <div className="absolute -top-3 right-0 sm:-right-2 z-20 bg-gradient-to-r from-blue-700 to-nearfix-blue text-white px-3.5 py-1.5 rounded-2xl shadow-2xl border border-white/30 flex items-center gap-2 animate-float">
                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
                     <div>
                       <div className="text-xs font-black tracking-wide text-amber-300">100+ Services</div>
@@ -215,22 +215,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
                     </div>
                   </div>
 
-                  {/* Main Graphic Image */}
-                  <div className="overflow-hidden rounded-3xl border border-white/20 bg-black/40 backdrop-blur-sm shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-                    <img
-                      src="/hero-technician-visual.png"
-                      alt="Nearfix Verified Technician & Mobile App"
-                      className="w-full h-auto object-contain max-h-[360px] sm:max-h-[460px] lg:max-h-[500px] mx-auto filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.6)]"
-                    />
-                  </div>
+                  {/* Clean Transparent Graphic Image */}
+                  <img
+                    src="/hero-technician-visual.png"
+                    alt="Nearfix Verified Technician & Smartphone App"
+                    className="w-full h-auto object-contain max-h-[300px] sm:max-h-[440px] lg:max-h-[500px] filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)] transform transition-transform duration-700 group-hover:scale-105"
+                  />
 
-                  {/* Floating Badge 2: Bottom Right Rating */}
-                  <div className="absolute -bottom-3 -left-2 sm:left-4 z-20 bg-black/80 backdrop-blur-md text-white px-4 py-2.5 rounded-2xl shadow-2xl border border-white/25 flex items-center gap-3 animate-float" style={{ animationDelay: '1.5s' }}>
+                  {/* Floating Badge 2: Bottom Rating */}
+                  <div className="absolute -bottom-4 left-0 sm:left-2 z-20 bg-black/85 backdrop-blur-md text-white px-3.5 py-2 rounded-2xl shadow-2xl border border-white/30 flex items-center gap-2.5 animate-float" style={{ animationDelay: '1.8s' }}>
                     <div className="flex items-center text-amber-400">
-                      <span className="text-sm font-black text-white mr-1.5">4.8/5</span>
-                      <span className="text-xs">⭐⭐⭐⭐⭐</span>
+                      <span className="text-xs sm:text-sm font-black text-white mr-1">4.8/5</span>
+                      <span className="text-[11px]">⭐⭐⭐⭐⭐</span>
                     </div>
-                    <span className="text-[11px] font-bold text-slate-300 border-l border-white/20 pl-2">
+                    <span className="text-[10px] sm:text-[11px] font-bold text-slate-300 border-l border-white/20 pl-2">
                       Trusted by Thousands
                     </span>
                   </div>
