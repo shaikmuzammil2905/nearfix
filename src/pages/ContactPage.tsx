@@ -4,6 +4,8 @@ import { NEARFIX_CONTACT } from '../data/contactInfo';
 import { MapSection } from '../components/MapSection';
 import { BackButton } from '../components/BackButton';
 
+import { CMSService } from '../services/cmsService';
+
 export const ContactPage: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -14,6 +16,16 @@ export const ContactPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (name.trim() && phone.trim()) {
+      CMSService.submitContactRequest({
+        name: name.trim(),
+        phone: phone.trim(),
+        email: email.trim() || undefined,
+        service: 'General Contact Inquiry',
+        location: 'Araku Valley',
+        message: message.trim(),
+        contactMethod: 'WhatsApp'
+      });
+
       const wpText = `Hello NEARFIX, I have a contact inquiry:\n\n*Name:* ${name.trim()}\n*Phone:* ${phone.trim()}${email ? `\n*Email:* ${email.trim()}` : ''}\n*Message:* ${message.trim()}`;
       const wpUrl = `https://wa.me/919493192020?text=${encodeURIComponent(wpText)}`;
       window.open(wpUrl, '_blank');

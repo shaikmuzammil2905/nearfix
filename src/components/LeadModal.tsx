@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, CheckCircle, Phone, MessageCircle, Send, ShieldCheck } from 'lucide-react';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 import { CATEGORIES } from '../data/categories';
+import { CMSService } from '../services/cmsService';
 
 interface LeadModalProps {
   isOpen: boolean;
@@ -62,14 +63,15 @@ export const LeadModal: React.FC<LeadModalProps> = ({
       createdAt: new Date().toISOString()
     };
 
-    // Save to localStorage
-    try {
-      const existingStr = localStorage.getItem('nearfix_leads');
-      const existing: SubmittedLead[] = existingStr ? JSON.parse(existingStr) : [];
-      localStorage.setItem('nearfix_leads', JSON.stringify([newLead, ...existing]));
-    } catch (err) {
-      console.error('Failed to save lead', err);
-    }
+    // Save to LocalStorage & Supabase via CMSService
+    CMSService.submitContactRequest({
+      name: name.trim(),
+      phone: phone.trim(),
+      service: service.trim(),
+      location: location.trim() || 'Araku Valley',
+      message: message.trim(),
+      contactMethod
+    });
 
     // Direct WhatsApp Dispatch
     const wpText = `Hello NEARFIX, I want to submit a service request details:\n\n*Name:* ${name.trim()}\n*Phone:* ${phone.trim()}\n*Service Needed:* ${service.trim()}\n*Location/District:* ${location.trim() || 'Araku Valley'}\n*Preferred Contact:* ${contactMethod}${message.trim() ? `\n*Details:* ${message.trim()}` : ''}`;

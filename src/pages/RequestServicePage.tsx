@@ -3,6 +3,7 @@ import { ShieldCheck, Send, CheckCircle, Phone, MessageCircle } from 'lucide-rea
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 import { SubmittedLead } from '../components/LeadModal';
 import { BackButton } from '../components/BackButton';
+import { CMSService } from '../services/cmsService';
 
 export const RequestServicePage: React.FC = () => {
   const [name, setName] = useState('');
@@ -28,13 +29,14 @@ export const RequestServicePage: React.FC = () => {
       createdAt: new Date().toISOString()
     };
 
-    try {
-      const existingStr = localStorage.getItem('nearfix_leads');
-      const existing: SubmittedLead[] = existingStr ? JSON.parse(existingStr) : [];
-      localStorage.setItem('nearfix_leads', JSON.stringify([newLead, ...existing]));
-    } catch (err) {
-      console.error(err);
-    }
+    CMSService.submitContactRequest({
+      name: name.trim(),
+      phone: phone.trim(),
+      service: service.trim(),
+      location: location.trim() || 'Araku Valley',
+      message: message.trim(),
+      contactMethod
+    });
 
     // Direct WhatsApp Dispatch
     const wpText = `Hello NEARFIX, I want to submit a service request:\n\n*Name:* ${name.trim()}\n*Phone:* ${phone.trim()}\n*Service Needed:* ${service.trim()}\n*Location/District:* ${location.trim() || 'Araku Valley'}\n*Preferred Contact:* ${contactMethod}${message.trim() ? `\n*Details:* ${message.trim()}` : ''}`;
