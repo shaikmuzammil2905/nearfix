@@ -196,18 +196,18 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
 
             </div>
 
-            {/* RIGHT COLUMN: Floating Clean Technician & Phone Visual (from Image 31) */}
+            {/* RIGHT COLUMN: Clean Floating Technician & Phone Visual (from Image 31) */}
             <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex items-center justify-center">
-              <div className="relative max-w-md lg:max-w-none group animate-float-slow">
+              <div className="relative max-w-sm sm:max-w-md lg:max-w-none mx-auto group animate-float-slow">
                 
-                {/* Subtle soft ambient glow behind visual */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/20 to-orange-400/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-700" />
+                {/* Soft natural radial glow behind visual */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/15 via-orange-400/15 to-amber-400/15 rounded-full blur-2xl opacity-60 group-hover:opacity-85 transition duration-700" />
 
-                {/* Clean Floating Image without white box border */}
+                {/* Clean Floating Image without any box border, white background, or dark patch work */}
                 <img
                   src="/hero-technician-visual.png"
                   alt="Nearfix Verified Technician & Smartphone App"
-                  className="relative z-10 w-full h-auto object-contain max-h-[440px] rounded-2xl filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] transform transition-transform duration-700 group-hover:scale-105"
+                  className="relative z-10 w-full h-auto object-contain max-h-[460px] filter drop-shadow-[0_18px_28px_rgba(0,0,0,0.55)] transform transition-transform duration-700 group-hover:scale-105"
                 />
 
               </div>
