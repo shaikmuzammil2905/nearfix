@@ -56,7 +56,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
     <div className="space-y-12 pb-12">
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[520px] lg:min-h-[580px] flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl mx-3 sm:mx-6 lg:mx-8 mt-4 border border-slate-800 bg-slate-950">
+      <section className="relative min-h-[520px] lg:min-h-[580px] flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl mx-3 sm:mx-6 lg:mx-8 mt-4 border border-white/20 bg-emerald-950/20">
         <HeroVideo />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 text-white">
@@ -66,36 +66,36 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-amber-500/30 text-xs sm:text-sm font-extrabold text-amber-300 uppercase tracking-wider animate-fadeIn shadow-lg">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-amber-400/40 text-xs sm:text-sm font-extrabold text-amber-300 uppercase tracking-wider animate-fadeIn shadow-xl">
                 <ShieldCheck className="w-4 h-4 text-nearfix-orange flex-shrink-0 animate-pulse" /> 
                 #1 Service Platform in Alluri Seetha Ramaraju, Visakhapatnam & Anakapalli
               </div>
 
               {/* Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                Find Trusted Local Services <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 drop-shadow-md">Near You</span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+                Find Trusted Local Services <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 drop-shadow-lg">Near You</span>
               </h1>
 
               {/* Subtitle */}
-              <p className="text-slate-200 font-medium text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                Actively serving <span className="font-bold text-amber-300">Alluri Seetha Ramaraju District (Araku Valley, Paderu, Chinthapalli)</span>, <span className="font-bold text-amber-300">Visakhapatnam District</span> & <span className="font-bold text-amber-300">Anakapalli District</span>. Connect with verified local professionals instantly.
+              <p className="text-white font-semibold text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-[0_3px_10px_rgba(0,0,0,0.95)]">
+                Actively serving <span className="font-extrabold text-amber-300">Alluri Seetha Ramaraju District (Araku Valley, Paderu, Chinthapalli)</span>, <span className="font-extrabold text-amber-300">Visakhapatnam District</span> & <span className="font-extrabold text-amber-300">Anakapalli District</span>. Connect with verified local professionals instantly.
               </p>
 
               {/* 4 Feature Badges (from Image 31) */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 max-w-xl mx-auto lg:mx-0">
-                <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-md hover:border-orange-500/40 transition-colors">
+                <div className="bg-black/55 backdrop-blur-md border border-white/20 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-xl hover:border-orange-500/50 transition-colors">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                   <span>Verified Professionals</span>
                 </div>
-                <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-md hover:border-orange-500/40 transition-colors">
+                <div className="bg-black/55 backdrop-blur-md border border-white/20 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-xl hover:border-orange-500/50 transition-colors">
                   <Zap className="w-4 h-4 text-amber-400 flex-shrink-0" />
                   <span>Quick Response</span>
                 </div>
-                <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-md hover:border-orange-500/40 transition-colors">
+                <div className="bg-black/55 backdrop-blur-md border border-white/20 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-xl hover:border-orange-500/50 transition-colors">
                   <Wrench className="w-4 h-4 text-sky-400 flex-shrink-0" />
                   <span>Wide Range of Services</span>
                 </div>
-                <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-md hover:border-orange-500/40 transition-colors">
+                <div className="bg-black/55 backdrop-blur-md border border-white/20 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-xl hover:border-orange-500/50 transition-colors">
                   <MessageCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
                   <span>Call or WhatsApp Support</span>
                 </div>
@@ -103,32 +103,32 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
 
               {/* District & Location Hierarchy Chips */}
               <div className="space-y-2 text-xs sm:text-sm pt-1">
-                <div className="text-xs font-extrabold uppercase tracking-wider text-amber-300 drop-shadow flex items-center justify-center lg:justify-start gap-1.5">
+                <div className="text-xs font-extrabold uppercase tracking-wider text-amber-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] flex items-center justify-center lg:justify-start gap-1.5">
                   <MapPin className="w-4 h-4 text-nearfix-orange" /> Verified Coverage Areas
                 </div>
 
                 <div className="space-y-2">
-                  <div className="bg-slate-900/70 backdrop-blur-md p-3 rounded-2xl border border-white/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 shadow-lg">
-                    <span className="font-extrabold text-amber-300 flex items-center gap-1.5">
+                  <div className="bg-black/55 backdrop-blur-md p-3 rounded-2xl border border-white/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 shadow-xl">
+                    <span className="font-extrabold text-amber-300 flex items-center gap-1.5 drop-shadow">
                       <MapPin className="w-4 h-4 text-nearfix-orange flex-shrink-0" /> Alluri Seetha Ramaraju District
                     </span>
                     <div className="flex flex-wrap items-center gap-1.5 font-bold text-white">
-                      <span className="bg-nearfix-orange/90 px-2.5 py-0.5 rounded-lg text-xs shadow-md">Araku Valley</span>
-                      <span className="bg-nearfix-orange/90 px-2.5 py-0.5 rounded-lg text-xs shadow-md">Paderu</span>
-                      <span className="bg-nearfix-orange/90 px-2.5 py-0.5 rounded-lg text-xs shadow-md">Chinthapalli</span>
+                      <span className="bg-nearfix-orange px-2.5 py-0.5 rounded-lg text-xs shadow-md">Araku Valley</span>
+                      <span className="bg-nearfix-orange px-2.5 py-0.5 rounded-lg text-xs shadow-md">Paderu</span>
+                      <span className="bg-nearfix-orange px-2.5 py-0.5 rounded-lg text-xs shadow-md">Chinthapalli</span>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <div className="bg-slate-900/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 flex items-center justify-between shadow-md">
-                      <span className="font-extrabold text-emerald-300 text-xs flex items-center gap-1.5">
+                    <div className="bg-black/55 backdrop-blur-md p-2.5 rounded-xl border border-white/20 flex items-center justify-between shadow-xl">
+                      <span className="font-extrabold text-emerald-300 text-xs flex items-center gap-1.5 drop-shadow">
                         <MapPin className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" /> Visakhapatnam District
                       </span>
                       <span className="text-[11px] font-bold bg-emerald-600/90 text-white px-2 py-0.5 rounded-md">Active</span>
                     </div>
 
-                    <div className="bg-slate-900/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 flex items-center justify-between shadow-md">
-                      <span className="font-extrabold text-sky-300 text-xs flex items-center gap-1.5">
+                    <div className="bg-black/55 backdrop-blur-md p-2.5 rounded-xl border border-white/20 flex items-center justify-between shadow-xl">
+                      <span className="font-extrabold text-sky-300 text-xs flex items-center gap-1.5 drop-shadow">
                         <MapPin className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" /> Anakapalli District
                       </span>
                       <span className="text-[11px] font-bold bg-sky-600/90 text-white px-2 py-0.5 rounded-md">Active</span>
@@ -138,12 +138,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
               </div>
 
               {/* Quick Interactive Search Bar (from Image 31) */}
-              <div className="bg-slate-900/80 backdrop-blur-lg p-3 rounded-2xl border border-white/20 shadow-2xl flex flex-col sm:flex-row items-center gap-2.5">
+              <div className="bg-black/60 backdrop-blur-lg p-3 rounded-2xl border border-white/25 shadow-2xl flex flex-col sm:flex-row items-center gap-2.5">
                 <div className="w-full sm:w-1/2 relative">
                   <select
                     id="hero-service-select"
                     onChange={(e) => e.target.value && onOpenLead(e.target.value)}
-                    className="w-full py-2.5 px-3 bg-slate-950/80 text-white font-medium text-xs sm:text-sm rounded-xl border border-slate-700 focus:outline-none focus:border-nearfix-orange cursor-pointer"
+                    className="w-full py-2.5 px-3 bg-slate-950/90 text-white font-medium text-xs sm:text-sm rounded-xl border border-slate-700 focus:outline-none focus:border-nearfix-orange cursor-pointer shadow-inner"
                   >
                     <option value="">Select a Service...</option>
                     {CATEGORIES.slice(0, 12).map((cat) => (
@@ -155,7 +155,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
                 <div className="w-full sm:w-1/2 relative">
                   <select
                     id="hero-location-select"
-                    className="w-full py-2.5 px-3 bg-slate-950/80 text-white font-medium text-xs sm:text-sm rounded-xl border border-slate-700 focus:outline-none focus:border-nearfix-orange cursor-pointer"
+                    className="w-full py-2.5 px-3 bg-slate-950/90 text-white font-medium text-xs sm:text-sm rounded-xl border border-slate-700 focus:outline-none focus:border-nearfix-orange cursor-pointer shadow-inner"
                   >
                     <option value="">Select Location / Area...</option>
                     <option value="Araku Valley">Araku Valley</option>
@@ -168,7 +168,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
 
                 <button
                   onClick={() => onOpenLead()}
-                  className="w-full sm:w-auto py-2.5 px-5 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-lg transition-all hover:scale-105 active:scale-95 flex-shrink-0 flex items-center justify-center gap-1.5"
+                  className="w-full sm:w-auto py-2.5 px-5 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-xl transition-all hover:scale-105 active:scale-95 flex-shrink-0 flex items-center justify-center gap-1.5"
                 >
                   <Wrench className="w-4 h-4" />
                   Search Services
@@ -187,7 +187,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
 
                 <button
                   onClick={onOpenWhatsApp}
-                  className="flex items-center justify-center gap-2.5 w-full sm:w-auto py-3.5 px-8 bg-slate-900/90 hover:bg-slate-800 text-emerald-400 border-2 border-emerald-500/60 font-extrabold text-base rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 backdrop-blur-md"
+                  className="flex items-center justify-center gap-2.5 w-full sm:w-auto py-3.5 px-8 bg-black/70 hover:bg-black/90 text-emerald-400 border-2 border-emerald-400 font-extrabold text-base rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 backdrop-blur-md"
                 >
                   <MessageCircle className="w-5 h-5 fill-current" />
                   WhatsApp
@@ -196,41 +196,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
 
             </div>
 
-            {/* RIGHT COLUMN: Animated Technician & Phone Visual Card (from Image 31) */}
-            <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-              <div className="relative mx-auto max-w-md lg:max-w-none group">
+            {/* RIGHT COLUMN: Floating Clean Technician & Phone Visual (from Image 31) */}
+            <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex items-center justify-center">
+              <div className="relative max-w-md lg:max-w-none group animate-float-slow">
                 
-                {/* Ambient glow behind graphic */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-emerald-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 animate-pulse" />
+                {/* Subtle soft ambient glow behind visual */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/20 to-orange-400/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-700" />
 
-                {/* Main Visual Container */}
-                <div className="relative rounded-3xl overflow-hidden border border-white/20 bg-slate-900/60 backdrop-blur-md p-2 shadow-2xl animate-float-slow">
-                  <img
-                    src="/hero-technician-phone.png"
-                    alt="Nearfix Verified Technician & Smartphone App"
-                    className="w-full h-auto object-cover rounded-2xl transform transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  {/* Animated Overlay Badges */}
-                  <div className="absolute top-4 right-4 bg-slate-950/90 text-white border border-amber-400/40 px-3 py-1.5 rounded-xl shadow-2xl backdrop-blur-md flex items-center gap-2 animate-float">
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="font-extrabold text-xs text-amber-300">100+ Services</span>
-                  </div>
-
-                  <div className="absolute bottom-4 left-4 right-4 bg-slate-950/85 backdrop-blur-md p-2.5 rounded-2xl border border-white/20 flex items-center justify-between shadow-xl">
-                    <div className="flex items-center gap-1.5">
-                      <div className="flex -space-x-1.5">
-                        <span className="w-6 h-6 rounded-full bg-emerald-500 border border-slate-900 flex items-center justify-center text-[10px] font-bold">★</span>
-                        <span className="w-6 h-6 rounded-full bg-orange-500 border border-slate-900 flex items-center justify-center text-[10px] font-bold">✓</span>
-                      </div>
-                      <div className="text-left">
-                        <div className="text-xs font-black text-amber-300">★ ★ ★ ★ ★ 4.8/5</div>
-                        <div className="text-[10px] text-slate-300 font-semibold">Trusted by Thousands</div>
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-extrabold bg-nearfix-orange/90 text-white px-2.5 py-1 rounded-lg">Verified</span>
-                  </div>
-                </div>
+                {/* Clean Floating Image without white box border */}
+                <img
+                  src="/hero-technician-visual.png"
+                  alt="Nearfix Verified Technician & Smartphone App"
+                  className="relative z-10 w-full h-auto object-contain max-h-[440px] rounded-2xl filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] transform transition-transform duration-700 group-hover:scale-105"
+                />
 
               </div>
             </div>

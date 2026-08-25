@@ -2,18 +2,18 @@ import React from 'react';
 
 export const HeroVideo: React.FC = () => {
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 bg-slate-950">
-      {/* Animated Araku Valley Scenic Landscape Background from image copy 30 */}
+    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 bg-emerald-950">
+      {/* Bright, Vivid Araku Valley Scenic Green Landscape Background */}
       <img
         src="/hero-bg-araku.png"
-        alt="NEARFIX Araku Valley Scenic Background"
-        className="absolute inset-0 w-full h-full object-cover object-center animate-kenburns filter brightness-95 contrast-110"
+        alt="NEARFIX Araku Valley Scenic Green Landscape Background"
+        className="absolute inset-0 w-full h-full object-cover object-center animate-kenburns filter brightness-105 contrast-105"
       />
 
-      {/* Dark protective gradient mask ensuring text pops crisply with NO white background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/85 via-slate-950/50 to-slate-950/90" />
-      <div className="absolute inset-0 bg-radial-gradient from-transparent via-slate-950/30 to-slate-950/70" />
+      {/* Light protective vignette mask ensuring text pops while green mountains & sky remain brightly visible */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/55" />
     </div>
   );
 };
+
 
