@@ -196,19 +196,46 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
 
             </div>
 
-            {/* RIGHT COLUMN: Clean Floating Technician & Phone Visual (from Image 31) */}
-            <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex items-center justify-center">
-              <div className="relative max-w-sm sm:max-w-md lg:max-w-none mx-auto group animate-float-slow">
+            {/* RIGHT COLUMN: Animated Technician & Phone App Graphic (image copy 32) */}
+            <div className="lg:col-span-5 relative mt-6 lg:mt-0 flex items-center justify-center">
+              <div className="relative max-w-sm sm:max-w-md lg:max-w-lg w-full mx-auto group">
                 
-                {/* Soft natural radial glow behind visual */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/15 via-orange-400/15 to-amber-400/15 rounded-full blur-2xl opacity-60 group-hover:opacity-85 transition duration-700" />
+                {/* Soft ambient glowing background */}
+                <div className="absolute -inset-4 bg-gradient-to-tr from-orange-500/25 via-emerald-500/20 to-amber-400/25 rounded-3xl blur-3xl opacity-70 group-hover:opacity-100 transition duration-700 animate-pulse-glow" />
 
-                {/* Clean Floating Image without any box border, white background, or dark patch work */}
-                <img
-                  src="/hero-technician-visual.png"
-                  alt="Nearfix Verified Technician & Smartphone App"
-                  className="relative z-10 w-full h-auto object-contain max-h-[460px] filter drop-shadow-[0_18px_28px_rgba(0,0,0,0.55)] transform transition-transform duration-700 group-hover:scale-105"
-                />
+                {/* Main Floating Container */}
+                <div className="relative z-10 animate-float-slow">
+                  
+                  {/* Floating Badge 1: Top Right 100+ Services */}
+                  <div className="absolute -top-2 -right-2 z-20 bg-gradient-to-r from-blue-700 to-nearfix-blue text-white px-3.5 py-2 rounded-2xl shadow-2xl border border-white/20 flex items-center gap-2 animate-float">
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                    <div>
+                      <div className="text-xs font-black tracking-wide text-amber-300">100+ Services</div>
+                      <div className="text-[10px] text-slate-200 font-semibold">Verified Local Pros</div>
+                    </div>
+                  </div>
+
+                  {/* Main Graphic Image */}
+                  <div className="overflow-hidden rounded-3xl border border-white/20 bg-black/40 backdrop-blur-sm shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+                    <img
+                      src="/hero-technician-visual.png"
+                      alt="Nearfix Verified Technician & Mobile App"
+                      className="w-full h-auto object-contain max-h-[360px] sm:max-h-[460px] lg:max-h-[500px] mx-auto filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.6)]"
+                    />
+                  </div>
+
+                  {/* Floating Badge 2: Bottom Right Rating */}
+                  <div className="absolute -bottom-3 -left-2 sm:left-4 z-20 bg-black/80 backdrop-blur-md text-white px-4 py-2.5 rounded-2xl shadow-2xl border border-white/25 flex items-center gap-3 animate-float" style={{ animationDelay: '1.5s' }}>
+                    <div className="flex items-center text-amber-400">
+                      <span className="text-sm font-black text-white mr-1.5">4.8/5</span>
+                      <span className="text-xs">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <span className="text-[11px] font-bold text-slate-300 border-l border-white/20 pl-2">
+                      Trusted by Thousands
+                    </span>
+                  </div>
+
+                </div>
 
               </div>
             </div>
