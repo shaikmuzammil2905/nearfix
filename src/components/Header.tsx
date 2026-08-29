@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone, MessageCircle, MapPin, Search } from 'lucide-react';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 
+import { CMSService, HeaderCMSData } from '../services/cmsService';
+
 interface HeaderProps {
   onOpenCall: () => void;
   onOpenWhatsApp: () => void;
@@ -14,8 +16,26 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('All Districts');
+  const [headerData, setHeaderData] = useState<HeaderCMSData | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const loadHeader = async () => {
+    try {
+      const data = await CMSService.getHeader();
+      setHeaderData(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    loadHeader();
+    const unsub = CMSService.subscribeToUpdates(() => {
+      loadHeader();
+    });
+    return unsub;
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +61,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
     }
   };
 
-  const navLinks = [
+  const navLinks = headerData?.navLinks?.filter(l => l.isVisible !== false) || [
     { name: 'Home', path: '/' },
     { name: 'Categories', path: '/categories' },
     { name: 'Services', path: '/services' },

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   MapPin, Phone, MessageCircle, ShieldCheck, Zap, 
@@ -11,6 +11,7 @@ import { CATEGORIES, CategoryItem } from '../data/categories';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 import { HeroVideo } from '../components/HeroVideo';
 import { MapSection } from '../components/MapSection';
+import { CMSService, HeroCMSData, AboutCMSData } from '../services/cmsService';
 
 interface HomePageProps {
   onOpenCall: () => void;
@@ -47,10 +48,38 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
   Droplet,
   Sparkles,
   Calculator,
-  Zap
+  Zap,
+  ShieldCheck,
+  MessageCircle
 };
 
 export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, onOpenLead }) => {
+  const [hero, setHero] = useState<HeroCMSData | null>(null);
+  const [categoriesList, setCategoriesList] = useState<CategoryItem[]>(CATEGORIES);
+  const [aboutData, setAboutData] = useState<AboutCMSData | null>(null);
+
+  const loadData = async () => {
+    try {
+      const [h, c, a] = await Promise.all([
+        CMSService.getHero(),
+        CMSService.getCategories(),
+        CMSService.getAbout()
+      ]);
+      setHero(h);
+      if (c && c.length > 0) setCategoriesList(c);
+      setAboutData(a);
+    } catch (err) {
+      console.error('Error loading homepage live data:', err);
+    }
+  };
+
+  useEffect(() => {
+    loadData();
+    const unsub = CMSService.subscribeToUpdates(() => {
+      loadData();
+    });
+    return unsub;
+  }, []);
 
   return (
     <div className="space-y-12 pb-12">
@@ -68,37 +97,35 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-amber-400/40 text-xs sm:text-sm font-extrabold text-amber-300 uppercase tracking-wider animate-fadeIn shadow-xl">
                 <ShieldCheck className="w-4 h-4 text-nearfix-orange flex-shrink-0 animate-pulse" /> 
-                #1 Service Platform in Alluri Seetha Ramaraju, Visakhapatnam & Anakapalli
+                {hero?.badge || "#1 Service Platform in Alluri Seetha Ramaraju, Visakhapatnam & Anakapalli"}
               </div>
 
               {/* Headline */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
-                Find Trusted Local Services <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 drop-shadow-lg">Near You</span>
+                {hero?.headline || "Find Trusted Local Services"} <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 drop-shadow-lg">{hero?.headlineGradient || "Near You"}</span>
               </h1>
 
               {/* Subtitle */}
               <p className="text-white font-semibold text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-[0_3px_10px_rgba(0,0,0,0.95)]">
-                Actively serving <span className="font-extrabold text-amber-300">Alluri Seetha Ramaraju District (Araku Valley, Paderu, Chinthapalli)</span>, <span className="font-extrabold text-amber-300">Visakhapatnam District</span> & <span className="font-extrabold text-amber-300">Anakapalli District</span>. Connect with verified local professionals instantly.
+                {hero?.subtitle || "Actively serving Alluri Seetha Ramaraju District (Araku Valley, Paderu, Chinthapalli), Visakhapatnam District & Anakapalli District. Connect with verified local professionals instantly."}
               </p>
 
-              {/* 4 Feature Badges (from Image 31) */}
+              {/* Feature Badges */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 max-w-xl mx-auto lg:mx-0">
-                <div className="bg-black/55 backdrop-blur-md border border-white/20 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-xl hover:border-orange-500/50 transition-colors">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                  <span>Verified Professionals</span>
-                </div>
-                <div className="bg-black/55 backdrop-blur-md border border-white/20 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-xl hover:border-orange-500/50 transition-colors">
-                  <Zap className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                  <span>Quick Response</span>
-                </div>
-                <div className="bg-black/55 backdrop-blur-md border border-white/20 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-xl hover:border-orange-500/50 transition-colors">
-                  <Wrench className="w-4 h-4 text-sky-400 flex-shrink-0" />
-                  <span>Wide Range of Services</span>
-                </div>
-                <div className="bg-black/55 backdrop-blur-md border border-white/20 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-xl hover:border-orange-500/50 transition-colors">
-                  <MessageCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span>Call or WhatsApp Support</span>
-                </div>
+                {(hero?.featureBadges || [
+                  { title: "Verified Professionals", icon: "ShieldCheck" },
+                  { title: "Quick Response", icon: "Zap" },
+                  { title: "Wide Range of Services", icon: "Wrench" },
+                  { title: "Call or WhatsApp Support", icon: "MessageCircle" }
+                ]).map((badgeItem, i) => {
+                  const BIcon = iconMap[badgeItem.icon] || ShieldCheck;
+                  return (
+                    <div key={i} className="bg-black/55 backdrop-blur-md border border-white/20 p-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-slate-100 shadow-xl hover:border-orange-500/50 transition-colors">
+                      <BIcon className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                      <span>{badgeItem.title}</span>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* District & Location Hierarchy Chips */}
@@ -137,7 +164,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
                 </div>
               </div>
 
-              {/* Quick Interactive Search Bar (from Image 31) */}
+              {/* Quick Interactive Search Bar */}
               <div className="bg-black/60 backdrop-blur-lg p-3 rounded-2xl border border-white/25 shadow-2xl flex flex-col sm:flex-row items-center gap-2.5">
                 <div className="w-full sm:w-1/2 relative">
                   <select
@@ -146,7 +173,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
                     className="w-full py-2.5 px-3 bg-slate-950/90 text-white font-medium text-xs sm:text-sm rounded-xl border border-slate-700 focus:outline-none focus:border-nearfix-orange cursor-pointer shadow-inner"
                   >
                     <option value="">Select a Service...</option>
-                    {CATEGORIES.slice(0, 12).map((cat) => (
+                    {categoriesList.slice(0, 12).map((cat) => (
                       <option key={cat.id} value={cat.name}>{cat.name}</option>
                     ))}
                   </select>
@@ -347,7 +374,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto mb-10">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Why Choose NEARFIX?
+            Why Choose SINCE T20 SERVICES?
           </h2>
           <p className="text-slate-500 text-sm mt-1">
             Built for speed, transparency, and local community trust.
@@ -402,7 +429,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden">
           <div className="text-center max-w-xl mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-wider text-nearfix-orange">Simple Process</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">How NEARFIX Works</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">How SINCE T20 SERVICES Works</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
@@ -423,7 +450,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-4">
               <h3 className="text-xl sm:text-2xl font-extrabold text-nearfix-blue">
-                NEARFIX Business Information
+                SINCE T20 SERVICES Business Information
               </h3>
               
               <div className="space-y-2 text-sm text-slate-700">

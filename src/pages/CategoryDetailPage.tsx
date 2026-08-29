@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
   Phone, MessageCircle, ArrowRight, ShieldCheck, 
@@ -6,9 +6,10 @@ import {
   Camera, Monitor, GraduationCap, AlertTriangle, Briefcase, ChevronRight, Zap,
   FileText, Receipt, Truck, Users, Drill, Scissors, ShoppingBag, Landmark, Scale, DollarSign, Package, Tractor, Droplet, Sparkles, Calculator
 } from 'lucide-react';
-import { getCategoryBySlug } from '../data/categories';
+import { getCategoryBySlug, CategoryItem } from '../data/categories';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 import { BackButton } from '../components/BackButton';
+import { CMSService } from '../services/cmsService';
 
 interface CategoryDetailPageProps {
   onOpenCall: (serviceName?: string) => void;
@@ -27,7 +28,27 @@ export const CategoryDetailPage: React.FC<CategoryDetailPageProps> = ({
   onOpenLead
 }) => {
   const { categorySlug } = useParams<{ categorySlug: string }>();
-  const category = getCategoryBySlug(categorySlug || '');
+  const [category, setCategory] = useState<CategoryItem | null>(getCategoryBySlug(categorySlug || '') || null);
+
+  const loadCategory = async () => {
+    try {
+      const liveCategories = await CMSService.getCategories();
+      const found = liveCategories.find(c => c.slug === categorySlug);
+      if (found) {
+        setCategory(found);
+      }
+    } catch (err) {
+      console.error('Error fetching live category:', err);
+    }
+  };
+
+  useEffect(() => {
+    loadCategory();
+    const unsub = CMSService.subscribeToUpdates(() => {
+      loadCategory();
+    });
+    return unsub;
+  }, [categorySlug]);
 
   if (!category) {
     return (
@@ -76,7 +97,7 @@ export const CategoryDetailPage: React.FC<CategoryDetailPageProps> = ({
 
           {/* Action box in banner */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/20 text-center w-full sm:w-auto flex-shrink-0 space-y-3">
-            <div className="text-xs font-bold uppercase tracking-wider text-slate-200">Connect with NEARFIX</div>
+            <div className="text-xs font-bold uppercase tracking-wider text-slate-200">Connect with SINCE T20 SERVICES</div>
             <div className="flex flex-col gap-2">
               <button
                 onClick={() => onOpenCall(category.name)}
@@ -101,11 +122,11 @@ export const CategoryDetailPage: React.FC<CategoryDetailPageProps> = ({
           <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">
             Available Services in {category.name}
           </h2>
-          <span className="text-xs font-bold text-slate-500">{category.services.length} Services Found</span>
+          <span className="text-xs font-bold text-slate-500">{category.services?.length || 0} Services Found</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {category.services.map((service) => (
+          {category.services?.map((service) => (
             <div
               key={service.id}
               className="bg-white rounded-3xl p-6 border border-slate-100 shadow-card hover:shadow-cardHover transition-all flex flex-col justify-between group"

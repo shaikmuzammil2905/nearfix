@@ -1,29 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ShieldCheck, Target, Eye, ArrowRight } from 'lucide-react';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 import { Link } from 'react-router-dom';
 import { BackButton } from '../components/BackButton';
+import { CMSService, AboutCMSData } from '../services/cmsService';
 
 export const AboutPage: React.FC = () => {
+  const [aboutData, setAboutData] = useState<AboutCMSData | null>(null);
+
+  const loadAbout = async () => {
+    try {
+      const data = await CMSService.getAbout();
+      setAboutData(data);
+    } catch (err) {
+      console.error('Error fetching About CMS data:', err);
+    }
+  };
+
+  useEffect(() => {
+    loadAbout();
+    const unsub = CMSService.subscribeToUpdates(() => {
+      loadAbout();
+    });
+    return unsub;
+  }, []);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       
       {/* Top Bar with Back Button */}
       <div className="flex items-center justify-between">
         <BackButton label="Back to Home" fallbackPath="/" />
-        <span className="text-xs font-semibold text-slate-500">About NEARFIX</span>
+        <span className="text-xs font-semibold text-slate-500">About SINCE T20 SERVICES</span>
       </div>
 
       {/* Banner */}
       <div className="bg-gradient-to-r from-nearfix-blue via-slate-900 to-nearfix-navy text-white rounded-3xl p-8 sm:p-12 shadow-xl text-center space-y-4">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-xs font-bold text-nearfix-orange uppercase tracking-wider">
-          <ShieldCheck className="w-4 h-4" /> About NEARFIX
+          <ShieldCheck className="w-4 h-4" /> About SINCE T20 SERVICES
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-          Connecting You with Local Experts
+          {aboutData?.heading || "Connecting You with Local Experts"}
         </h1>
         <p className="text-slate-300 text-base max-w-2xl mx-auto leading-relaxed">
-          NEARFIX is the leading local service discovery and lead generation platform active across Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley — designed to make finding reliable help effortless and transparent.
+          {aboutData?.description || "SINCE T20 SERVICES is the leading local service discovery and lead generation platform active across Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley — designed to make finding reliable help effortless and transparent."}
         </p>
       </div>
 
@@ -37,7 +57,7 @@ export const AboutPage: React.FC = () => {
           </div>
           <h2 className="text-2xl font-extrabold text-slate-900">Our Vision</h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            {NEARFIX_CONTACT.vision}
+            {aboutData?.vision || NEARFIX_CONTACT.vision}
           </p>
         </div>
 
@@ -48,7 +68,7 @@ export const AboutPage: React.FC = () => {
           </div>
           <h2 className="text-2xl font-extrabold text-slate-900">Our Mission</h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            {NEARFIX_CONTACT.mission}
+            {aboutData?.mission || NEARFIX_CONTACT.mission}
           </p>
         </div>
 
@@ -64,7 +84,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {NEARFIX_CONTACT.coreValues.map((val) => (
+          {(aboutData?.coreValues || NEARFIX_CONTACT.coreValues).map((val) => (
             <div
               key={val.id}
               className="bg-white rounded-3xl p-6 border border-slate-100 shadow-card hover:shadow-cardHover transition-all space-y-3"

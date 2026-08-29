@@ -26,7 +26,7 @@ export const ContactPage: React.FC = () => {
         contactMethod: 'WhatsApp'
       });
 
-      const wpText = `Hello NEARFIX, I have a contact inquiry:\n\n*Name:* ${name.trim()}\n*Phone:* ${phone.trim()}${email ? `\n*Email:* ${email.trim()}` : ''}\n*Message:* ${message.trim()}`;
+      const wpText = `Hello SINCE T20 SERVICES, I have a contact inquiry:\n\n*Name:* ${name.trim()}\n*Phone:* ${phone.trim()}${email ? `\n*Email:* ${email.trim()}` : ''}\n*Message:* ${message.trim()}`;
       const wpUrl = `https://wa.me/919493192020?text=${encodeURIComponent(wpText)}`;
       window.open(wpUrl, '_blank');
       setIsSent(true);
@@ -48,7 +48,7 @@ export const ContactPage: React.FC = () => {
           <ShieldCheck className="w-4 h-4" /> Official Support
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-          Contact NEARFIX
+          Contact SINCE T20 SERVICES
         </h1>
         <p className="text-slate-300 text-base max-w-xl leading-relaxed">
           Have questions or need immediate service help? Reach out to us via Call, WhatsApp, Email, or the form below.

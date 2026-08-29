@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
   Phone, MessageCircle, Send, CheckCircle2, 
   MapPin, Clock, Info, ChevronRight, Zap, ShieldCheck
 } from 'lucide-react';
-import { getServiceBySlug, getAllServices } from '../data/categories';
+import { getServiceBySlug, ServiceItem } from '../data/categories';
 import { NEARFIX_CONTACT } from '../data/contactInfo';
 import { BackButton } from '../components/BackButton';
+import { CMSService } from '../services/cmsService';
 
 interface ServiceDetailPageProps {
   onOpenCall: (serviceName?: string) => void;
@@ -20,7 +21,29 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
   onOpenLead
 }) => {
   const { serviceSlug } = useParams<{ serviceSlug: string }>();
-  const service = getServiceBySlug(serviceSlug || '');
+  const [service, setService] = useState<ServiceItem | null>(getServiceBySlug(serviceSlug || '') || null);
+  const [allServicesList, setAllServicesList] = useState<ServiceItem[]>([]);
+
+  const loadServiceData = async () => {
+    try {
+      const all = await CMSService.getAllServices();
+      setAllServicesList(all);
+      const found = all.find(s => s.slug === serviceSlug);
+      if (found) {
+        setService(found);
+      }
+    } catch (err) {
+      console.error('Error fetching live service:', err);
+    }
+  };
+
+  useEffect(() => {
+    loadServiceData();
+    const unsub = CMSService.subscribeToUpdates(() => {
+      loadServiceData();
+    });
+    return unsub;
+  }, [serviceSlug]);
 
   if (!service) {
     return (
@@ -32,8 +55,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
     );
   }
 
-  const all = getAllServices();
-  const relatedServices = all
+  const relatedServices = allServicesList
     .filter(s => s.categorySlug === service.categorySlug && s.id !== service.id)
     .slice(0, 3);
 
@@ -85,7 +107,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
             <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 flex items-center gap-3">
               <Info className="w-5 h-5 text-nearfix-blue flex-shrink-0" />
               <p className="text-sm font-semibold text-slate-700">
-                Connect with a local service provider through NEARFIX.
+                Connect with a local service provider through SINCE T20 SERVICES.
               </p>
             </div>
 

@@ -12,7 +12,22 @@ export const AdminFooter: React.FC = () => {
     const loadData = async () => {
       try {
         const data = await CMSService.getFooter();
-        setFooterData(data);
+        const requiredPlatforms = [
+          { platform: "Facebook", url: "https://www.facebook.com/share/1K7sBDVMWK/" },
+          { platform: "Instagram", url: "https://www.instagram.com/sincet20services?utm_source=qr&igsi=MTJoZTA4MDRkeWk1ZQ==" },
+          { platform: "Threads", url: "https://www.threads.com/@sincet20services" },
+          { platform: "YouTube", url: "https://youtube.com/@oneplatformmanyservices?si=dcoNFUHBFMwD5E0_" },
+          { platform: "X", url: "https://youtube.com/@oneplatformmanyservices?si=dcoNFUHBFMwD5E0_" },
+          { platform: "LinkedIn", url: "https://www.linkedin.com/in/one-platform-many-services-ab6342432?utm_source=share_via&utm_content=profile&utm_medium=member_android" }
+        ];
+
+        const existingLinks = data.socialLinks || [];
+        const mergedLinks = requiredPlatforms.map(req => {
+          const found = existingLinks.find(e => e.platform.toLowerCase().includes(req.platform.toLowerCase()));
+          return found ? { ...found, platform: req.platform } : req;
+        });
+
+        setFooterData({ ...data, socialLinks: mergedLinks });
       } catch (err) {
         console.error(err);
       }

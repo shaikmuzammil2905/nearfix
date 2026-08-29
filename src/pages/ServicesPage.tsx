@@ -35,6 +35,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenCall, onOpenWh
       }
     };
     fetchServices();
+    const unsub = CMSService.subscribeToUpdates(() => {
+      fetchServices();
+    });
+    return unsub;
   }, []);
 
   const filteredServices = services.filter(service => {

@@ -157,11 +157,11 @@ CREATE TABLE IF NOT EXISTS public.footer_settings (
   description TEXT NOT NULL,
   phone_display TEXT DEFAULT '9493416030',
   whatsapp_display TEXT DEFAULT '9493192020',
-  email TEXT DEFAULT 'nearfixin@gmail.com',
+  email TEXT DEFAULT 'sincet20services@gmail.com',
   location TEXT DEFAULT 'Araku Valley',
   full_address TEXT NOT NULL,
   social_links JSONB DEFAULT '[]'::jsonb,
-  copyright_text TEXT DEFAULT '© NEARFIX. All rights reserved.',
+  copyright_text TEXT DEFAULT '© SINCE T20 SERVICES. All rights reserved.',
   is_active BOOLEAN DEFAULT true,
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
@@ -169,12 +169,12 @@ CREATE TABLE IF NOT EXISTS public.footer_settings (
 -- 12. SITE SETTINGS TABLE
 CREATE TABLE IF NOT EXISTS public.site_settings (
   id TEXT PRIMARY KEY DEFAULT 'main_settings',
-  business_name TEXT DEFAULT 'NEARFIX',
+  business_name TEXT DEFAULT 'SINCE T20 SERVICES',
   tagline TEXT DEFAULT 'Trusted Local Service Discovery & Lead Platform',
   experience TEXT DEFAULT '3 years',
   phone TEXT DEFAULT '9493416030',
   whatsapp TEXT DEFAULT '9493192020',
-  email TEXT DEFAULT 'nearfixin@gmail.com',
+  email TEXT DEFAULT 'sincet20services@gmail.com',
   location TEXT DEFAULT 'Araku Valley',
   district TEXT DEFAULT 'Alluri Seetha Ramaraju District',
   full_address TEXT NOT NULL,
@@ -310,7 +310,7 @@ INSERT INTO public.about_sections (id, heading, description, vision, mission, is
 VALUES (
   'main_about',
   'Connecting You with Local Experts',
-  'NEARFIX is the leading local service discovery and lead generation platform active across Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley.',
+  'SINCE T20 SERVICES is the leading local service discovery and lead generation platform active across Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley.',
   'To become most trusted platform for finding reliable local services — connecting people with the right service provider quickly, easily, and transparently.',
   'To make local services accessible to everyone through one simple platform, connecting customers with verified service providers through calls and WhatsApp.',
   true
@@ -321,9 +321,9 @@ VALUES ('main_header', '/logo.png', 'Call Now', 'WhatsApp', true, true)
 ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO public.footer_settings (id, description, phone_display, whatsapp_display, email, location, full_address, is_active)
-VALUES ('main_footer', 'NEARFIX is the trusted local service discovery and lead platform for Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley.', '9493416030', '9493192020', 'nearfixin@gmail.com', 'Araku Valley', 'Semon Residency, Second Floor, Room No 3, ZP Colony, Near Govt Hospital, Araku Valley, AP - 531151', true)
+VALUES ('main_footer', 'SINCE T20 SERVICES is the trusted local service discovery and lead platform for Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley.', '9493416030', '9493192020', 'sincet20services@gmail.com', 'Araku Valley', 'Semon Residency, Second Floor, Room No 3, ZP Colony, Near Govt Hospital, Araku Valley, AP - 531151', true)
 ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO public.site_settings (id, business_name, tagline, phone, whatsapp, email, location, district, full_address, pincode, maintenance_mode)
-VALUES ('main_settings', 'NEARFIX', 'Trusted Local Service Discovery & Lead Platform', '9493416030', '9493192020', 'nearfixin@gmail.com', 'Araku Valley', 'Alluri Seetha Ramaraju District', 'Semon Residency, Second Floor, Room No 3, ZP Colony, Near Govt Hospital, Araku Valley, AP - 531151', '531151', false)
+VALUES ('main_settings', 'SINCE T20 SERVICES', 'Trusted Local Service Discovery & Lead Platform', '9493416030', '9493192020', 'sincet20services@gmail.com', 'Araku Valley', 'Alluri Seetha Ramaraju District', 'Semon Residency, Second Floor, Room No 3, ZP Colony, Near Govt Hospital, Araku Valley, AP - 531151', '531151', false)
 ON CONFLICT (id) DO NOTHING;

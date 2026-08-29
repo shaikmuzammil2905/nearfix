@@ -207,7 +207,7 @@ const INITIAL_TESTIMONIALS: TestimonialCMSData[] = [
     id: "test-2",
     customerName: "Priya Reddy",
     roleLocation: "Visakhapatnam Tourist",
-    reviewText: "NearFix helped us book a local cab driver for our Araku Valley family trip. Clear communication and transparent pricing.",
+    reviewText: "SINCE T20 SERVICES helped us book a local cab driver for our Araku Valley family trip. Clear communication and transparent pricing.",
     rating: 5,
     profileImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150",
     isActive: true,
@@ -228,15 +228,15 @@ const INITIAL_TESTIMONIALS: TestimonialCMSData[] = [
 const INITIAL_FAQS: FaqCMSData[] = [
   {
     id: "faq-1",
-    question: "How do I request a local service on NearFix?",
-    answer: "You can choose a service on NearFix and either call us directly, send an instant WhatsApp message, or fill out the quick lead request form.",
+    question: "How do I request a local service on SINCE T20 SERVICES?",
+    answer: "You can choose a service on SINCE T20 SERVICES and either call us directly, send an instant WhatsApp message, or fill out the quick lead request form.",
     category: "General",
     isActive: true,
     displayOrder: 1
   },
   {
     id: "faq-2",
-    question: "Are all service providers on NearFix verified?",
+    question: "Are all service providers on SINCE T20 SERVICES verified?",
     answer: "Yes, all our local service providers undergo background verification to ensure safety, reliability, and quality service.",
     category: "Verification",
     isActive: true,
@@ -252,8 +252,8 @@ const INITIAL_FAQS: FaqCMSData[] = [
   },
   {
     id: "faq-4",
-    question: "Is there any extra fee to use NearFix?",
-    answer: "No, using NearFix to search, discover, and connect with verified local service providers is 100% free for customers.",
+    question: "Is there any extra fee to use SINCE T20 SERVICES?",
+    answer: "No, using SINCE T20 SERVICES to search, discover, and connect with verified local service providers is 100% free for customers.",
     category: "Pricing",
     isActive: true,
     displayOrder: 4
@@ -300,7 +300,7 @@ const INITIAL_GALLERY: GalleryCMSData[] = [
 
 const INITIAL_ABOUT: AboutCMSData = {
   heading: "Connecting You with Local Experts",
-  description: "NEARFIX is the leading local service discovery and lead generation platform active across Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley — designed to make finding reliable help effortless and transparent.",
+  description: "SINCE T20 SERVICES is the leading local service discovery and lead generation platform active across Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley — designed to make finding reliable help effortless and transparent.",
   vision: NEARFIX_CONTACT.vision,
   mission: NEARFIX_CONTACT.mission,
   coreValues: NEARFIX_CONTACT.coreValues,
@@ -326,7 +326,7 @@ const INITIAL_HEADER: HeaderCMSData = {
 };
 
 const INITIAL_FOOTER: FooterCMSData = {
-  description: "NEARFIX is the trusted local service discovery and lead platform for Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley. Connecting customers with verified local professionals quickly and transparently via Call & WhatsApp.",
+  description: "SINCE T20 SERVICES is the trusted local service discovery and lead platform for Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley. Connecting customers with verified local professionals quickly and transparently via Call & WhatsApp.",
   phoneDisplay: NEARFIX_CONTACT.phoneDisplay,
   whatsappDisplay: NEARFIX_CONTACT.whatsappDisplay,
   email: NEARFIX_CONTACT.email,
@@ -335,11 +335,12 @@ const INITIAL_FOOTER: FooterCMSData = {
   socialLinks: [
     { platform: "Facebook", url: NEARFIX_CONTACT.social.facebook },
     { platform: "Instagram", url: NEARFIX_CONTACT.social.instagram },
-    { platform: "LinkedIn", url: NEARFIX_CONTACT.social.linkedin },
     { platform: "Threads", url: NEARFIX_CONTACT.social.threads },
-    { platform: "X (Twitter)", url: NEARFIX_CONTACT.social.x }
+    { platform: "YouTube", url: NEARFIX_CONTACT.social.youtube },
+    { platform: "X", url: NEARFIX_CONTACT.social.x },
+    { platform: "LinkedIn", url: NEARFIX_CONTACT.social.linkedin }
   ],
-  copyrightText: "© NEARFIX. All rights reserved.",
+  copyrightText: "© SINCE T20 SERVICES. All rights reserved.",
   isActive: true
 };
 
@@ -354,9 +355,9 @@ const INITIAL_SITE_SETTINGS: SiteSettingsCMSData = {
   district: NEARFIX_CONTACT.district,
   fullAddress: NEARFIX_CONTACT.fullAddress,
   pincode: NEARFIX_CONTACT.pincode,
-  seoTitle: "NEARFIX - Find Trusted Local Services in Araku Valley, Visakhapatnam & Anakapalli",
+  seoTitle: "SINCE T20 SERVICES - Find Trusted Local Services in Araku Valley, Visakhapatnam & Anakapalli",
   metaDescription: "Connect with verified local electricians, plumbers, taxi drivers, carpenters, and technicians in Araku Valley & Visakhapatnam instantly.",
-  keywords: "NearFix, Araku local services, electrician Araku, plumber Araku Valley, taxi Araku, service directory Visakhapatnam",
+  keywords: "SINCE T20 SERVICES, Araku local services, electrician Araku, plumber Araku Valley, taxi Araku, service directory Visakhapatnam",
   maintenanceMode: false
 };
 
@@ -380,6 +381,19 @@ function setLocal<T>(key: string, data: T): void {
 }
 
 export class CMSService {
+  private static notifyUpdate(table?: string) {
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('cms-data-updated', { detail: { table } }));
+    }
+  }
+
+  static subscribeToUpdates(callback: () => void): () => void {
+    if (typeof window === 'undefined') return () => {};
+    const handler = () => callback();
+    window.addEventListener('cms-data-updated', handler);
+    return () => window.removeEventListener('cms-data-updated', handler);
+  }
+
   // --- HERO ---
   static async getHero(): Promise<HeroCMSData> {
     const local = getLocal<HeroCMSData>('hero', INITIAL_HERO);
@@ -427,6 +441,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase updateHero error:', err);
     }
+    this.notifyUpdate('hero');
     return updated;
   }
 
@@ -513,6 +528,7 @@ export class CMSService {
       console.error('Supabase saveCategory error:', err);
     }
 
+    this.notifyUpdate('categories');
     return updatedList;
   }
 
@@ -526,6 +542,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase deleteCategory error:', err);
     }
+    this.notifyUpdate('categories');
     return updated;
   }
 
@@ -622,6 +639,7 @@ export class CMSService {
       console.error('Supabase saveService error:', err);
     }
 
+    this.notifyUpdate('services');
     return updatedList;
   }
 
@@ -635,6 +653,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase deleteService error:', err);
     }
+    this.notifyUpdate('services');
     return updated;
   }
 
@@ -702,6 +721,8 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase saveProvider error:', err);
     }
+
+    this.notifyUpdate('providers');
     return updated;
   }
 
@@ -761,6 +782,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase updateAbout error:', err);
     }
+    this.notifyUpdate('about');
     return updated;
   }
 
@@ -822,6 +844,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase saveTestimonial error:', err);
     }
+    this.notifyUpdate('testimonials');
     return updated;
   }
 
@@ -834,6 +857,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase deleteTestimonial error:', err);
     }
+    this.notifyUpdate('testimonials');
     return updated;
   }
 
@@ -889,6 +913,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase saveFaq error:', err);
     }
+    this.notifyUpdate('faqs');
     return updated;
   }
 
@@ -901,6 +926,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase deleteFaq error:', err);
     }
+    this.notifyUpdate('faqs');
     return updated;
   }
 
@@ -959,6 +985,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase saveGalleryItem error:', err);
     }
+    this.notifyUpdate('gallery');
     return updated;
   }
 
@@ -971,6 +998,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase deleteGalleryItem error:', err);
     }
+    this.notifyUpdate('gallery');
     return updated;
   }
 
@@ -1097,6 +1125,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase updateHeader error:', err);
     }
+    this.notifyUpdate('header');
     return hdr;
   }
 
@@ -1144,6 +1173,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase updateFooter error:', err);
     }
+    this.notifyUpdate('footer');
     return ftr;
   }
 
@@ -1201,6 +1231,7 @@ export class CMSService {
     } catch (err) {
       console.error('Supabase updateSiteSettings error:', err);
     }
+    this.notifyUpdate('settings');
     return stg;
   }
 }

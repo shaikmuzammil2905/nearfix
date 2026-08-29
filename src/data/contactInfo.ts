@@ -1,5 +1,5 @@
 export const NEARFIX_CONTACT = {
-  name: "NEARFIX",
+  name: "SINCE T20 SERVICES",
   tagline: "Trusted Local Service Discovery & Lead Platform",
   experience: "3 years",
   phoneDisplay: "9493416030",
@@ -7,15 +7,16 @@ export const NEARFIX_CONTACT = {
   phoneTel: "tel:9493416030",
   whatsappDisplay: "9493192020",
   whatsappRaw: "9493192020",
-  whatsappUrl: "https://wa.me/919493192020?text=Hello%20NEARFIX%2C%20I%20need%20assistance%20with%20a%20local%20service.",
+  whatsappUrl: "https://wa.me/919493192020?text=Hello%20SINCE%20T20%20SERVICES%2C%20I%20need%20assistance%20with%20a%20local%20service.",
   social: {
-    linkedin: "https://www.linkedin.com/in/near-fix-4497a2430",
-    instagram: "https://www.instagram.com/nearfixin?utm_source=qr&igsi=MTd1bzM4NDNmN3prdQ==",
-    facebook: "https://www.facebook.com/share/1ckDPP1Bfg/",
-    threads: "https://www.threads.com/@nearfixin",
-    x: "https://x.com/NearFixin"
+    facebook: "https://www.facebook.com/share/1K7sBDVMWK/",
+    instagram: "https://www.instagram.com/sincet20services?utm_source=qr&igsi=MTJoZTA4MDRkeWk1ZQ==",
+    threads: "https://www.threads.com/@sincet20services",
+    youtube: "https://youtube.com/@oneplatformmanyservices?si=dcoNFUHBFMwD5E0_",
+    x: "https://youtube.com/@oneplatformmanyservices?si=dcoNFUHBFMwD5E0_",
+    linkedin: "https://www.linkedin.com/in/one-platform-many-services-ab6342432?utm_source=share_via&utm_content=profile&utm_medium=member_android"
   },
-  email: "nearfixin@gmail.com",
+  email: "sincet20services@gmail.com",
   location: "Araku Valley",
   district: "Alluri Seetha Ramaraju District",
   districtsServed: [
@@ -42,7 +43,7 @@ export const NEARFIX_CONTACT = {
     lng: 82.8812,
   },
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Semon+Residency+ZP+Colony+Near+Govt+Hospital+Araku+Valley+Andhra+Pradesh+531151",
-  vision: "To become most trusted platform for finding reliable local services — connecting people with the right service provider quickly, easily, and transparently.",
+  vision: "To become the most trusted platform for finding reliable local services — connecting people with the right service provider quickly, easily, and transparently.",
   mission: "To make local services accessible to everyone through one simple platform, connecting customers with verified service providers through calls and WhatsApp while creating more opportunities for local businesses.",
   coreValues: [
     {
@@ -118,12 +119,12 @@ export const NEARFIX_CONTACT = {
     {
       step: "01",
       title: "Find a Service",
-      description: "Search or select the service you need from our comprehensive 12 category listing."
+      description: "Search or select the service you need from our comprehensive category listing."
     },
     {
       step: "02",
       title: "Submit Your Requirement",
-      description: "Tell NEARFIX what help you need via form, phone call, or instant WhatsApp message."
+      description: "Tell SINCE T20 SERVICES what help you need via form, phone call, or instant WhatsApp message."
     },
     {
       step: "03",

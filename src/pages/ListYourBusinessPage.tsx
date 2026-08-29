@@ -39,7 +39,7 @@ export const ListYourBusinessPage: React.FC = () => {
           Are You a Local Service Provider?
         </h1>
         <p className="text-slate-300 text-base max-w-xl leading-relaxed">
-          Get discovered by customers in your area through NEARFIX. Partner with us to receive quality phone & WhatsApp leads.
+          Get discovered by customers in your area through SINCE T20 SERVICES. Partner with us to receive quality phone & WhatsApp leads.
         </p>
       </div>
 

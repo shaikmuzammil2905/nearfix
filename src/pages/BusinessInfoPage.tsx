@@ -20,7 +20,7 @@ export const BusinessInfoPage: React.FC = () => {
           <ShieldCheck className="w-4 h-4" /> Official Business Documentation
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-          NEARFIX Business Information
+          SINCE T20 SERVICES Business Information
         </h1>
         <p className="text-slate-300 text-base max-w-2xl leading-relaxed">
           Comprehensive company details, registered address, leadership vision, mission, and direct contacts.

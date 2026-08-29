@@ -28,6 +28,10 @@ export const CategoriesPage: React.FC = () => {
       }
     };
     fetchCategories();
+    const unsub = CMSService.subscribeToUpdates(() => {
+      fetchCategories();
+    });
+    return unsub;
   }, []);
 
   const filteredCategories = categories.filter(cat => 
