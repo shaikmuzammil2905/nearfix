@@ -43,7 +43,7 @@ export const MapSection: React.FC = () => {
         
         marker.bindPopup(`
           <div style="font-family: sans-serif; padding: 6px; text-align: center;">
-            <b style="color: #0A2540; font-size: 14px;">NEARFIX HQ</b><br/>
+            <b style="color: #0A2540; font-size: 14px;">SINCE T20 SERVICES HQ</b><br/>
             <span style="color: #dc2626; font-weight: bold; font-size: 12px;">🔴 Exact Business Location</span><br/>
             <span style="color: #475569; font-size: 11px;">Semon Residency, ZP Colony, Araku Valley</span>
           </div>
@@ -73,7 +73,7 @@ export const MapSection: React.FC = () => {
               <MapPin className="w-3.5 h-3.5 fill-current" /> Red Pin Marked Location
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              NEARFIX Business Location
+              SINCE T20 SERVICES Business Location
             </h3>
             <p className="text-slate-600 text-sm mt-1">
               Marked with exact red pin point at Araku Valley main office.
@@ -126,7 +126,7 @@ export const MapSection: React.FC = () => {
 
           {/* Embedded Google Maps iframe for 100% visual fallback guarantee on all mobile devices */}
           <iframe
-            title="NEARFIX Araku Valley Map"
+            title="SINCE T20 SERVICES Araku Valley Map"
             src="https://maps.google.com/maps?q=18.3273,82.8812&z=15&output=embed"
             className="absolute inset-0 w-full h-full border-0 z-0 pointer-events-auto"
             allowFullScreen
@@ -136,7 +136,7 @@ export const MapSection: React.FC = () => {
           {/* Floating red marker badge */}
           <div className="absolute top-4 left-4 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-slate-200 text-xs font-bold text-slate-900 flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-red-600 animate-ping" />
-            <span className="text-red-600 font-extrabold">🔴 NEARFIX Red Pin Marked HQ</span>
+            <span className="text-red-600 font-extrabold">🔴 SINCE T20 SERVICES Red Pin Marked HQ</span>
           </div>
         </div>
 

@@ -41,9 +41,9 @@ export const AdminLogin: React.FC = () => {
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md relative z-10 text-center space-y-3">
         <div className="w-16 h-16 rounded-3xl bg-nearfix-orange text-white flex items-center justify-center mx-auto shadow-2xl font-black text-2xl">
-          N
+          S
         </div>
-        <h2 className="text-3xl font-black text-white tracking-tight">NearFix Admin Panel</h2>
+        <h2 className="text-3xl font-black text-white tracking-tight">SINCE T20 SERVICES Admin Panel</h2>
         <p className="text-sm font-semibold text-slate-400">Secure Content Management Login</p>
       </div>
 
@@ -69,7 +69,7 @@ export const AdminLogin: React.FC = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@nearfix.in"
+                  placeholder="sincet20services@gmail.com"
                   className="w-full pl-10 pr-4 py-3 rounded-2xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-nearfix-orange text-sm font-medium"
                 />
               </div>
@@ -112,7 +112,7 @@ export const AdminLogin: React.FC = () => {
             <div className="flex items-center justify-center gap-1.5 font-bold text-amber-400">
               <ShieldCheck className="w-4 h-4" /> Default Admin Credentials Provided
             </div>
-            <div>Email: <span className="font-mono text-white">admin@nearfix.in</span></div>
+            <div>Email: <span className="font-mono text-white">sincet20services@gmail.com</span> (or admin@nearfix.in)</div>
             <div>Password: <span className="font-mono text-white">Admin@12345</span></div>
           </div>
 

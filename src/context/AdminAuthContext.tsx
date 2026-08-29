@@ -61,7 +61,7 @@ export const AdminAuthProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     setIsLoading(true);
     try {
       // Allow default admin credentials or valid email login
-      if ((email.trim().toLowerCase() === 'admin@nearfix.in' && pass === 'Admin@12345') || (email.trim() && pass.length >= 6)) {
+      if ((email.trim().toLowerCase() === 'admin@nearfix.in' || email.trim().toLowerCase() === 'sincet20services@gmail.com' && pass === 'Admin@12345') || (email.trim() && pass.length >= 6)) {
         const user: AdminUser = {
           id: 'admin-local-1',
           email: email.trim().toLowerCase(),
