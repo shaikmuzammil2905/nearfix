@@ -3,6 +3,7 @@ export const NEARFIX_CONTACT = {
   tagline: "Trusted Local Service Discovery & Lead Platform",
   experience: "3 years",
   phoneDisplay: "9493416030",
+  phonePrimary: "9493416030",
   phoneRaw: "9493416030",
   phoneTel: "tel:9493416030",
   whatsappDisplay: "9493192020",

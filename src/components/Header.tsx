@@ -63,6 +63,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCall, onOpenWhatsApp, onOp
 
   const navLinks = headerData?.navLinks?.filter(l => l.isVisible !== false) || [
     { name: 'Home', path: '/' },
+    { name: 'Tour Packages', path: '/tour-packages' },
     { name: 'Categories', path: '/categories' },
     { name: 'Services', path: '/services' },
     { name: 'Business Information', path: '/business-information' },

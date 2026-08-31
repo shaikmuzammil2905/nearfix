@@ -320,10 +320,50 @@ INSERT INTO public.header_settings (id, logo_url, cta_call_text, cta_whatsapp_te
 VALUES ('main_header', '/logo.png', 'Call Now', 'WhatsApp', true, true)
 ON CONFLICT (id) DO NOTHING;
 
-INSERT INTO public.footer_settings (id, description, phone_display, whatsapp_display, email, location, full_address, is_active)
-VALUES ('main_footer', 'SINCE T20 SERVICES is the trusted local service discovery and lead platform for Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley.', '9493416030', '9493192020', 'sincet20services@gmail.com', 'Araku Valley', 'Semon Residency, Second Floor, Room No 3, ZP Colony, Near Govt Hospital, Araku Valley, AP - 531151', true)
-ON CONFLICT (id) DO NOTHING;
+INSERT INTO public.footer_settings (
+  id,
+  description,
+  phone_display,
+  whatsapp_display,
+  email,
+  location,
+  full_address,
+  is_active
+)
+VALUES (
+  'main_footer',
+  'SINCE T20 SERVICES is the trusted local service discovery and lead platform for Visakhapatnam District, Anakapalli District, Alluri Seetha Ramaraju District, and Araku Valley.',
+  '9493416030',
+  '9493192020',
+  'sincet20services@gmail.com',
+  'Araku Valley',
+  'Semon Residency, Second Floor, Room No 3, ZP Colony, Near Govt Hospital, Araku Valley, AP - 531151',
+  true
+) ON CONFLICT (id) DO NOTHING;
 
-INSERT INTO public.site_settings (id, business_name, tagline, phone, whatsapp, email, location, district, full_address, pincode, maintenance_mode)
-VALUES ('main_settings', 'SINCE T20 SERVICES', 'Trusted Local Service Discovery & Lead Platform', '9493416030', '9493192020', 'sincet20services@gmail.com', 'Araku Valley', 'Alluri Seetha Ramaraju District', 'Semon Residency, Second Floor, Room No 3, ZP Colony, Near Govt Hospital, Araku Valley, AP - 531151', '531151', false)
-ON CONFLICT (id) DO NOTHING;
+INSERT INTO public.site_settings (
+  id,
+  business_name,
+  tagline,
+  phone,
+  whatsapp,
+  email,
+  location,
+  district,
+  full_address,
+  pincode,
+  maintenance_mode
+)
+VALUES (
+  'main_settings',
+  'SINCE T20 SERVICES',
+  'Trusted Local Service Discovery & Lead Platform',
+  '9493416030',
+  '9493192020',
+  'sincet20services@gmail.com',
+  'Araku Valley',
+  'Alluri Seetha Ramaraju District',
+  'Semon Residency, Second Floor, Room No 3, ZP Colony, Near Govt Hospital, Araku Valley, AP - 531151',
+  '531151',
+  false
+) ON CONFLICT (id) DO NOTHING;

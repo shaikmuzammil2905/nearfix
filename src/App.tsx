@@ -21,6 +21,17 @@ import { ContactPage } from './pages/ContactPage';
 import { RequestServicePage } from './pages/RequestServicePage';
 import { ListYourBusinessPage } from './pages/ListYourBusinessPage';
 
+// SEO & Tour Landing Pages
+import { TourPackagesIndexPage } from './pages/tour/TourPackagesIndexPage';
+import { TourPackageDetailPage } from './pages/tour/TourPackageDetailPage';
+import { DestinationDetailPage } from './pages/destinations/DestinationDetailPage';
+import { HotelBookingPage } from './pages/travel-services/HotelBookingPage';
+import { CampingTentPage } from './pages/travel-services/CampingTentPage';
+import { TaxiRentalPage } from './pages/travel-services/TaxiRentalPage';
+import { GSTBusinessServicePage } from './pages/services/GSTBusinessServicePage';
+import { ITRTaxServicePage } from './pages/services/ITRTaxServicePage';
+import { RTARTOPage } from './pages/services/RTARTOPage';
+
 // Admin CMS Context & Pages
 import { AdminAuthProvider } from './context/AdminAuthContext';
 import { ProtectedRoute } from './components/admin/ProtectedRoute';
@@ -140,6 +151,98 @@ export const AppContent: React.FC = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/request-service" element={<RequestServicePage />} />
           <Route path="/list-your-business" element={<ListYourBusinessPage />} />
+
+          {/* Tour Packages & Destinations SEO Routes */}
+          <Route 
+            path="/tour-packages" 
+            element={
+              <TourPackagesIndexPage 
+                onOpenCall={handleOpenCall} 
+                onOpenWhatsApp={handleOpenWhatsApp} 
+                onOpenLead={handleOpenLead} 
+              />
+            } 
+          />
+          <Route 
+            path="/tour-packages/:packageSlug" 
+            element={
+              <TourPackageDetailPage 
+                onOpenCall={handleOpenCall} 
+                onOpenWhatsApp={handleOpenWhatsApp} 
+                onOpenLead={handleOpenLead} 
+              />
+            } 
+          />
+          <Route 
+            path="/destinations/:destinationSlug" 
+            element={
+              <DestinationDetailPage 
+                onOpenCall={handleOpenCall} 
+                onOpenWhatsApp={handleOpenWhatsApp} 
+                onOpenLead={handleOpenLead} 
+              />
+            } 
+          />
+          <Route 
+            path="/travel-services/hotel-booking" 
+            element={
+              <HotelBookingPage 
+                onOpenCall={handleOpenCall} 
+                onOpenWhatsApp={handleOpenWhatsApp} 
+                onOpenLead={handleOpenLead} 
+              />
+            } 
+          />
+          <Route 
+            path="/travel-services/camping-tent-booking" 
+            element={
+              <CampingTentPage 
+                onOpenCall={handleOpenCall} 
+                onOpenWhatsApp={handleOpenWhatsApp} 
+                onOpenLead={handleOpenLead} 
+              />
+            } 
+          />
+          <Route 
+            path="/travel-services/taxi-car-rental" 
+            element={
+              <TaxiRentalPage 
+                onOpenCall={handleOpenCall} 
+                onOpenWhatsApp={handleOpenWhatsApp} 
+                onOpenLead={handleOpenLead} 
+              />
+            } 
+          />
+          <Route 
+            path="/professional-services/gst-business-services" 
+            element={
+              <GSTBusinessServicePage 
+                onOpenCall={handleOpenCall} 
+                onOpenWhatsApp={handleOpenWhatsApp} 
+                onOpenLead={handleOpenLead} 
+              />
+            } 
+          />
+          <Route 
+            path="/professional-services/itr-tax-filing" 
+            element={
+              <ITRTaxServicePage 
+                onOpenCall={handleOpenCall} 
+                onOpenWhatsApp={handleOpenWhatsApp} 
+                onOpenLead={handleOpenLead} 
+              />
+            } 
+          />
+          <Route 
+            path="/professional-services/rta-rto-services" 
+            element={
+              <RTARTOPage 
+                onOpenCall={handleOpenCall} 
+                onOpenWhatsApp={handleOpenWhatsApp} 
+                onOpenLead={handleOpenLead} 
+              />
+            } 
+          />
 
           {/* Admin Authentication Route */}
           <Route path="/admin/login" element={<AdminLogin />} />

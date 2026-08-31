@@ -12,6 +12,7 @@ import { NEARFIX_CONTACT } from '../data/contactInfo';
 import { HeroVideo } from '../components/HeroVideo';
 import { MapSection } from '../components/MapSection';
 import { CMSService, HeroCMSData, AboutCMSData } from '../services/cmsService';
+import { SEO } from '../components/SEO';
 
 interface HomePageProps {
   onOpenCall: () => void;
@@ -81,8 +82,46 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
     return unsub;
   }, []);
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Since T20 Services",
+    "url": "https://sincet20services.com",
+    "logo": "https://sincet20services.com/logo.png",
+    "description": "Since T20 Services connects customers with trusted local and professional service providers for GST, ITR, Udyam, RTA, Labour, home services, vehicle services, travel, construction, real estate and more across Andhra Pradesh.",
+    "telephone": NEARFIX_CONTACT.phonePrimary,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": NEARFIX_CONTACT.fullAddress,
+      "addressLocality": "Araku Valley / Paderu",
+      "addressRegion": "Andhra Pradesh",
+      "postalCode": "531151",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": NEARFIX_CONTACT.coordinates.lat,
+      "longitude": NEARFIX_CONTACT.coordinates.lng
+    },
+    "areaServed": [
+      "Alluri Sitharama Raju District",
+      "Paderu",
+      "Araku Valley",
+      "Visakhapatnam",
+      "Anakapalli",
+      "Andhra Pradesh"
+    ]
+  };
+
   return (
     <div className="space-y-12 pb-12">
+      <SEO 
+        title="Since T20 Services | Online & Local Services in Andhra Pradesh"
+        description="Since T20 Services connects customers with trusted local and professional service providers for GST, ITR, Udyam, RTA, Labour, home services, vehicle services, travel, construction, real estate and more across Andhra Pradesh."
+        keywords="Since T20 Services, Online Services in Andhra Pradesh, Local Services in Andhra Pradesh, Online Service Provider in Andhra Pradesh, Local Service Provider, Business Services in Andhra Pradesh, Professional Services in Andhra Pradesh, Services in Paderu, GST Services in Paderu, GST Registration Services, GST Return Filing, ITR Filing Services, Udyam Registration, Udyam Registration in Paderu, RTA Services in Paderu, RTO Services in Paderu, Labour Services in Paderu, Home Services in Paderu, Electrician in Paderu, Plumber in Paderu, AC Repair in Paderu, Taxi Services in Araku Valley, Real Estate Services in Paderu, Construction Services in Paderu, Local Service Provider Near Me, Alluri Sitharama Raju District, Araku Valley Tour Package, Vanajangi Sunrise, Maredumilli Resorts, Deomali Trekking, Onor app, Onor food delivery, Onor delivery"
+        canonical="https://sincet20services.com"
+        schema={schemaData}
+      />
       
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[520px] lg:min-h-[580px] flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl mx-3 sm:mx-6 lg:mx-8 mt-4 border border-white/20 bg-emerald-950/20">
@@ -97,12 +136,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCall, onOpenWhatsApp, 
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-amber-400/40 text-xs sm:text-sm font-extrabold text-amber-300 uppercase tracking-wider animate-fadeIn shadow-xl">
                 <ShieldCheck className="w-4 h-4 text-nearfix-orange flex-shrink-0 animate-pulse" /> 
-                {hero?.badge || "#1 Service Platform in Alluri Seetha Ramaraju, Visakhapatnam & Anakapalli"}
+                {hero?.badge || "#1 Trusted Online & Local Services Platform in Andhra Pradesh"}
               </div>
 
               {/* Headline */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
-                {hero?.headline || "Find Trusted Local Services"} <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 drop-shadow-lg">{hero?.headlineGradient || "Near You"}</span>
+                Trusted Local & Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 drop-shadow-lg">Services Near You</span>
               </h1>
 
               {/* Subtitle */}

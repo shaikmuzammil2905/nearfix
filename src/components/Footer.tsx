@@ -71,17 +71,21 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 3: Popular Services */}
+          {/* Col 3: Popular Services & Tour Packages */}
           <div className="space-y-3">
-            <h4 className="text-base font-bold text-white uppercase tracking-wider text-nearfix-orange">Popular Services</h4>
-            <ul className="space-y-2 text-sm text-slate-300">
-              <li><Link to="/services/electrician" className="hover:text-white transition-colors">Electrician Services</Link></li>
-              <li><Link to="/services/plumber" className="hover:text-white transition-colors">Plumbing Repairs</Link></li>
-              <li><Link to="/services/ac-repair" className="hover:text-white transition-colors">AC Repair & Service</Link></li>
-              <li><Link to="/services/local-taxi" className="hover:text-white transition-colors">Local Taxi & Araku Tours</Link></li>
-              <li><Link to="/services/hotels" className="hover:text-white transition-colors">Hotels & Resort Booking</Link></li>
-              <li><Link to="/services/roadside-assistance" className="hover:text-white transition-colors">24/7 Roadside Assistance</Link></li>
-              <li><Link to="/services/building-contractors" className="hover:text-white transition-colors">Construction & House Builders</Link></li>
+            <h4 className="text-base font-bold text-white uppercase tracking-wider text-nearfix-orange">Tour Packages & Services</h4>
+            <ul className="space-y-1.5 text-xs sm:text-sm text-slate-300">
+              <li><Link to="/tour-packages/araku-valley-from-visakhapatnam" className="hover:text-amber-400 transition-colors">Araku Tour Package from Vizag</Link></li>
+              <li><Link to="/tour-packages/vanajangi-sunrise-tour" className="hover:text-amber-400 transition-colors">Vanajangi Sunrise Tour Package</Link></li>
+              <li><Link to="/tour-packages/maredumilli-nature-tour" className="hover:text-amber-400 transition-colors">Maredumilli Nature Tour</Link></li>
+              <li><Link to="/tour-packages/deomali-trekking-camping" className="hover:text-amber-400 transition-colors">Deomali Trekking & Camping</Link></li>
+              <li><Link to="/tour-packages/araku-vanajangi-deomali-combo" className="hover:text-amber-400 transition-colors">Araku + Vanajangi + Deomali</Link></li>
+              <li><Link to="/professional-services/gst-business-services" className="hover:text-amber-400 transition-colors">GST & Business Services Paderu</Link></li>
+              <li><Link to="/professional-services/itr-tax-filing" className="hover:text-amber-400 transition-colors">ITR Tax Filing in Paderu & AP</Link></li>
+              <li><Link to="/professional-services/rta-rto-services" className="hover:text-amber-400 transition-colors">RTA & RTO Services in Paderu</Link></li>
+              <li><Link to="/travel-services/hotel-booking" className="hover:text-amber-400 transition-colors">Hotels in Araku & Vanajangi</Link></li>
+              <li><Link to="/travel-services/camping-tent-booking" className="hover:text-amber-400 transition-colors">Tent Camping in Vanajangi & Araku</Link></li>
+              <li><Link to="/travel-services/taxi-car-rental" className="hover:text-amber-400 transition-colors">Vizag to Araku Taxi Booking</Link></li>
             </ul>
           </div>
 
